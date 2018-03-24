@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f1ed7cf5-08d6-40b2-ac21-d2f8a936917d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/v2sh/alumini/models.py" afterPath="$PROJECT_DIR$/v2sh/alumini/models.py" />
-      <change beforePath="$PROJECT_DIR$/v2sh/templates/home.html" afterPath="$PROJECT_DIR$/v2sh/templates/home.html" />
-    </list>
+    <list default="true" id="f1ed7cf5-08d6-40b2-ac21-d2f8a936917d" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
