@@ -15,4 +15,5 @@ class SuperUser(models.Model):
     email = models.EmailField()
     ph_no = models.TextField()
     internship = models.TextField()
+
 # Create your models here.
