@@ -11,12 +11,25 @@
 {% block content %}
     <div class = "search">
         <form action="/action_page.php">
-          <input type="text" class = "type" placeholder="Start Exploring ..." name="search">
+          <input type="text" class = "type" placeholder="Start Exploring" name="search">
           <button id = "sub_btn" type="submit">Search<i class="fa fa-search"></i></button>
         </form>
+        <div class = "filter">
+                <label>
+                    Search By
+                </label>
+                <label for="one">
+                <input type="radio" id="one" name="company"  />
+                    Company
+                </label>
+                <label for = "two">
+                <input type="radio" id="two" name="name" />
+                   Name
+                </label>
+                <label for = "three">
+                <input type="radio" id="three" name="year"/>
+                    Year
+                </label>
+        </div>
     </div>
-    <div class = "filter">
-        dafad
-    </div>
-
 {% endblock %}

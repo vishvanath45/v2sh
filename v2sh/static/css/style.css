@@ -2,9 +2,9 @@
 
 .search{
     width : 585px;
-    margin-left : 450px;
+    margin-left : 400px;
     margin-top : 350px;
-    float : left;
+    float : fixed;
  }
 
 #sub_btn{
@@ -26,9 +26,8 @@
 }
 
 .filter{
-    width : 100px;
-    border : 1px solid;
-    margin-left : 300px;
+    width : 600px;
+    margin-left : 10px;
     /*border: 1px solid;*/
 }
 
