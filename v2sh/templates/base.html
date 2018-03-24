@@ -1,0 +1,60 @@
+<html>
+<head>
+    {% load static %}
+	<title>
+		v2sh
+	</title>
+    {% block head %}
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    {% endblock %}
+</head>
+<body>
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-light " style="background-color: #e3f2fd;">
+    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#"><font color = "#515254">Home</font></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="//codeply.com"><font color = "#515254">About Us</font></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><font color = "#515254">Contribute us</font></a>
+            </li>
+        </ul>
+    </div>
+    <div class="mx-auto order-0">
+        <a class="navbar-brand mx-auto" href="#"><font color = "#515254">V2SH</font></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#"><font color = "#515254">LogIn</font></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><font color = "#515254">SignUp</font></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+    {% block content %}
+
+    {% endblock %}
+
+
+<!-- this is bottom navbar -->
+	<nav class="navbar fixed-bottom navbar-expand-lg navbar light justify-content-between"  style="background-color: #e3f2fd;">
+    <span class="navbar-text"><font color=#515254>Developed by team v2sh for NIT Durgapur students</font></span>
+	    <div class="navbar-nav">
+	      		<a class="nav-item nav-link" href="#"><font color="#515254">Report a bug!</font></a>
+	      		<a class="nav-item nav-link" href="#"><font color="#515254">Our Mission</font></a>
+	      		<a class="nav-item nav-link" href="#"><font color=#515254>Feedback</font></a>
+	    </div>
+	</nav>
+</body>
+</html>

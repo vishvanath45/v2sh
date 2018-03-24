@@ -1,0 +1,48 @@
+
+
+.search{
+    width : 600px;
+    margin-left : 450px;
+    margin-top : 300px;
+    float : left;
+    position : fixed;
+ }
+
+#sub_btn{
+  width: 15%;
+  padding: 25px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+
+}
+
+.type{
+    float: left;
+    width : 500px;
+    margin : 0;
+    padding-bottom : 10px;
+    padding-top : 10px;
+}
+
+.filter{
+    width : 500px;
+    margin-left: 450px;
+    margin-top: 10px;
+    /*border: 1px solid;*/
+}
+
+label {
+  float: left;
+  clear: none;
+  display: block;
+  padding: 2px 1em 0 0;
+}
+
+input[type=radio],
+input.radio {
+  float: left;
+  clear: none;
+  margin: 2px 0 0 2px;
+}
