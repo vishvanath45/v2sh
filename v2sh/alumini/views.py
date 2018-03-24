@@ -13,3 +13,6 @@ def aboutus(request):
 
 def reportissue(request):
 	return render(request, 'issue_report.html')
+
+def authenticate(request):
+	return render(request, 'authenticate.html')
