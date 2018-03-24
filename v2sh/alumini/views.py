@@ -10,3 +10,6 @@ def home(request):
 
 def aboutus(request):
 	return render(request, 'aboutus.html')
+
+def reportissue(request):
+	return render(request, 'issue_report.html')
