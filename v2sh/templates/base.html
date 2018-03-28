@@ -14,13 +14,13 @@
     <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#"><font color = "#515254">Home</font></a>
+                <a class="nav-link" href="{% url 'home' %}"><font color = "#515254">Home</font></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="//codeply.com"><font color = "#515254">About Us</font></a>
+                <a class="nav-link" href="{% url 'aboutus' %}"><font color = "#515254">About Us</font></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><font color = "#515254">Contribute us</font></a>
+                <a class="nav-link" href="{% url 'contactform' %}"><font color = "#515254">Contribute us</font></a>
             </li>
         </ul>
     </div>
@@ -45,7 +45,7 @@
 	<nav class="navbar fixed-bottom navbar-expand-lg navbar light justify-content-between"  style="background-color: #e3f2fd;">
     <span class="navbar-text"><font color=#515254>Developed by team v2sh for NIT Durgapur students</font></span>
 	    <div class="navbar-nav">
-	      		<a class="nav-item nav-link" href="#"><font color="#515254">Report a bug!</font></a>
+	      		<a class="nav-item nav-link" href="{% url 'reportissue' %}"><font color="#515254">Report a bug!</font></a>
 	      		<a class="nav-item nav-link" href="#"><font color="#515254">Our Mission</font></a>
 	      		<a class="nav-item nav-link" href="#"><font color=#515254>Feedback</font></a>
 	    </div>

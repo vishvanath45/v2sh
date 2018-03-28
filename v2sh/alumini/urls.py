@@ -6,5 +6,5 @@ urlpatterns = [
     url(r'^aboutus/$', views.aboutus , name= 'aboutus'),
     url(r'^reportissue/$', views.reportissue , name= 'reportissue'),
     url(r'^authenticate/$',views.authenticate , name= 'authenticate'),
-    url(r'^contactform/$',views.conactform ,name='contactform'),
+    url(r'^contactform/$',views.contactform ,name='contactform'),
 ]
