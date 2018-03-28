@@ -6,10 +6,6 @@ urlpatterns = [
     url(r'^aboutus/$', views.aboutus , name= 'aboutus'),
     url(r'^reportissue/$', views.reportissue , name= 'reportissue'),
     url(r'^authenticate/$',views.authenticate , name= 'authenticate'),
-<<<<<<< HEAD
     url(r'^contactform/$',views.contactform ,name='contactform'),
-]
-=======
     url(r'^superuserprofile/$',views.superuserprofile, name= 'superuserprofile'),
 ]
->>>>>>> newnewbranch

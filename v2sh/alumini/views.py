@@ -16,12 +16,9 @@ def reportissue(request):
 
 def authenticate(request):
 	return render(request, 'authenticate.html')
-<<<<<<< HEAD
+
 def contactform(request):
 	return render(request, 'contactform.html')
 
-=======
-
 def superuserprofile(request):
 	return render(request, 'superuserprofile.html')
->>>>>>> newnewbranch
