@@ -16,7 +16,7 @@
 
      <style type="text/css">
         * { margin: 0; padding: 0; }
-        body { font: 16px Helvetica, Sans-Serif; line-height: 24px; background: url(images/noise.jpg); }
+        body { margin-top: 80px; font: 16px Helvetica, Sans-Serif; line-height: 24px; background: url(images/noise.jpg); }
         .clear { clear: both; }
         #page-wrap { width: 800px; margin: 40px auto 60px; }
         #pic { float: right; margin: -30px 0 0 0; }
@@ -53,14 +53,6 @@
             </p>
         </div>
                 
-<!--         <div id="objective">
-            <p>
-                I am an outgoing and energetic (ask anybody) young professional, seeking a 
-                career that fits my professional skills, personality, and murderous tendencies. 
-                My squid-like head is a masterful problem solver and inspires fear in who gaze upon it. 
-                I can bring world domination to your organization. 
-            </p>
-        </div> -->
         
         <div class="clear"></div>
         
@@ -69,30 +61,30 @@
             
             <dt>Internship</dt>
             <dd>
-                <h2>Amzn</h2>
+                {{ user.internship }}
+<!--                 <h2>Amzn</h2>
                 <p><strong>Major:</strong> Public Relations<br />
-                   <strong>Minor:</strong> Scale Tending</p>
+                   <strong>Minor:</strong> Scale Tending</p> -->
             </dd>
 
             <dd class="clear"></dd>
             
             <dt>Job</dt>
             <dd>
-                <h2>Office skills</h2>
-                <p>Office and records management, database administration, event organization, customer support, travel coordination</p>
+                {{ user.job }}
+<!--                 <h2>Office skills</h2>
+                <p>Office and records management, database administration, event organization, customer support, travel coordination</p> -->
                 
-                <!-- <h2>Computer skills</h2> -->
-<!--                 <p>Microsoft productivity software (Word, Excel, etc), Adobe Creative Suite, Windows</p> -->
             </dd>
             
             <dd class="clear"></dd>
             
-
-            
             <dd class="clear"></dd>
+
+                {{ user.notes }}
             
-            <dt>Notes to User</dt>
-            <dd>World Domination, Deep Sea Diving, Murder Most Foul</dd>
+<!--             <dt>Notes to User</dt>
+            <dd>World Domination, Deep Sea Diving, Murder Most Foul</dd> -->
             
             <dd class="clear"></dd>
 

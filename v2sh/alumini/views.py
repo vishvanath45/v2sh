@@ -3,6 +3,8 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render
 
+from .models import SuperUser, Experience
+
 # Create your views here.
 
 def home(request):
@@ -21,4 +23,7 @@ def contactform(request):
 	return render(request, 'contactform.html')
 
 def superuserprofile(request):
-	return render(request, 'superuserprofile.html')
+
+	user = SuperUser.objects.all()[0]
+	exp = Experience.objects.get(object_name = user)
+	return render(request, 'superuserprofile.html',{'user':user,'exp':exp})
