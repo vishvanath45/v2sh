@@ -6,7 +6,7 @@ from django.shortcuts import render
 # Create your views here.
 
 def home(request):
-    return render(request , 'home.html')
+    return render(request, 'home.html')
 
 def aboutus(request):
 	return render(request, 'aboutus.html')
@@ -16,3 +16,6 @@ def reportissue(request):
 
 def authenticate(request):
 	return render(request, 'authenticate.html')
+
+def superuserprofile(request):
+	return render(request, 'superuserprofile.html')
