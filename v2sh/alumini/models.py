@@ -13,6 +13,8 @@ class SuperUser(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField(primary_key = True)
     ph_no = models.TextField()
+    branch = models.CharField(max_length=50 , default= None)
+    yog = models.IntegerField(default= None)
     # internship = models.TextField()
 
 class Experience(models.Model):

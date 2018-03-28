@@ -18,3 +18,4 @@ def authenticate(request):
 	return render(request, 'authenticate.html')
 def contactform(request):
 	return render(request, 'contactform.html')
+
