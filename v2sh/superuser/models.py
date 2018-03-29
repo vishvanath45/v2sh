@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
 from django.db import models
@@ -20,6 +19,4 @@ class Experience(models.Model):
     ending_date = models.DateField()
     role = models.CharField(max_length=100)
     internship_or_job = models.BooleanField(default = True)
-    object_name = models.ForeignKey(SuperUser)
-
-# Create your models here.
+    object_name = models.ForeignKey(SuperUser,on_delete=models.CASCADE)
