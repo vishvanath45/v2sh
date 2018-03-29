@@ -13,3 +13,9 @@ def aboutus(request):
 
 def reportissue(request):
 	return render(request, 'contents/issue_report.html')
+
+def feedbackform(request)
+	return render(request, 'contents/feedbackform.html')
+
+def ourmission(request)
+	return render(request, 'contents/ourmission.html')
