@@ -4,14 +4,15 @@
 
 {% block head %}
 <title>Contact_form</title>
-	<style type="text/css">
-		
-	</style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 {% endblock %}
 
 
 {% block content %}
-<table align="center" border="1px" style="height: 100px" width="60%">
+<table align="center" border="1px"  style="height: 100px;margin-top: 60px" width="60%">
 	<tr align="center">
 		<td>
 			<h1>Contact Info</h1>
@@ -20,38 +21,38 @@
 </table>
 <table align="center" border="1px" width="60%">
 	<tr>
-		<td style="text-align: right; font-size: 20px; height: 40px" width="39%">
+		<td style="text-align: right; font-size: 20px; height: 40px" width="35%">
 			Name:
 			<td>
 				<input type="text" placeholder="Your Name">
 			</td>
 		</td>
 			<tr>
-				<td style="text-align: right; font-size: 20px; height: 40px" width="39%">
+				<td style="text-align: right; font-size: 20px; height: 40px" width="35%">
 					Branch:
 					<td>
 						<input type="text" placeholder="Your Branch">
 					</td>
 					<tr>
-						<td style="text-align: right; font-size: 20px; height: 40px" width="39%">
+						<td style="text-align: right; font-size: 20px; height: 40px" width="35%">
 							Batch:
 							<td>
 								<input type="text" placeholder="Your Batch">
 							</td>
 							<tr>
-								<td style="text-align: right; font-size: 20px; height: 40px" width="39%">
+								<td style="text-align: right; font-size: 20px; height: 40px" width="35%">
 									Contact Number:
 									<td>
 										<input type="text" placeholder="Your Contact Number">
 									</td>
 									<tr>
-										<td style="text-align: right; font-size: 20px; height: 40px" width="39%">
+										<td style="text-align: right; font-size: 20px; height: 40px" width="35%">
 											Email-Id:
 											<td>
 												<input type="text" placeholder="Your Email-Id">
 											</td>
 											<tr style="height: 50px">
-												<td style="text-align: right; font-size: 20px;" width="39%">
+												<td style="text-align: right; font-size: 20px;" width="35%">
 													Internship:
 													<td>
 														#1<br><br>
@@ -64,22 +65,33 @@
 														To:<input type="Date" placeholder="Duration">
 													</td>
 													<tr>
-														<td style="text-align: right; font-size: 20px; height: 40px" width="39%">
+														<td style="text-align: right; font-size: 20px; height: 40px" width="35%">
 															Job:
 															<td>
-																
+																#1<br><br>
+																Company Name:
+																<input type="text" placeholder="Company Name"><br><br>
+																&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Role:
+																<input type="text" placeholder="Role"><br><br>
+																Duration:- From:
+																<input type="Date" placeholder="Duration">
+																To:<input type="Date" placeholder="Duration">
 															</td>
 															<tr>
-																<td style="text-align: right; font-size: 20px; height: 40px" width="39%">
+																<td style="text-align: right; font-size: 20px; height: 40px" width="35%">
 																	Note to User:
 																	<td>
-																		
+																		<textarea rows="4" cols="50" placeholder="Write Here...."></textarea>
 																	</td>
 																	<tr>
-																		<td style="text-align: right; font-size: 20px; height: 40px" width="39%">
-																			Link Of Your Photo:
+																		<td style="text-align: right; font-size: 20px; height: 40px" width="35%">
+																			Upload Photo:
 																			<td>
-																				
+																				<form>
+																				  <div class="form-group" style="margin-top: 12px">
+																				    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+																				  </div>
+																				</form>
 																			</td>
 																		</td>
 																	</tr>
@@ -99,4 +111,7 @@
 			</tr>
 	</tr>
 </table>
+<div align="center">
+	<button style="background-color: green; height: 30px; width: 7%; margin-top: 2%;margin-bottom: 5%" >SUBMIT</button>
+</div>
 {% endblock %}
