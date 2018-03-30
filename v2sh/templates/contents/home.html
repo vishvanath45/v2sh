@@ -3,36 +3,20 @@
 {% load static %}
 
 {% block head %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/search.css' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 {% endblock %}
 
-
 {% block content %}
-    <div class = "search">
-        <form action="/action_page.php">
-          <input type="text" class = "type" placeholder="Start Exploring" name="search">
-          <button id = "sub_btn" type="submit"><img src="http://www.endlessicons.com/wp-content/uploads/2015/08/search-icon-2-614x460.png" height="22px" width="29px"><i class="fa fa-search"></i></button>
-        </form>
-        <div class = "filter">
-                <label>
-                    Search By
-                </label>
-                <label for="one">
-                <input type="radio" id="one" name="filter"  />
-                    Company
-                </label>
-                <label for = "two">
-                <input type="radio" id="two" name="filter" />
-                   Name
-                </label>
-                <label for = "three">
-                <input type="radio" id="three" name="filter"/>
-                    Year
-                </label>
-        </div>
-    </div>
-    <div class = "">
-
+    <div class="search">
+        <span class="sub-search">
+            <a href="google.com">Search by Company</a>
+        </span>
+        <span class="sub-search">
+            <a href="facebook.com">Search by Name</a>
+        </span>
+        <span class="sub-search">
+            <a href="youtube.com">Search by Year of Graduation</a>
+        </span>
     </div>
 {% endblock %}
