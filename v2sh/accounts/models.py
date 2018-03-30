@@ -5,7 +5,7 @@ from django.db import models
 
 # Create your models here.
 
-class User(models.Model):
+class user(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField(unique = True)
-    password = models.Field()
+    pwd = models.CharField(max_length=100)
