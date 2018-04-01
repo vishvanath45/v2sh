@@ -27,11 +27,11 @@ def superuserprofile(request):
 		role = str()
 		present = False
 
-	ie_index = 0
+	ie_index = -1
 
 	ie = []
-	for i in range(5):
-		ie.append(intershipexp())
+	# for i in range(5):
+	# 	ie.append(intershipexp())
 
 
 
@@ -42,10 +42,10 @@ def superuserprofile(request):
 		role = str()
 		present = False
 
-	je_index = 0
+	je_index = -1
 	je = []
-	for i in range(5):
-		je.append(jobexp())
+	# for i in range(5):
+	# 	je.append(jobexp())
 
 
 	'''
@@ -65,11 +65,12 @@ def superuserprofile(request):
 
 	obj = Experience.objects.filter(object_name = user)
 
-	print obj
 
 	for i in range(no_of_obj_returned):
 		# Considering if true than internship else job experience
 		if (obj[i].internship_or_job == True):
+			ie.append(intershipexp())
+			ie_index+=1
 			ie[ie_index].comp_name = obj[i].company_name;
 			ie[ie_index].joining_date = obj[i].joining_date;
 			ie[ie_index].ending_date = obj[i].ending_date;
@@ -77,6 +78,8 @@ def superuserprofile(request):
 			ie[ie_index].present = True
 			ie_index += 1
 		else:
+			je.append(intershipexp())
+			je_index += 1
 			je[je_index].comp_name = obj[i].company_name;
 			je[je_index].joining_date = obj[i].joining_date;
 			je[je_index].ending_date = obj[i].ending_date;
@@ -86,5 +89,5 @@ def superuserprofile(request):
 
 	
 	# return render(request, 'superuser/superuserprofile.html',{'user':user})	
-	return render(request, 'superuser/superuserprofile.html',{'user':user,'ie1':ie[0],'ie2':ie[1],'ie3':ie[2],'ie4':ie[3],'ie5':ie[4],'je1':je[0],'je2':je[1],'je3':je[2],'je4':je[3],'je5':je[4]})
+	return render(request, 'superuser/superuserprofile.html',{'user':user,'ie':ie,'je':je})
 	# return render(request, 'superuser/superuserprofile.html')

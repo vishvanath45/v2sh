@@ -61,101 +61,29 @@
             
             <dt>Internship</dt>
             <dd>
-                <h2>{{ ie1.comp_name }}</h2>
+                {% for data in ie %}
+                <h2>{{ data.comp_name }}</h2>
                 
-                {{ ie1.joining_date }}
+                {{ data.joining_date }}
                 <br>
-                {{ ie1.ending_date  }}
+                {{ data.ending_date  }}
                 <br>
-                {{ ie1.role }}
+                {{ data.role }}
+                {% endfor %}
             </dd>
-            <dd>
-                <h2>{{ ie2.comp_name }}</h2>
-                
-                {{ ie2.joining_date }}
-                <br>
-                {{ ie2.ending_date  }}
-                <br>
-                {{ ie2.role }}
-            </dd>
-            <dd>
-                <h2>{{ ie3.comp_name }}</h2>
-                
-                {{ ie3.joining_date }}
-                <br>
-                {{ ie3.ending_date  }}
-                <br>
-                {{ ie3.role }}
-            </dd>
-            <dd>
-
-                <h2>{{ ie4.comp_name }}</h2>
-                
-                {{ ie4.joining_date }}
-                <br>
-                {{ ie4.ending_date  }}
-                <br>
-                {{ ie4.role }}
-            </dd>
-            <dd>
-                <h2>{{ ie5.comp_name }}</h2>
-                
-                {{ ie5.joining_date }}
-                <br>
-                {{ ie5.ending_date  }}
-                <br>
-                {{ ie5.role }}
-            </dd>
-
             <dd class="clear"></dd>
             
             <dt>Job</dt>
             <dd>
-                <h2>{{ je1.comp_name }}</h2>
-                
-                {{ je1.joining_date }}
-                <br>
-                {{ je1.ending_date  }}
-                <br>
-                {{ je1.role }}
-            </dd>
-            <dd>
-                <h2>{{ je2.comp_name }}</h2>
-                
-                {{ je2.joining_date }}
-                <br>
-                {{ je2.ending_date  }}
-                <br>
-                {{ je2.role }}
-            </dd>
-            <dd>
-                <h2>{{ je3.comp_name }}</h2>
-                
-                {{ je3.joining_date }}
-                <br>
-                {{ je3.ending_date  }}
-                <br>
-                {{ je3.role }}
-            </dd>
-            <dd>
-                <h2>{{ je4.comp_name }}</h2>
-                
-                {{ je4.joining_date }}
-                <br>
-                {{ je4.ending_date  }}
-                <br>
-                {{ je4.role }}
-            </dd>
-            <dd>
-                <h2>{{ je5.comp_name }}</h2>
-                
-                {{ je5.joining_date }}
-                <br>
-                {{ je5.ending_date  }}
-                <br>
-                {{ je5.role }}
-            </dd>
+                {% for data in je %}
+                <h2>{{ data.comp_name }}</h2>
 
+                {{ data.joining_date }}
+                <br>
+                {{ data.ending_date  }}
+                <br>
+                {{ data.role }}
+                {% endfor %}
             
             <dd class="clear"></dd>
             
