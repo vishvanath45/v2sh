@@ -61,27 +61,35 @@
             
             <dt>Internship</dt>
             <dd>
-                {{ user.internship }}
-<!--                 <h2>Amzn</h2>
-                <p><strong>Major:</strong> Public Relations<br />
-                   <strong>Minor:</strong> Scale Tending</p> -->
+                {% for data in ie %}
+                <h2>{{ data.comp_name }}</h2>
+                
+                {{ data.joining_date }}
+                <br>
+                {{ data.ending_date  }}
+                <br>
+                {{ data.role }}
+                {% endfor %}
             </dd>
-
             <dd class="clear"></dd>
             
             <dt>Job</dt>
             <dd>
-                {{ user.job }}
-<!--                 <h2>Office skills</h2>
-                <p>Office and records management, database administration, event organization, customer support, travel coordination</p> -->
-                
-            </dd>
+                {% for data in je %}
+                <h2>{{ data.comp_name }}</h2>
+
+                {{ data.joining_date }}
+                <br>
+                {{ data.ending_date  }}
+                <br>
+                {{ data.role }}
+                {% endfor %}
             
             <dd class="clear"></dd>
             
             <dd class="clear"></dd>
 
-                {{ user.notes }}
+                <!-- {{ user.notes }} -->
             
 <!--             <dt>Notes to User</dt>
             <dd>World Domination, Deep Sea Diving, Murder Most Foul</dd> -->
