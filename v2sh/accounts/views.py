@@ -4,6 +4,8 @@ from __future__ import unicode_literals
 from django.shortcuts import render,redirect
 
 from .forms import RegisterForm
+
+from django.contrib.auth.decorators import login_required
 # ,LoginForm
 
 # from .models import user
@@ -12,6 +14,7 @@ from .forms import RegisterForm
 # def authenticate(request):
 #     return render(request, 'accounts/authenticate.html')
 #
+@login_required()
 def signup(request):
     form = RegisterForm(request.POST or None)
     if form.is_valid():

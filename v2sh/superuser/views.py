@@ -3,9 +3,11 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render
 from django.views.decorators.csrf import ensure_csrf_cookie
-
+from django.contrib.auth.decorators import login_required
 from .models import SuperUser, Experience
 # Create your views here.
+
+
 def contactform(request):
 	if(request.method == 'POST'):
 		name = request.POST['name']
@@ -50,7 +52,7 @@ def contactform(request):
 		
 
 	return render(request, 'superuser/contactform.html')
-
+@login_required()
 def superuserprofile(request):
 
 #  I am currently taking user with su_id = 54, this value will be passed to this function, right now for testing I have taken 54, and populated fake exp in DB.
@@ -133,3 +135,6 @@ def superuserprofile(request):
 	# return render(request, 'superuser/superuserprofile.html',{'user':user})	
 	return render(request, 'superuser/superuserprofile.html',{'user':user,'ie':ie,'je':je})
 	# return render(request, 'superuser/superuserprofile.html')
+
+def error(request):
+    return render(request , 'error.html')

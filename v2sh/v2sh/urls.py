@@ -16,12 +16,14 @@ Including another URLconf
 from django.conf.urls import url,include
 from django.contrib import admin
 from contents import views
+from superuser import views as sp
 
 urlpatterns = [
-    url(r'^$', views.home, name='home'),
-    url(r'^contents/', include('contents.urls')),
-    url(r'^accounts/', include('accounts.urls')),
     url(r'^superuser/', include('superuser.urls')),
+    url(r'^contents/', include('contents.urls')),
+    url(r'^$', views.home, name='home'),
+    url(r'^accounts/', include('accounts.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'' , sp.error , name = 'error'),
     # url(r'^dynamic_forms/$',include('dynamic_forms.urls', namespace='dynamic_forms')),
 ]
