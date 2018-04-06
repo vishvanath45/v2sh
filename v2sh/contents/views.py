@@ -22,7 +22,14 @@ def reportissue(request):
 
 @login_required()
 def feedbackform(request):
-    return render(request, 'contents/feedbackform.html')
+	if(request.method=="POST"):
+		note=request.POST['note']
+		rating=request.POST['rating']
+		ask=request.POST.getlist('ask')
+		# print(note)
+		# print(rating)
+		# print(ask)	
+	return render(request, 'contents/feedbackform.html')
 
 @login_required()
 def ourmission(request):

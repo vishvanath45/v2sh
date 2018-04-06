@@ -16,14 +16,15 @@
 <div>
 	<h1>FeedBack From</h1>
 	<hr>
-	<form>
+	<form action="#" method="POST">
+		{% csrf_token %}
   		<div>
   			1. Tell us, How much you have been benefited with this platform?<br><br>
-  			<textarea rows="4" cols="55" placeholder="Please, Be honest. It will help us to improve this platform."></textarea>
+  			<textarea name="note" rows="4" cols="55" placeholder="Please, Be honest. It will help us to improve this platform."></textarea>
   		</div>
   		<div class="form-group">
 		    <label for="exampleFormControlSelect1">2. Rate this platform (out of 10): </label>
-		    <select class="form-control" id="exampleFormControlSelect1" style="width: 40%">
+		    <select name="rating" class="form-control" id="exampleFormControlSelect1" style="width: 40%">
 		      <option>0</option>
 		      <option>1</option>
 		      <option>2</option>
@@ -40,24 +41,21 @@
 		<div>
 			3. Would you like to contribute in future?
 			<div class="form-check">
-			  <input class="form-check-input" style="margin-left: 1%" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+			  <input name="ask" class="form-check-input" style="margin-left: 1%" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
 			  <label class="form-check-label" style="margin-left: 3%"for="exampleRadios1">
 			    Yes
 			  </label>
 			</div>
 			<div class="form-check">
-			  <input class="form-check-input" style="margin-left: 1%" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+			  <input name="ask" class="form-check-input" style="margin-left: 1%" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
 			  <label class="form-check-label" style="margin-left: 3%" for="exampleRadios2">
 			    No
 			  </label>
 			</div>
 		</div>
-		<div>
-  			4. Tell us, How much you have been benefited with this platform?<br><br>
-  			<textarea rows="4" cols="55" placeholder="Feel free to tell us....."></textarea>
-  		</div>
+
   		<br>
-  		<button style="color: red">SUBMIT</button>
+		<input type="submit" value="submit">
 	</form>
 </div>
 {% endblock %}
