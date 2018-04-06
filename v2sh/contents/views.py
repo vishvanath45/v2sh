@@ -16,6 +16,13 @@ def reportissue(request):
 	return render(request, 'contents/issue_report.html')
 
 def feedbackform(request):
+	if(request.method=="POST"):
+		note=request.POST['note']
+		rating=request.POST['rating']
+		ask=request.POST.getlist('ask')
+		print(note)
+		print(rating)
+		print(ask)	
 	return render(request, 'contents/feedbackform.html')
 
 def ourmission(request):
