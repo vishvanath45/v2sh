@@ -9,11 +9,16 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+	textarea{
+		resize: both;
+	}
+</style>
 {% endblock %}
 
 
 {% block content %}
-<table align="center" border="1px"  style="height: 100px;margin-top: 60px" width="60%">
+<table align="center" border="1px"  style="height: 100px; margin-top:60px" width="60%">
 <tr align="center">
 <td>
 	<h1>Contact Info</h1>
@@ -22,53 +27,53 @@
 </table>
 <form action = '#' method ='POST'>
 {% csrf_token %}
-<table align="center" border="1px" width="60%">
+<table align="center" border="1px" width="60%" style="height: 500px">
 <tr>
-<td style="text-align: right; font-size: 20px; height: 40px" width="40%">
-	Name:
+<td style="text-align: right; font-size: 20px; height: 40px" width="50%">
+	Name :&nbsp;&nbsp;&nbsp;
 	<td>
-		<input type="text" name = 'name' placeholder="Your Name">
+		&nbsp;&nbsp;&nbsp;<input type="text" name = 'name' placeholder="Your Name">
 	</td>
 </td>
 	<tr>
-		<td style="text-align: right; font-size: 20px; height: 40px" width="40%">
-			Branch:
+		<td style="text-align: right; font-size: 20px; height: 40px" width="50%">
+			Branch :&nbsp;&nbsp;&nbsp;
 			<td>
-				<input type="text" name = 'branch' placeholder="Your Branch">
+				&nbsp;&nbsp;&nbsp;<input type="text" name = 'branch' placeholder="Your Branch">
 			</td>
 			<tr>
-				<td style="text-align: right; font-size: 20px; height: 40px" width="40%">
-					Year of Graduation:
+				<td style="text-align: right; font-size: 20px; height: 40px" width="50%">
+					Year of Graduation :&nbsp;&nbsp;&nbsp;
 					<td>
-						<input type="text" name = 'yog' placeholder="Your Batch">
+						&nbsp;&nbsp;&nbsp;<input type="text" name = 'yog' placeholder="Your Batch">
 					</td>
 					<tr>
-						<td style="text-align: right; font-size: 20px; height: 40px" width="40%">
-							Contact Number:
+						<td style="text-align: right; font-size: 20px; height: 40px" width="50%">
+							Contact Number :&nbsp;&nbsp;&nbsp;
 							<td>
-								<input type="Number" name = 'contact_no' placeholder="Your Contact Number">
+								&nbsp;&nbsp;&nbsp;<input type="Number" name = 'contact_no' placeholder="Your Contact Number">
 							</td>
 							<tr>
-								<td style="text-align: right; font-size: 20px; height: 40px" width="40%">
-									Email-Id:
+								<td style="text-align: right; font-size: 20px; height: 40px" width="50%">
+									Email-Id :&nbsp;&nbsp;&nbsp;
 									<td>
-										<input type="text" name = 'email_id' placeholder="Your Email-Id">
+										&nbsp;&nbsp;&nbsp;<input type="text" name = 'email_id' placeholder="Your Email-Id">
 									</td>
 									<tr style="height: 50px">
-										<td style="text-align: right; font-size: 20px;" width="40%">
-											Internship:
+										<td style="text-align: right; font-size: 20px;" width="50%">
+											Internship :&nbsp;&nbsp;&nbsp;
 											<td>
 												<div id="main">
-											        <input type="button" id="btAdd" value="Add" class="bt" style="width: 25%" />
+											        &nbsp;&nbsp;&nbsp;<input type="button" id="btAdd" value="Add" class="bt" style="width: 25%" />
 											        <input type="button" id="btRemove" value="Remove" class="bt" style="width: 25%" />
 											    </div>
 
 												<div Id="copy-this">
-													Company Name:
+													Company Name :
 													<input type="text" name = 'I_comp_name' placeholder=""><br><br>
 													&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Role:
 													<input type="text" name = 'I_role' placeholder="Role"><br><br>
-													Duration:-      From :
+													Duration :-      From :
 													<input type="Month" name = 'I_F_month' placeholder="Duration"><br><br>
 													&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To:
 													<div class="form-check form-check-inline" style="margin-left: 1%">
@@ -82,46 +87,46 @@
 											</td>
 											<tr>
 
-												<td style="text-align: right; font-size: 20px; height: 40px" width="40%">
-													Job:
+												<td style="text-align: right; font-size: 20px; height: 40px" width="50%">
+													Job :&nbsp;&nbsp;&nbsp;
 													<td>
 														<div id="main1">
-													        <input type="button" id="btAdd1" value="Add" class="bt1" style="width: 25%" />
+													        &nbsp;&nbsp;&nbsp;<input type="button" id="btAdd1" value="Add" class="bt1" style="width: 25%" />
 													        <input type="button" id="btRemove1" value="Remove" class="bt1" style="width: 25%" />
 													    </div>
 													</td>
 
 
 													<div Id="copy-this1">
-													Company Name:
+													Company Name :
 													<input type="text" name = 'J_comp_name' placeholder="Company Name"><br><br>
 													&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Role:
 													<input type="text" name = 'J_role' placeholder="Role"><br><br>
-													Duration:-      From :
-													<input type="Month" name = 'J_F_month' placeholder="Duration"><br><br>
+													Duration :-      From :
+													<input type="Month" name = 'J_F_month' placeholder="Start date"><br><br>
 													&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To:
 													<div class="form-check form-check-inline" style="margin-left: 1%">
 													  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
 													  <label class="form-check-label" for="inlineCheckbox1">Currently Working Here.</label>
 													</div><br><br>
-													<input type="Month" name = 'J_T_month' id="input" placeholder="Duration" style="margin-left: 27%">
+													<input type="Month" name = 'J_T_month' id="input" placeholder="End Date" style="margin-left: 27%">
 													<br><br>
 												</div>
 
 
 
 													<tr>
-														<td style="text-align: right; font-size: 20px; height: 40px" width="40%">
-															Note to User:
+														<td style="text-align: right; font-size: 20px; height: 40px" width="50%">
+															Note to User :&nbsp;&nbsp;&nbsp;
 															<td>
-																<textarea name = 'note' rows="4" cols="50" placeholder="Write Here...."></textarea>
+																&nbsp;&nbsp;&nbsp;<textarea name = 'note' placeholder="Ex. Contact me only on weekend."></textarea>
 															</td>
 															<tr>
-																<td style="text-align: right; font-size: 20px; height: 40px" width="40%">
-																	Upload Photo:
+																<td style="text-align: right; font-size: 20px; height: 40px" width="50%">
+																	Upload Photo :&nbsp;&nbsp;&nbsp;
 																	<td>
 																		<form>
-																		  <div class="form-group" style="margin-top: 12px">
+																		  <div class="form-group" style="margin-top: 12px;margin-left: 10px">
 																		    <input type="file" class="form-control-file" id="exampleFormControlFile1">
 																		  </div>
 																		</form>
@@ -145,8 +150,7 @@
 </tr>
 </table>
 <div align="center">
-<input type = 'submit' value = 'submit'>
-<!-- <button style="background-color: green; height: 30px; width: 7%; margin-top: 2%;margin-bottom: 5%" >SUBMIT</button> -->
+<input type = 'submit' value = 'submit' style="height: 30px; width: 7%; margin-top: 2%;margin-bottom: 5%">
 </div>
 </form>
 <script>
@@ -243,35 +247,36 @@ $('#btRemove1').click(function()
 });
 });
 </script>
-<script type="text/javascript">
+<script>
 document.getElementById("copy-this").style.display="none";
-document.getElementById("inlineCheckbox1").onclick = function(){
-if(document.getElementById("input").disabled)
-	document.getElementById("input").disabled = false;
-else
-	document.getElementById("input").disabled = true;
-}
-document.getElementById("inlineCheckbox2").onclick = function(){
-if(document.getElementById("input1").disabled)
-	document.getElementById("input1").disabled = false;
-else
-	document.getElementById("input1").disabled = true;
-}
+// document.getElementById("inlineCheckbox1").onclick = function(){
+// 	console.log("vikas");
+// if(document.getElementById("input").disabled)
+// 	document.getElementById("input").disabled = false;
+// else
+// 	document.getElementById("input").disabled = true;
+// }
+// document.getElementById("inlineCheckbox2").onclick = function(){
+// if(document.getElementById("input1").disabled)
+// 	document.getElementById("input1").disabled = false;
+// else
+// 	document.getElementById("input1").disabled = true;
+// }
 </script>
 
-<script type="text/javascript">
+<script>
 document.getElementById("copy-this1").style.display="none";
-document.getElementById("inlineCheckbox1").onclick = function(){
-if(document.getElementById("input").disabled)
-	document.getElementById("input").disabled = false;
-else
-	document.getElementById("input").disabled = true;
-}
-document.getElementById("inlineCheckbox2").onclick = function(){
-if(document.getElementById("input1").disabled)
-	document.getElementById("input1").disabled = false;
-else
-	document.getElementById("input1").disabled = true;
-}
+// document.getElementById("inlineCheckbox1").onclick = function(){
+// if(document.getElementById("input").disabled)
+// 	document.getElementById("input").disabled = false;
+// else
+// 	document.getElementById("input").disabled = true;
+// }
+// document.getElementById("inlineCheckbox2").onclick = function(){
+// if(document.getElementById("input1").disabled)
+// 	document.getElementById("input1").disabled = false;
+// else
+// 	document.getElementById("input1").disabled = true;
+// }
 </script>
 {% endblock %}
