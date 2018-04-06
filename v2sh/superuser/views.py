@@ -6,7 +6,7 @@ from django.views.decorators.csrf import ensure_csrf_cookie
 from django.contrib.auth.decorators import login_required
 from .models import SuperUser, Experience
 # Create your views here.
-
+from django.http import HttpResponse
 
 def contactform(request):
 	if(request.method == 'POST'):
@@ -43,7 +43,7 @@ def contactform(request):
 				 
 
 
-
+		return HttpResponse("Thanks for filling the form")
 		# try:
 		# 	pkp = request.POST.getlist('Cname')
 		# 	print (pkp)
