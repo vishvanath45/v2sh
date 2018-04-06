@@ -2,11 +2,53 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render
+from django.views.decorators.csrf import ensure_csrf_cookie
 
 from .models import SuperUser, Experience
-
 # Create your views here.
 def contactform(request):
+	if(request.method == 'POST'):
+		name = request.POST['name']
+		branch = request.POST['branch']
+		yog = request.POST['yog']
+		contact_no = request.POST['contact_no']
+		email_id = request.POST['email_id']
+		
+		I_comp_name = request.POST.getlist('I_comp_name')
+		I_role = request.POST.getlist('I_role')
+		I_F_month = request.POST.getlist('I_F_month')
+		I_T_month = request.POST.getlist('I_T_month')
+
+		J_comp_name = request.POST.getlist('J_comp_name')
+		J_role = request.POST.getlist('J_role')
+		J_F_month = request.POST.getlist('J_F_month')
+		J_T_month = request.POST.getlist('J_T_month')
+
+		note = request.POST['note']
+
+		User = SuperUser.objects.create(name = name, email = email_id, ph_no = contact_no, branch = branch,yog = yog )
+
+		for i in range(len(I_comp_name)):
+
+			if(I_comp_name[i]!=''):
+				exp = Experience.objects.create(company_name = I_comp_name[i], joining_date = I_F_month[i], ending_date = I_T_month[i], role = I_role[i], internship_or_job = True, object_name = User)
+
+
+		for i in range(len(J_comp_name)):
+
+			if(J_comp_name[i]!=''):
+				exp = Experience.objects.create(company_name = J_comp_name[i], joining_date = J_F_month[i], ending_date = J_T_month[i], role = J_role[i], internship_or_job = False, object_name = User)
+				 
+
+
+
+		# try:
+		# 	pkp = request.POST.getlist('Cname')
+		# 	print (pkp)
+		# except :
+		# 	pkp = 1
+		
+
 	return render(request, 'superuser/contactform.html')
 
 def superuserprofile(request):
