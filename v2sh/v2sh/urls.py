@@ -23,4 +23,5 @@ urlpatterns = [
     url(r'^accounts/', include('accounts.urls')),
     url(r'^superuser/', include('superuser.urls')),
     url(r'^admin/', admin.site.urls),
+    # url(r'^dynamic_forms/$',include('dynamic_forms.urls', namespace='dynamic_forms')),
 ]
