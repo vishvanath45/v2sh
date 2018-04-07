@@ -28,7 +28,7 @@ def contactform(request):
 
 		note = request.POST['note']
 
-		User = SuperUser.objects.create(name = name, email = email_id, ph_no = contact_no, branch = branch,yog = yog )
+		User = SuperUser.objects.create(name = name, email = email_id, ph_no = contact_no, branch = branch,yog = yog,note =note )
 
 		for i in range(len(I_comp_name)):
 

@@ -10,6 +10,7 @@ class SuperUser(models.Model):
     ph_no = models.TextField()
     branch = models.CharField(max_length=50 , default= None)
     yog = models.IntegerField(default= None)
+    note = models.CharField(max_length=500)
     # internship = models.TextField()
 
 class Experience(models.Model):
