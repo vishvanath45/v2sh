@@ -8,19 +8,19 @@ from superuser.models import SuperUser, Experience
 from django.contrib.auth.decorators import login_required
 # Create your views here.
 
-@login_required()
+# @login_required()
 def home(request):
     return render(request, 'contents/home.html')
 
-@login_required()
+# @login_required()
 def aboutus(request):
     return render(request, 'contents/aboutus.html')
 
-@login_required()
+# @login_required()
 def reportissue(request):
     return render(request, 'contents/issue_report.html')
 
-@login_required()
+# @login_required()
 def feedbackform(request):
 	if(request.method=="POST"):
 		note=request.POST['note']
@@ -31,11 +31,11 @@ def feedbackform(request):
 		# print(ask)	
 	return render(request, 'contents/feedbackform.html')
 
-@login_required()
+# @login_required()
 def ourmission(request):
     return render(request, 'contents/ourmission.html')
 
-@login_required()
+# @login_required()
 def bycompany(request,alpha):
 
     names=[]

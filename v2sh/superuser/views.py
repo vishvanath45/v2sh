@@ -52,7 +52,7 @@ def contactform(request):
 		
 
 	return render(request, 'superuser/contactform.html')
-@login_required()
+# @login_required()
 def superuserprofile(request):
 
 #  I am currently taking user with su_id = 54, this value will be passed to this function, right now for testing I have taken 54, and populated fake exp in DB.

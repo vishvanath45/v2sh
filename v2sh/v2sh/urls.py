@@ -17,7 +17,7 @@ from django.conf.urls import url,include
 from django.contrib import admin
 from contents import views
 from superuser import views as sp
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+# from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     url(r'^superuser/', include('superuser.urls')),
@@ -25,9 +25,9 @@ urlpatterns = [
     url(r'^$', views.home, name='home'),
     url(r'^accounts/', include('accounts.urls')),
     url(r'^admin/', admin.site.urls),
-    url(r'' , sp.error , name = 'error'),
+    # url(r'' , sp.error , name = 'error'),
     # url(r'^dynamic_forms/$',include('dynamic_forms.urls', namespace='dynamic_forms')),
 ]
 
-urlpatterns += staticfiles_urlpatterns()
+# urlpatterns += staticfiles_urlpatterns()
 

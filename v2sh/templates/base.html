@@ -1,9 +1,11 @@
-                <html>
+<!DOCTYPE html>
+<html>
 <head>
     {% load static %}
 	<title>
 		v2sh
 	</title>
+    <link rel="stylesheet" href="{% static 'css/stylebase.css' %}">
     {% block head %}
         <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -11,19 +13,21 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     {% endblock %}
 </head>
-<body>
-
-<nav class="navbar fixed-top navbar-expand-lg navbar-light " style="background-color: #e3f2fd;">
+<body >
+<!-- <div id="text">
+  <h1>Everything Connects</h1>
+</div> -->
+<nav class="navbar fixed-top navbar-expand-lg navbar-light " style="background-color: rgba(0,0,0,0.5);">
     <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="{% url 'home' %}"><font color = "#515254">Home</font></a>
+                <a class="nav-link" href="{% url 'home' %}"><font color = "#cbd1d6">Home</font></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'aboutus' %}"><font color = "#515254">About Us</font></a>
+                <a class="nav-link" href="{% url 'aboutus' %}"><font color = "#cbd1d6">About Us</font></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'contactform' %}"><font color = "#515254">Contribute us</font></a>
+                <a class="nav-link" href="{% url 'contactform' %}"><font color = "#cbd1d6">Contribute us</font></a>
             </li>
         </ul>
     </div>
@@ -31,38 +35,44 @@
         {% if User.name %}
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="#"><font color = "#515254">{{ User.name }}</font></a>
+                <a class="nav-link" href="#"><font color = "#cbd1d6">{{ User.name }}</font></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'logout' %}"><font color = "#515254">Logout</font></a>
+                <a class="nav-link" href="{% url 'logout' %}"><font color = "#cbd1d6">Logout</font></a>
             </li>
         </ul>
       {% else %}
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="#"><font color = "#515254">LogIn</font></a>
+                <a class="nav-link" href="#"><font color = "#cbd1d6">LogIn</font></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'signup' %}"><font color = "#515254">SignUp</font></a>
+                <a class="nav-link" href="{% url 'signup' %}"><font color = "#cbd1d6">SignUp</font></a>
             </li>
         </ul>
       {% endif %}
     </div>
 </nav>
+    <canvas id="canvas">
+    </canvas>
 
     {% block content %}
 
     {% endblock %}
-
+<!--     <div id="text">
+  <h1>Everything Connects</h1>
+</div> -->
 
 <!-- this is bottom navbar -->
-	<nav class="navbar fixed-bottom navbar-expand-lg navbar light justify-content-between"  style="background-color: #e3f2fd;">
-    <span class="navbar-text"><font color=#515254>Developed by team v2sh for NIT Durgapur students</font></span>
+	<nav class="navbar fixed-bottom navbar-expand-lg navbar light justify-content-between"  style="background-color: rgba(0,0,0,0.5);">
+    <span class="navbar-text"><font color=#cbd1d6>Developed by team v2sh for NIT Durgapur students</font></span>
 	    <div class="navbar-nav">
-	      		<a class="nav-item nav-link" href="{% url 'reportissue' %}"><font color="#515254">Report a bug!</font></a>
-	      		<a class="nav-item nav-link" href="{% url 'ourmission' %}"><font color="#515254">Our Mission</font></a>
-	      		<a class="nav-item nav-link" href="{% url 'feedbackform' %}"><font color=#515254>Feedback</font></a>
+	      		<a class="nav-item nav-link" href="{% url 'reportissue' %}"><font color="#cbd1d6">Report a bug!</font></a>
+	      		<a class="nav-item nav-link" href="{% url 'ourmission' %}"><font color="#cbd1d6">Our Mission</font></a>
+	      		<a class="nav-item nav-link" href="{% url 'feedbackform' %}"><font color=#cbd1d6>Feedback</font></a>
 	    </div>
 	</nav>
+    <!-- <script type="text/javascript"></script> -->
+<script src="{% static 'js/index.js' %}"></script>
 </body>
 </html>

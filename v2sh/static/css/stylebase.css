@@ -1,0 +1,18 @@
+body {
+  /*background-image: url("https://www-tc.pbs.org/wgbh/nova/next/wp-content/uploads/2016/04/cosmic-dark-ages.jpg");*/
+  /*background-image: url("http://wall.wallrage.com/wp-content/uploads/Plain-Black-Backgrounds.jpg");*/
+  /*background-color:  #222;*/
+  background-image: url("build.jpg")
+/*  margin: 0rem;
+  min-height: 100vh;
+  font-family: Futura, sans-serif;*/
+}
+
+#canvas {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
