@@ -30,54 +30,146 @@
 <table align="center" border="1px" width="60%" style="height: 500px">
 <tr>
 <td style="text-align: right; font-size: 20px; height: 40px" width="50%">
-	Name :&nbsp;&nbsp;&nbsp;
+	<div style="margin-right: 5%">Name :</div>
 	<td>
-		&nbsp;&nbsp;&nbsp;<input type="text" name = 'name' placeholder="Your Name" required>
+		<div style="margin-left: 3%">
+			<input type="text" name = 'name' placeholder="Your Name" required>
+		</div>
 	</td>
 </td>
 	<tr>
 		<td style="text-align: right; font-size: 20px; height: 40px" width="50%">
-			Branch :&nbsp;&nbsp;&nbsp;
+			<div style="margin-right: 5%">Branch :</div>
 			<td>
-				&nbsp;&nbsp;&nbsp;<input type="text" name = 'branch' placeholder="Your Branch" required>
+				<div class="form-group" style="margin-left: 3%; margin-top: 0%;margin-bottom: 0%">
+					<select name="company_name" class="Company" id="Company1" style="width: 53%" required>
+					  <option value = "">Select Branch</option>
+				      <option value = "CSE">CSE</option>
+				      <option value = "IT">IT</option>
+				      <option value = "CHE">CHE</option>
+				      <option value = "MME">MME</option>
+				      <option value = "ECE">ECE</option>
+				      <option value = "EE">EE</option>
+				      <option value = "ME">ME</option>
+				      <option value = "CE">CE</option>	  
+				      <option value = "BT">BT</option>
+				    </select>
+				</div>
 			</td>
 			<tr>
 				<td style="text-align: right; font-size: 20px; height: 40px" width="50%">
-					Year of Graduation :&nbsp;&nbsp;&nbsp;
+					<div style="margin-right: 5%">Year Of Graduation :</div>
 					<td>
-						&nbsp;&nbsp;&nbsp;<input type="number" name = 'yog' placeholder="Your Batch" required>
+						<div style="margin-left: 3%">
+							<select id = "year" style="width: 53%" required></select>
+							<script >
+								var year = 1990;
+								var till = 2199;
+								var options = "<option >year</option>";
+								for(var y=year; y<=till; y++){
+								  options += "<option >"+ y +"</option>";
+								}
+								document.getElementById("year").innerHTML = options;
+							</script>
+						</div>
 					</td>
 					<tr>
 						<td style="text-align: right; font-size: 20px; height: 40px" width="50%">
-							Contact Number :&nbsp;&nbsp;&nbsp;
+							<div style="margin-right: 5%">Contact Number :</div>
 							<td>
-								&nbsp;&nbsp;&nbsp;<input type="Number" name = 'contact_no' placeholder="Your Contact Number">
+								<div style="margin-left: 3%">
+									<input type="text" name = 'contact_no' placeholder="digits(0-9){10}" pattern="[0-9]{10}" required>
+								</div>
 							</td>
 							<tr>
 								<td style="text-align: right; font-size: 20px; height: 40px" width="50%">
-									Email-Id :&nbsp;&nbsp;&nbsp;
+									<div style="margin-right: 5%">Email-Id :</div>
 									<td>
-										&nbsp;&nbsp;&nbsp;<input type="email_id" name = 'email_id' placeholder="Your Email-Id" required>
+										<div style="margin-left: 3%">
+											<input type="email_id" name = 'email_id' placeholder="Your Email-Id" required>
+										</div>
 									</td>
 									<tr style="height: 50px">
 										<td style="text-align: right; font-size: 20px;" width="50%">
-											Internship :&nbsp;&nbsp;&nbsp;
+											<div style="margin-right: 5%">Internship :</div>
 											<td>
-												<div id="main">
-											        &nbsp;&nbsp;&nbsp;<input type="button" id="btAdd" value="Add" class="bt" style="width: 25%" />
-											        <input type="button" id="btRemove" value="Remove" class="bt" style="width: 25%" />
+												<div id="main" style="margin-left: 3%">
+													<input type="button" id="btAdd" value="Add" class="bt" style="width: 25%" />
+													<input type="button" id="btRemove" value="Remove" class="bt" style="width: 25%" />
 											    </div>
 
 												<div Id="copy-this">
 													Company Name :
 													<input type="text" name = 'I_comp_name' placeholder=""><br><br>
-													&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Role:
-													<input type="text" name = 'I_role' placeholder="Role"><br><br>
+													<label style="margin-left: 23%">Role:</label>
+													<label>
+														<div>
+															<input type="text" name = 'I_role' placeholder="Role">
+														</div>
+													</label>
+													<br><br>
 													Duration :-      From :
-													<input type="Month" name = 'I_F_month' placeholder="Duration"><br><br>
-													&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To:
-						
-													<input type="Month" name = 'I_T_month' id="input" placeholder="Duration" style="margin-left: 33%">
+													<label>
+														<div>
+															<select required>
+																<option value="">Month</option>
+																<option value="JAN">JAN</option>
+																<option value="FEB">FEB</option>
+																<option value="MARCH">MARCH</option>
+																<option value="APRIL">APRIL</option>
+																<option value="MAY">MAY</option>
+																<option value="JUNE">JUNE</option>
+																<option value="JULY">JULY</option>
+																<option value="AUG">AUG</option>
+																<option value="SEPT">SEPT</option>
+																<option value="OCT">OCT</option>
+																<option value="NOV">NOV</option>
+																<option value="DEC">DEC</option>
+															</select>&nbsp;&nbsp;&nbsp;
+															<select id = "year1" required></select>
+															<script >
+																var year = 1990;
+																var till = 2199;
+																var options = "<option>year</option>";
+																for(var y=year; y<=till; y++){
+																  options += "<option>"+ y +"</option>";
+																}
+																document.getElementById("year1").innerHTML = options;
+															</script>
+														</div>
+													</label><br><br>
+													<label style="margin-left: 27%">To:</label>
+													<label >
+														<div>
+															<select required>
+																<option value="">Month</option>
+																<option value="JAN">JAN</option>
+																<option value="FEB">FEB</option>
+																<option value="MARCH">MARCH</option>
+																<option value="APRIL">APRIL</option>
+																<option value="MAY">MAY</option>
+																<option value="JUNE">JUNE</option>
+																<option value="JULY">JULY</option>
+																<option value="AUG">AUG</option>
+																<option value="SEPT">SEPT</option>
+																<option value="OCT">OCT</option>
+																<option value="NOV">NOV</option>
+																<option value="DEC">DEC</option>
+															</select>&nbsp;&nbsp;&nbsp;
+															<select id = "year2" >
+																<!-- <option>year</option> -->
+															</select>
+															<script >
+																var year = 1990;
+																var till = 2199;
+																var options = "<option>year</option>";
+																for(var y=year; y<=till; y++){
+																  options += "<option>"+ y +"</option>";
+																}
+																document.getElementById("year2").innerHTML = options;
+															</script>
+														</div>
+													</label>
 													<br><br>
 												</div>
 
@@ -85,38 +177,98 @@
 											<tr>
 
 												<td style="text-align: right; font-size: 20px; height: 40px" width="50%">
-													Job :&nbsp;&nbsp;&nbsp;
+													<div style="margin-right: 5%">Job :</div>
 													<td>
-														<div id="main1">
-													        &nbsp;&nbsp;&nbsp;<input type="button" id="btAdd1" value="Add" class="bt1" style="width: 25%" />
+														<div id="main1" style="margin-left: 3%">
+													        <input type="button" id="btAdd1" value="Add" class="bt1" style="width: 25%" />
 													        <input type="button" id="btRemove1" value="Remove" class="bt1" style="width: 25%" />
 													    </div>
+														<div Id="copy-this1">
+															Company Name :
+															<input type="text" name = 'I_comp_name' placeholder=""><br><br>
+															<label style="margin-left: 23%">Role:</label>
+															<label>
+																<div>
+																	<input type="text" name = 'I_role' placeholder="Role">
+																</div>
+															</label>
+															<br><br>
+															Duration :-      From :
+															<label>
+																<div>
+																	<select required>
+																		<option value="">Month</option>
+																		<option value="JAN">JAN</option>
+																		<option value="FEB">FEB</option>
+																		<option value="MARCH">MARCH</option>
+																		<option value="APRIL">APRIL</option>
+																		<option value="MAY">MAY</option>
+																		<option value="JUNE">JUNE</option>
+																		<option value="JULY">JULY</option>
+																		<option value="AUG">AUG</option>
+																		<option value="SEPT">SEPT</option>
+																		<option value="OCT">OCT</option>
+																		<option value="NOV">NOV</option>
+																		<option value="DEC">DEC</option>
+																	</select>&nbsp;&nbsp;&nbsp;
+																	<select id = "year4" ></select>
+																	<script >
+																		var year = 1990;
+																		var till = 2199;
+																		var options = "<option>year</option>";
+																		for(var y=year; y<=till; y++){
+																		  options += "<option>"+ y +"</option>";
+																		}
+																		document.getElementById("year4").innerHTML = options;
+																	</script>
+																</div>
+															</label><br><br>
+															<label style="margin-left: 27%">To:</label>
+															<label >
+																<div>
+																	<select required>
+																		<option value="">Month</option>
+																		<option value="JAN">JAN</option>
+																		<option value="FEB">FEB</option>
+																		<option value="MARCH">MARCH</option>
+																		<option value="APRIL">APRIL</option>
+																		<option value="MAY">MAY</option>
+																		<option value="JUNE">JUNE</option>
+																		<option value="JULY">JULY</option>
+																		<option value="AUG">AUG</option>
+																		<option value="SEPT">SEPT</option>
+																		<option value="OCT">OCT</option>
+																		<option value="NOV">NOV</option>
+																		<option value="DEC">DEC</option>
+																	</select>&nbsp;&nbsp;&nbsp;
+																	<select id = "year3" >
+																		<!-- <option>year</option> -->
+																	</select>
+																	<script >
+																		var year = 1990;
+																		var till = 2199;
+																		var options = "<option>year</option>";
+																		for(var y=year; y<=till; y++){
+																		  options += "<option>"+ y +"</option>";
+																		}
+																		document.getElementById("year3").innerHTML = options;
+																	</script>
+																</div>
+															</label>
+															<br><br>
+														</div>
 													</td>
-
-
-													<div Id="copy-this1">
-													Company Name :
-													<input type="text" name = 'J_comp_name' placeholder="Company Name"><br><br>
-													&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Role:
-													<input type="text" name = 'J_role' placeholder="Role"><br><br>
-													Duration :-      From :
-													<input type="Month" name = 'J_F_month'><br><br>
-													<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To: -->
-													<input type="Month" name = 'J_T_month' id="input" style="margin-left: 33%">
-													<br><br>
-												</div>
-
-
-
 													<tr>
 														<td style="text-align: right; font-size: 20px; height: 40px" width="50%">
-															Note to User :&nbsp;&nbsp;&nbsp;
+															<div style="margin-right: 5%">Note to User :</div>
 															<td>
-																&nbsp;&nbsp;&nbsp;<textarea name = 'note' placeholder="Ex. Contact me only on weekend."></textarea>
+																<div style="margin-left: 3%">
+																	<textarea name = 'note' placeholder="Ex. Contact me only on weekend."></textarea>
+																</div>
 															</td>
 														<!--	<tr>
 																<td style="text-align: right; font-size: 20px; height: 40px" width="50%">
-																	Upload Photo :&nbsp;&nbsp;&nbsp;
+																	<div style="margin-right: 5%">Upload Photo :</div>
 																	<td>
 																		<form>
 																		  <div class="form-group" style="margin-top: 12px;margin-left: 10px">

@@ -14,7 +14,7 @@ from django.contrib.auth.decorators import login_required
 # def authenticate(request):
 #     return render(request, 'accounts/authenticate.html')
 #
-@login_required()
+# @login_required()
 def signup(request):
     form = RegisterForm(request.POST or None)
     if form.is_valid():
