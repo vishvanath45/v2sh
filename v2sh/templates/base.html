@@ -32,19 +32,23 @@
         </ul>
     </div>
     <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-        {% if User.name %}
+         {% if user.is_authenticated %}
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="#"><font color = "#cbd1d6">{{ User.name }}</font></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'logout' %}"><font color = "#cbd1d6">Logout</font></a>
-            </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              {{ user.get_full_name }}
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
+              <a class="dropdown-item" href="{% url 'password_change' %}">Change password</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{% url 'logout' %}">Log out</a>
+            </div>
+          </li>
         </ul>
       {% else %}
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="#"><font color = "#cbd1d6">LogIn</font></a>
+                <a class="nav-link" href="{% url 'login' %}"><font color = "#cbd1d6">LogIn</font></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'signup' %}"><font color = "#cbd1d6">SignUp</font></a>

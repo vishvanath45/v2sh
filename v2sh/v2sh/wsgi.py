@@ -12,10 +12,10 @@ import os
 from django.core.wsgi import get_wsgi_application
 
 #new added 1 line: problem unable to load static files
-from whitenoise.django import DjangoWhiteNoise
+# from whitenoise.django import DjangoWhiteNoise
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "v2sh.settings")
 
 application = get_wsgi_application()
 #new added 1 line: problem unable to load static files
-application = DjangoWhiteNoise(application)
+# application = DjangoWhiteNoise(application)

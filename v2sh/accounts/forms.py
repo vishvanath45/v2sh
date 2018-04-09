@@ -8,11 +8,12 @@ class RegisterForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ('full_name','email',)
+        fields = ('full_name','email','password1','password2')
 
     def cleanpassword2(self):
         password1 = self.cleaned_data.get("password1")
         password2 = self.cleaned_data.get("password2")
+        print(password1 , password2)
         if password1 and password2 and password1!=password2:
             raise forms.ValidationError("Passwords dont match")
 
@@ -22,7 +23,7 @@ class RegisterForm(forms.ModelForm):
 
         user = super(RegisterForm , self).save(commit=False)
         user.set_password(self.cleaned_data["password1"])
-        user.active = False
+        user.is_active = False
         if commit:
             user.save()
 
