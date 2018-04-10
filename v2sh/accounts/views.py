@@ -26,6 +26,8 @@ from django.core.mail import EmailMessage,send_mail
 #
 
 User = get_user_model()
+# @login_required()
+
 def signup(request):
     if request.method == 'POST':
         form = RegisterForm(request.POST)
