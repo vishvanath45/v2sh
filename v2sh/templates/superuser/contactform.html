@@ -18,22 +18,23 @@
 
 
 {% block content %}
-<table align="center" border="1px"  style="height: 100px; margin-top:60px" width="60%">
+
+<table align="center" border="1px"  style="height: 100px; margin-top:60px; opacity: 1; background-color: rgb(255,255,255)" width="60%">
 <tr align="center">
 <td>
-	<h1>Contact Info</h1>
+	<h1 style="">Contact Info</h1>
 </td>
 </tr>
 </table>
 <form action = '#' method ='POST'>
 {% csrf_token %}
-<table align="center" border="1px" width="60%" style="height: 500px">
+<table align="center" border="1px" width="60%" style="height: 500px; opacity: 1; background-color: rgb(255,255,255)">
 <tr>
 <td style="text-align: right; font-size: 20px; height: 40px" width="50%">
 	<div style="margin-right: 5%">Name :</div>
 	<td>
 		<div style="margin-left: 3%">
-			<input type="text" name = 'name' placeholder="Your Name" required>
+			<input type="text" name = 'name' placeholder="Your Name" style="color: red" required>
 		</div>
 	</td>
 </td>
@@ -42,7 +43,7 @@
 			<div style="margin-right: 5%">Branch :</div>
 			<td>
 				<div class="form-group" style="margin-left: 3%; margin-top: 0%;margin-bottom: 0%">
-					<select name="company_name" class="Company" id="Company1" style="width: 53%" required>
+					<select style="height: 27px; width: 53%" name="company_name" class="Company" id="Company1" required>
 					  <option value = "">Select Branch</option>
 				      <option value = "CSE">CSE</option>
 				      <option value = "IT">IT</option>
@@ -61,13 +62,13 @@
 					<div style="margin-right: 5%">Year Of Graduation :</div>
 					<td>
 						<div style="margin-left: 3%">
-							<select id = "year" style="width: 53%" required></select>
+							<select id = "year" style="height: 27px; width: 53%" required></select>
 							<script >
-								var year = 1990;
-								var till = 2199;
-								var options = "<option >year</option>";
+								var year = 2010;
+								var till = 2025;
+								var options = "<option value = ''>year</option>";
 								for(var y=year; y<=till; y++){
-								  options += "<option >"+ y +"</option>";
+								  options += "<option value = ' "+y+" '>"+ y +"</option>";
 								}
 								document.getElementById("year").innerHTML = options;
 							</script>
@@ -78,7 +79,7 @@
 							<div style="margin-right: 5%">Contact Number :</div>
 							<td>
 								<div style="margin-left: 3%">
-									<input type="text" name = 'contact_no' placeholder="digits(0-9){10}" pattern="[0-9]{10}" required>
+									<input type="text" name = 'contact_no' placeholder="Please enter 10 digit number" pattern="[0-9]{10}" required>
 								</div>
 							</td>
 							<tr>
@@ -86,7 +87,7 @@
 									<div style="margin-right: 5%">Email-Id :</div>
 									<td>
 										<div style="margin-left: 3%">
-											<input type="email_id" name = 'email_id' placeholder="Your Email-Id" required>
+											<input type="email_id" name = 'email_id' pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" placeholder="Your Email-Id" required>
 										</div>
 									</td>
 									<tr style="height: 50px">
@@ -100,18 +101,18 @@
 
 												<div Id="copy-this">
 													Company Name :
-													<input type="text" name = 'I_comp_name' placeholder=""><br><br>
+													<input type="text" name = 'I_comp_name' placeholder="Company Name" required ><br><br>
 													<label style="margin-left: 23%">Role:</label>
 													<label>
 														<div>
-															<input type="text" name = 'I_role' placeholder="Role">
+															<input type="text" name = 'I_role' placeholder="Role" required >
 														</div>
 													</label>
 													<br><br>
 													Duration :-      From :
 													<label>
 														<div>
-															<select required>
+															<select style="height: 27px" required>
 																<option value="">Month</option>
 																<option value="JAN">JAN</option>
 																<option value="FEB">FEB</option>
@@ -126,13 +127,13 @@
 																<option value="NOV">NOV</option>
 																<option value="DEC">DEC</option>
 															</select>&nbsp;&nbsp;&nbsp;
-															<select id = "year1" required></select>
+															<select style="height: 27px" id = "year1" required></select>
 															<script >
-																var year = 1990;
-																var till = 2199;
-																var options = "<option>year</option>";
+																var year = 2010;
+																var till = 2025;
+																var options = "<option value = ''>year</option>";
 																for(var y=year; y<=till; y++){
-																  options += "<option>"+ y +"</option>";
+																  options += "<option value = ' " + y +" '>"+ y +"</option>";
 																}
 																document.getElementById("year1").innerHTML = options;
 															</script>
@@ -141,7 +142,7 @@
 													<label style="margin-left: 27%">To:</label>
 													<label >
 														<div>
-															<select required>
+															<select style="height: 27px" required>
 																<option value="">Month</option>
 																<option value="JAN">JAN</option>
 																<option value="FEB">FEB</option>
@@ -156,15 +157,15 @@
 																<option value="NOV">NOV</option>
 																<option value="DEC">DEC</option>
 															</select>&nbsp;&nbsp;&nbsp;
-															<select id = "year2" >
+															<select style="height: 27px" id = "year2" required >
 																<!-- <option>year</option> -->
 															</select>
 															<script >
-																var year = 1990;
-																var till = 2199;
-																var options = "<option>year</option>";
+																var year = 2010;
+																var till = 2025;
+																var options = "<option value = ''>year</option>";
 																for(var y=year; y<=till; y++){
-																  options += "<option>"+ y +"</option>";
+																  options += "<option value = ' "+ y + "'>"+ y +"</option>";
 																}
 																document.getElementById("year2").innerHTML = options;
 															</script>
@@ -185,18 +186,18 @@
 													    </div>
 														<div Id="copy-this1">
 															Company Name :
-															<input type="text" name = 'I_comp_name' placeholder=""><br><br>
+															<input type="text" name = 'I_comp_name' placeholder="Company Name" required><br><br>
 															<label style="margin-left: 23%">Role:</label>
 															<label>
 																<div>
-																	<input type="text" name = 'I_role' placeholder="Role">
+																	<input type="text" name = 'I_role' placeholder="Role" required>
 																</div>
 															</label>
 															<br><br>
 															Duration :-      From :
 															<label>
 																<div>
-																	<select id='job' required>
+																	<select style="height: 27px" id='job' required>
 																		<option value="">Month</option>
 																		<option value="JAN">JAN</option>
 																		<option value="FEB">FEB</option>
@@ -211,10 +212,10 @@
 																		<option value="NOV">NOV</option>
 																		<option value="DEC">DEC</option>
 																	</select>&nbsp;&nbsp;&nbsp;
-																	<select id = "year4" ></select>
+																	<select style="height: 27px" id = "year4" ></select>
 																	<script >
-																		var year = 1990;
-																		var till = 2199;
+																		var year = 2010;
+																		var till = 2025;
 																		var options = "<option>year</option>";
 																		for(var y=year; y<=till; y++){
 																		  options += "<option>"+ y +"</option>";
@@ -226,7 +227,7 @@
 															<label style="margin-left: 27%">To:</label>
 															<label >
 																<div>
-																	<select required>
+																	<select style="height: 27px" required>
 																		<option value="">Month</option>
 																		<option value="JAN">JAN</option>
 																		<option value="FEB">FEB</option>
@@ -241,12 +242,12 @@
 																		<option value="NOV">NOV</option>
 																		<option value="DEC">DEC</option>
 																	</select>&nbsp;&nbsp;&nbsp;
-																	<select id = "year3" >
+																	<select style="height: 27px" id = "year3" >
 																		<!-- <option>year</option> -->
 																	</select>
 																	<script >
-																		var year = 1990;
-																		var till = 2199;
+																		var year = 2010;
+																		var till = 2025;
 																		var options = "<option>year</option>";
 																		for(var y=year; y<=till; y++){
 																		  options += "<option>"+ y +"</option>";
@@ -294,9 +295,15 @@
 	</tr>
 </tr>
 </table>
-<div align="center">
-<input type = 'submit' value = 'submit' style="height: 30px; width: 7%; margin-top: 2%;margin-bottom: 5%">
-</div>
+<table align="center" style="margin-bottom: 5%; height: 100px; opacity: 1; background-color: rgb(255,255,255)" border="1px" width="60%">
+	<tr align="center">
+		<td >
+			<div align="center">
+				<input type = 'submit' value = 'submit' style=" height: 30px; width: 12%;">
+			</div>
+		</td>
+	</tr>
+</table>
 </form>
 <script>
 $(document).ready(function() {
