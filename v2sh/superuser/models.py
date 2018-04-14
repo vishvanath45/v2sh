@@ -6,7 +6,7 @@ import uuid
 
 class SuperUser(models.Model):
     name = models.CharField(max_length=100)
-    email = models.EmailField( default = None , primary_key = True)
+    email = models.EmailField( default = None )
     ph_no = models.TextField()
     branch = models.CharField(max_length=50 , default= None)
     yog = models.IntegerField(default= None)
