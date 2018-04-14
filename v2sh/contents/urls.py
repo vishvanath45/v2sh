@@ -8,5 +8,5 @@ urlpatterns = [
     url(r'^feedbackform/$',views.feedbackform, name= 'feedbackform'),
     url(r'^ourmission/$',views.ourmission, name= 'ourmission'),
     url(r'^bycompany/(?P<alpha>\w{0,50})$',views.bycompany,name = "bycompany")
-
+    # url(r'^bycompany/$',views.bycompany,name = "bycompany"),
 ]
