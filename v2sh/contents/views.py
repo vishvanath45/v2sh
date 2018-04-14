@@ -6,7 +6,10 @@ from django.shortcuts import render
 from superuser.models import SuperUser, Experience
 
 from django.contrib.auth.decorators import login_required
+
+from django.urls import reverse
 # Create your views here.
+
 
 # @login_required()
 def home(request):
@@ -36,13 +39,14 @@ def ourmission(request):
     return render(request, 'contents/ourmission.html')
 
 # @login_required()
-def bycompany(request,alpha):
 
+def bycompany(request,alpha):
+    alpha1=alpha.upper()
     names=[]
     number_of_people=[]
     job_count_pairs = []
     for i in range(Experience.objects.count()):
-        if(Experience.objects.all()[i].company_name[0]==alpha):
+        if(Experience.objects.all()[i].company_name[0]==alpha or Experience.objects.all()[i].company_name[0]==alpha1):
             names.append(Experience.objects.all()[i].company_name)
     for i in names:
         cnt=0
@@ -53,7 +57,7 @@ def bycompany(request,alpha):
     for i in range(len(names)):
         job_count_pairs.append((names[i], number_of_people[i]))
 
-    return render(request,'contents/bycompany.html',{'names':job_count_pairs,'alpha':alpha})
+    return render(request,'contents/bycompany.html',{'names':job_count_pairs,'alpha':alpha1})
 
 
 def results_by_year(request):
@@ -72,3 +76,4 @@ def results_by_year(request):
 
 
     return render(request, 'search_results/results_by_year.html')
+

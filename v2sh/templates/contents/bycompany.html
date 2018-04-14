@@ -12,6 +12,34 @@
 
 {% block content %}
     <div class="main">
+        <h5>
+            <a href=" {%url 'bycompany' alpha='a' %}">A</a>
+            <a href="{% url 'bycompany' alpha='b' %}">B</a>
+            <a href="{% url 'bycompany' alpha='c'%} ">C</a>
+            <a href="{% url 'bycompany' alpha='d' %}">D</a>
+            <a href="{% url 'bycompany' alpha='e' %}">E</a>
+            <a href="{% url 'bycompany' alpha='f' %}">F</a>
+            <a href="{% url 'bycompany' alpha='g' %}">G</a>
+            <a href="{% url 'bycompany' alpha='h' %}">H</a>
+            <a href="{% url 'bycompany' alpha='i' %}">I</a>
+            <a href="{% url 'bycompany' alpha='j' %}">J</a>
+            <a href="{% url 'bycompany' alpha='k' %}">K</a>
+            <a href="{% url 'bycompany' alpha='l' %}">L</a>
+            <a href="{% url 'bycompany' alpha='m' %}">M</a>
+            <a href="{% url 'bycompany' alpha='n' %}">N</a>
+            <a href="{% url 'bycompany' alpha='o' %}">O</a>
+            <a href="{% url 'bycompany' alpha='p' %}">P</a>
+            <a href="{% url 'bycompany' alpha='q' %}">Q</a>
+            <a href="{% url 'bycompany' alpha='r' %}">R</a>
+            <a href="{% url 'bycompany' alpha='s' %}">S</a>
+            <a href="{% url 'bycompany' alpha='t' %}">T</a>
+            <a href="{% url 'bycompany' alpha='u' %}">U</a>
+            <a href="{% url 'bycompany' alpha='v' %}">V</a>
+            <a href="{% url 'bycompany' alpha='w' %}">W</a>
+            <a href="{% url 'bycompany' alpha='x' %}">X</a>
+            <a href="{% url 'bycompany' alpha='y' %}">Y</a>
+            <a href="{% url 'bycompany' alpha='z' %}">Z</a>
+        </h5>
         <h1>Results: Starting with {{alpha}}</h1>
         {% for name,cnt in names %}
             <div class="sub-main">
