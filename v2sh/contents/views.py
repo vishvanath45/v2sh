@@ -54,3 +54,21 @@ def bycompany(request,alpha):
         job_count_pairs.append((names[i], number_of_people[i]))
 
     return render(request,'contents/bycompany.html',{'names':job_count_pairs,'alpha':alpha})
+
+
+def results_by_year(request):
+    if (request.method == 'POST'):
+        year_passed = request.POST['pika']
+
+        user_names = []
+        for i in range(Experience.objects.count()):
+            if ( (Experience.objects.all()[i].ending_date.split('-')[0] == year_passed ) or (Experience.objects.all()[i].joining_date.split('-')[0] == year_passed )):
+                user_names.append(Experience.objects.all()[i].object_name.name)
+        print user_names
+
+
+        return render(request, 'search_results/output_by_year.html',{'name':user_names,'year':year_passed})
+
+
+
+    return render(request, 'search_results/results_by_year.html')

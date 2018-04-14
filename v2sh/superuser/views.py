@@ -136,5 +136,26 @@ def superuserprofile(request):
 	return render(request, 'superuser/superuserprofile.html',{'user':user,'ie':ie,'je':je})
 	# return render(request, 'superuser/superuserprofile.html')
 
+
+def search_by_year_result(year,request):
+    return render(request , 'error.html')
+
+	# for i in range(SuperUser.objects.count()):
+	# 	end_date = int(SuperUser.objects.all()[i].ending_date.split('-')[0])
+	# 	start_date = int(SuperUser.objects.all()[i].joining_date.split('-')[0])
+
+	# 	if( (end_date == year) or (start_date == year)):
+	# 		user = SuperUser.objects.all()[i]
+
+
+
+
+
+
+
+
+
+
+
 def error(request):
     return render(request , 'error.html')
