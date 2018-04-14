@@ -19,7 +19,7 @@
 
 {% block content %}
 
-<table align="center" border="1px"  style="height: 100px; margin-top:60px; opacity: 1; background-color: rgb(255,255,255)" width="60%">
+<table align="center" border="1px"  style="height: 100px; margin-top:60px; opacity: 0.5; background-color: blue" width="60%">
 <tr align="center">
 <td>
 	<h1 style="">Contact Info</h1>
@@ -28,7 +28,7 @@
 </table>
 <form action = '#' method ='POST'>
 {% csrf_token %}
-<table align="center" border="1px" width="60%" style="height: 500px; opacity: 1; background-color: rgb(255,255,255)">
+<table align="center" border="1px" width="60%" style="height: 500px; opacity: 0.5; background-color: blue">
 <tr>
 <td style="text-align: right; font-size: 20px; height: 40px" width="50%">
 	<div style="margin-right: 5%">Name :</div>
@@ -44,7 +44,7 @@
 			<td>
 				<div class="form-group" style="margin-left: 3%; margin-top: 0%;margin-bottom: 0%">
 					<select style="height: 27px; width: 53%" name="company_name" class="Company" id="Company1" required>
-					  <option value = "">Select Branch</option>
+					  <option value = ""> --Select Branch-- </option>
 				      <option value = "CSE">CSE</option>
 				      <option value = "IT">IT</option>
 				      <option value = "CHE">CHE</option>
@@ -66,7 +66,7 @@
 							<script >
 								var year = 2010;
 								var till = 2025;
-								var options = "<option value = ''>year</option>";
+								var options = "<option value = ''> --year-- </option>";
 								for(var y=year; y<=till; y++){
 								  options += "<option value = ' "+y+" '>"+ y +"</option>";
 								}
@@ -113,7 +113,7 @@
 													<label>
 														<div>
 															<select style="height: 27px" required>
-																<option value="">Month</option>
+																<option value=""> --Month-- </option>
 																<option value="JAN">JAN</option>
 																<option value="FEB">FEB</option>
 																<option value="MARCH">MARCH</option>
@@ -131,7 +131,7 @@
 															<script >
 																var year = 2010;
 																var till = 2025;
-																var options = "<option value = ''>year</option>";
+																var options = "<option value = ''> --year-- </option>";
 																for(var y=year; y<=till; y++){
 																  options += "<option value = ' " + y +" '>"+ y +"</option>";
 																}
@@ -143,7 +143,7 @@
 													<label >
 														<div>
 															<select style="height: 27px" required>
-																<option value="">Month</option>
+																<option value=""> --Month-- </option>
 																<option value="JAN">JAN</option>
 																<option value="FEB">FEB</option>
 																<option value="MARCH">MARCH</option>
@@ -163,7 +163,7 @@
 															<script >
 																var year = 2010;
 																var till = 2025;
-																var options = "<option value = ''>year</option>";
+																var options = "<option value = ''> --year-- </option>";
 																for(var y=year; y<=till; y++){
 																  options += "<option value = ' "+ y + "'>"+ y +"</option>";
 																}
@@ -198,7 +198,7 @@
 															<label>
 																<div>
 																	<select style="height: 27px" id='job' required>
-																		<option value="">Month</option>
+																		<option value=""> --Month-- </option>
 																		<option value="JAN">JAN</option>
 																		<option value="FEB">FEB</option>
 																		<option value="MARCH">MARCH</option>
@@ -216,7 +216,7 @@
 																	<script >
 																		var year = 2010;
 																		var till = 2025;
-																		var options = "<option>year</option>";
+																		var options = "<option> --year-- </option>";
 																		for(var y=year; y<=till; y++){
 																		  options += "<option>"+ y +"</option>";
 																		}
@@ -228,7 +228,7 @@
 															<label >
 																<div>
 																	<select style="height: 27px" required>
-																		<option value="">Month</option>
+																		<option value=""> --Month-- </option>
 																		<option value="JAN">JAN</option>
 																		<option value="FEB">FEB</option>
 																		<option value="MARCH">MARCH</option>
@@ -248,7 +248,7 @@
 																	<script >
 																		var year = 2010;
 																		var till = 2025;
-																		var options = "<option>year</option>";
+																		var options = "<option> --year-- </option>";
 																		for(var y=year; y<=till; y++){
 																		  options += "<option>"+ y +"</option>";
 																		}
@@ -295,7 +295,7 @@
 	</tr>
 </tr>
 </table>
-<table align="center" style="margin-bottom: 5%; height: 100px; opacity: 1; background-color: rgb(255,255,255)" border="1px" width="60%">
+<table align="center" style="margin-bottom: 5%; height: 100px; opacity: 1; background-color: blue" border="1px" width="60%">
 	<tr align="center">
 		<td >
 			<div align="center">
