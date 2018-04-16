@@ -9,7 +9,12 @@ from .models import SuperUser, Experience
 from django.http import HttpResponse
 
 def contactform(request):
+	print "ssss"
+	print request.method
 	if(request.method == 'POST'):
+		print "asas"
+
+		su_id = SuperUser.objects.count()+1
 		name = request.POST['name']
 		branch = request.POST['branch']
 		yog = request.POST['yog']
@@ -18,28 +23,44 @@ def contactform(request):
 		
 		I_comp_name = request.POST.getlist('I_comp_name')
 		I_role = request.POST.getlist('I_role')
+		#  internship from = I_F
+		#  internship to = I_T
 		I_F_month = request.POST.getlist('I_F_month')
+		I_F_year = request.POST.getlist('I_F_year')
 		I_T_month = request.POST.getlist('I_T_month')
+		I_T_year = request.POST.getlist('I_T_year')
 
 		J_comp_name = request.POST.getlist('J_comp_name')
 		J_role = request.POST.getlist('J_role')
+
 		J_F_month = request.POST.getlist('J_F_month')
+		J_F_year = request.POST.getlist('J_F_year')
 		J_T_month = request.POST.getlist('J_T_month')
+		J_T_year = request.POST.getlist('J_T_year')
+
+		# For debugging purpose
+		# print su_id, name, branch, yog, contact_no, email_id
+		# print I_comp_name, I_role, I_F_month , I_F_year,I_T_month,I_T_year
+		# print J_comp_name, J_role, J_F_month , J_F_year,J_T_month,J_T_year
+
 
 		note = request.POST['note']
 
-		User = SuperUser.objects.create(name = name, email = email_id, ph_no = contact_no, branch = branch,yog = yog,note =note )
+		# print note
 
+		User = SuperUser.objects.create(su_id = su_id, name = name, email = email_id, ph_no = contact_no, branch = branch,yog = yog,note =note )
+
+		print "something  ", len(I_comp_name)
 		for i in range(len(I_comp_name)):
 
 			if(I_comp_name[i]!=''):
-				exp = Experience.objects.create(company_name = I_comp_name[i], joining_date = I_F_month[i], ending_date = I_T_month[i], role = I_role[i], internship_or_job = True, object_name = User)
+				exp = Experience.objects.create(company_name = I_comp_name[i], joining_date = str(I_F_month[i])+" "+ str(I_F_year[i]), ending_date = str(I_T_month[i])+" "+ str(I_T_year[i]), role = I_role[i], internship_or_job = True, object_name = User)
 
 
 		for i in range(len(J_comp_name)):
 
 			if(J_comp_name[i]!=''):
-				exp = Experience.objects.create(company_name = J_comp_name[i], joining_date = J_F_month[i], ending_date = J_T_month[i], role = J_role[i], internship_or_job = False, object_name = User)
+				exp = Experience.objects.create(company_name = J_comp_name[i], joining_date = str(J_F_month[i])+" "+ str(J_F_year[i]), ending_date = str(J_T_month[i])+" "+str(J_T_year[i]), role = J_role[i], internship_or_job = False, object_name = User)
 				 
 
 

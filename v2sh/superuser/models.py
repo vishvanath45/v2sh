@@ -5,6 +5,7 @@ from django.db import models
 import uuid
 
 class SuperUser(models.Model):
+    su_id = models.IntegerField( default = 0, primary_key = True )
     name = models.CharField(max_length=100)
     email = models.EmailField( default = None )
     ph_no = models.TextField()
@@ -19,5 +20,6 @@ class Experience(models.Model):
     # take data in YYYY-MM-DD
     ending_date = models.CharField(max_length=100)
     role = models.CharField(max_length=100)
+    # This will be true if internship, False if JOB
     internship_or_job = models.BooleanField(default =True)
     object_name = models.ForeignKey(SuperUser,on_delete=models.CASCADE)
