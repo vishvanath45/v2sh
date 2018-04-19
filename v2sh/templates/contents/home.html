@@ -3,6 +3,9 @@
 {% load static %}
 
 {% block head %}
+    {% block title %}
+        Home
+    {% endblock %}
     <link rel="stylesheet" href="{% static 'css/search.css' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 {% endblock %}
