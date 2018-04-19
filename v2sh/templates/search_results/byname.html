@@ -44,12 +44,14 @@
             <a href="{% url 'byname' 'z' %}">Z</a>
         </h5>
         <h1>Results: Starting with {{alpha}}</h1>
-        {% for name in names %}
             <div class="sub-main">
                 <span>
-                    <p>Name:{{name}}</p>
+                    <ul>Name of the persons working in this company
+                        {% for name in names %}
+                        <li><a href="{% url 'superuserprofile' name.su_id %}">{{ name.name }}</a></li>
+                        {% endfor %}
+                    </ul>
                 </span>
             </div>
-        {% endfor %}
     </div>
 {% endblock %}

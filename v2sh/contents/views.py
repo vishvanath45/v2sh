@@ -86,6 +86,6 @@ def byname(request , gamma):
     User = SuperUser.objects.all()
     for i in range(SuperUser.objects.count()):
         if SuperUser.objects.all()[i].name[0] == gamma or SuperUser.objects.all()[i].name[0] == gamma1:
-            names.append(SuperUser.objects.all()[i].name)
+            names.append(SuperUser.objects.all()[i])
 
     return render(request , 'search_results/byname.html' , {'names' : names , 'alpha' : gamma})
