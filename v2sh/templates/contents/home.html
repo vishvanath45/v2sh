@@ -3,6 +3,9 @@
 {% load static %}
 
 {% block head %}
+    {% block title %}
+        Home
+    {% endblock %}
     <link rel="stylesheet" href="{% static 'css/search.css' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 {% endblock %}
@@ -16,7 +19,7 @@
             <a href="facebook.com">Search by Name</a>
         </span>
         <span class="sub-search">
-            <a href="{% url 'results_by_year'%}">Search by Year of Graduation</a>
+            <a href="{% url 'byyear' beta='2018' %}">Search by Year of Graduation</a>
         </span>
     </div>
 {% endblock %}

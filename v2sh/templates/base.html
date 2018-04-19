@@ -3,7 +3,8 @@
 <head>
     {% load static %}
 	<title>
-		v2sh
+        {% block title %}
+        {% endblock %}
 	</title>
     {% block head %}
         <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
