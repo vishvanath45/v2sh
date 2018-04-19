@@ -9,10 +9,7 @@ from .models import SuperUser, Experience
 from django.http import HttpResponse
 
 def contactform(request):
-	# print "ssss"
-	# print request.method
 	if(request.method == 'POST'):
-		# print "asas"
 
 		su_id = SuperUser.objects.count()+1
 		name = request.POST['name']
@@ -50,7 +47,6 @@ def contactform(request):
 
 		User = SuperUser.objects.create(su_id = su_id, name = name, email = email_id, ph_no = contact_no, branch = branch,yog = yog,note =note )
 
-		# print "something  ", len(I_comp_name)
 		for i in range(len(I_comp_name)):
 
 			if(I_comp_name[i]!=''):

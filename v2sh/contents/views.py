@@ -60,20 +60,13 @@ def bycompany(request,alpha):
     return render(request,'search_results/bycompany.html',{'names':job_count_pairs,'alpha':alpha1})
 
 
-def results_by_year(request):
-    if (request.method == 'POST'):
-        year_passed = request.POST['pika']
-
-        user_names = []
-        for i in range(Experience.objects.count()):
-            if ( (Experience.objects.all()[i].ending_date.split('-')[0] == year_passed ) or (Experience.objects.all()[i].joining_date.split('-')[0] == year_passed )):
-                user_names.append(Experience.objects.all()[i].object_name.name)
-        # print user_names
-
-
-        return render(request, 'search_results/output_by_year.html',{'name':user_names,'year':year_passed})
-
-
-
-    return render(request, 'search_results/results_by_year.html')
+def byyear(request,beta):
+    year_passed = int(beta)
+    user_names = []
+    for i in range(Experience.objects.count()):
+        ending_year = int(Experience.objects.all()[i].ending_date.split(' ')[2])
+        joining_year = int(Experience.objects.all()[i].joining_date.split(' ')[2])
+        if ( (ending_year >= year_passed ) and (joining_year <= year_passed )):
+            user_names.append(Experience.objects.all()[i].object_name.name)
+    return render(request, 'search_results/byyear.html',{'name':user_names, 'beta':year_passed})
 
