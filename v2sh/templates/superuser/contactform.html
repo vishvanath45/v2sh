@@ -64,10 +64,10 @@
 						<div style="margin-left: 3%">
 							<select id = "year" style="height: 27px; width: 53%" required></select>
 							<script >
-								var year = 2010;
-								var till = 2025;
+								var year = 2025;
+								var till = 2010;
 								var options = "<option value = ''> --year-- </option>";
-								for(var y=year; y<=till; y++){
+								for(var y=year; y>=till; y--){
 								  options += "<option value = ' "+y+" '>"+ y +"</option>";
 								}
 								document.getElementById("year").innerHTML = options;
@@ -129,10 +129,10 @@
 															</select>&nbsp;&nbsp;&nbsp;
 															<select style="height: 27px" id = "year1" required></select>
 															<script >
-																var year = 2010;
-																var till = 2025;
+																var year = 2025;
+																var till = 2010;
 																var options = "<option value = ''> --year-- </option>";
-																for(var y=year; y<=till; y++){
+																for(var y=year; y>=till; y--){
 																  options += "<option value = ' " + y +" '>"+ y +"</option>";
 																}
 																document.getElementById("year1").innerHTML = options;
@@ -161,10 +161,10 @@
 																<!-- <option>year</option> -->
 															</select>
 															<script >
-																var year = 2010;
-																var till = 2025;
+																var year = 2025;
+																var till = 2010;
 																var options = "<option value = ''> --year-- </option>";
-																for(var y=year; y<=till; y++){
+																for(var y=year; y>=till; y--){
 																  options += "<option value = ' "+ y + "'>"+ y +"</option>";
 																}
 																document.getElementById("year2").innerHTML = options;
@@ -214,10 +214,10 @@
 																	</select>&nbsp;&nbsp;&nbsp;
 																	<select style="height: 27px" id = "year4" ></select>
 																	<script >
-																		var year = 2010;
-																		var till = 2025;
+																		var year = 2025;
+																		var till = 2010;
 																		var options = "<option> --year-- </option>";
-																		for(var y=year; y<=till; y++){
+																		for(var y=year; y>=till; y--){
 																		  options += "<option>"+ y +"</option>";
 																		}
 																		document.getElementById("year4").innerHTML = options;
@@ -246,10 +246,10 @@
 																		<!-- <option>year</option> -->
 																	</select>
 																	<script >
-																		var year = 2010;
-																		var till = 2025;
+																		var year = 2025;
+																		var till = 2010;
 																		var options = "<option> --year-- </option>";
-																		for(var y=year; y<=till; y++){
+																		for(var y=year; y>=till; y--){
 																		  options += "<option>"+ y +"</option>";
 																		}
 																		document.getElementById("year3").innerHTML = options;
