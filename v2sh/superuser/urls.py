@@ -6,5 +6,4 @@ urlpatterns = [
     url(r'^superuserprofile/$',views.superuserprofile, name= 'superuserprofile'),
     url(r'^search_by_year/(?P<value>\d+)/$',views.superuserprofile, name= 'search_by_year_result'),
 
-
 ]

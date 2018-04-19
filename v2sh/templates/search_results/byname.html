@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block head %}
+    {% block title %}
+        Search Results: By Company
+    {% endblock %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bycomapany.css' %}">
+{% endblock %}
+
+
+{% block content %}
+    <div class="main">
+        <h5>
+            <a href=" {%url 'byname' 'a' %}">A</a>
+            <a href="{% url 'byname' 'b' %}">B</a>
+            <a href="{% url 'byname' 'c'%} ">C</a>
+            <a href="{% url 'byname' 'd' %}">D</a>
+            <a href="{% url 'byname' 'e' %}">E</a>
+            <a href="{% url 'byname' 'f' %}">F</a>
+            <a href="{% url 'byname' 'g' %}">G</a>
+            <a href="{% url 'byname' 'h' %}">H</a>
+            <a href="{% url 'byname' 'i' %}">I</a>
+            <a href="{% url 'byname' 'j' %}">J</a>
+            <a href="{% url 'byname' 'k' %}">K</a>
+            <a href="{% url 'byname' 'l' %}">L</a>
+            <a href="{% url 'byname' 'm' %}">M</a>
+            <a href="{% url 'byname' 'n' %}">N</a>
+            <a href="{% url 'byname' 'o' %}">O</a>
+            <a href="{% url 'byname' 'p' %}">P</a>
+            <a href="{% url 'byname' 'q' %}">Q</a>
+            <a href="{% url 'byname' 'r' %}">R</a>
+            <a href="{% url 'byname' 's' %}">S</a>
+            <a href="{% url 'byname' 't' %}">T</a>
+            <a href="{% url 'byname' 'u' %}">U</a>
+            <a href="{% url 'byname' 'v' %}">V</a>
+            <a href="{% url 'byname' 'w' %}">W</a>
+            <a href="{% url 'byname' 'x' %}">X</a>
+            <a href="{% url 'byname' 'y' %}">Y</a>
+            <a href="{% url 'byname' 'z' %}">Z</a>
+        </h5>
+        <h1>Results: Starting with {{alpha}}</h1>
+        {% for name in names %}
+            <div class="sub-main">
+                <span>
+                    <p>Name:{{name}}</p>
+                </span>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

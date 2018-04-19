@@ -78,3 +78,14 @@ def company(request , name):
         if (Experience.objects.all()[i].company_name == name):
             experiences.append(Experience.objects.all()[i])
     return render(request , 'contents/company_profile.html' , {'experiences' : experiences , 'name':name})
+
+
+def byname(request , gamma):
+    gamma1 = gamma.upper()
+    names = []
+    User = SuperUser.objects.all()
+    for i in range(SuperUser.objects.count()):
+        if SuperUser.objects.all()[i].name[0] == gamma or SuperUser.objects.all()[i].name[0] == gamma1:
+            names.append(SuperUser.objects.all()[i].name)
+
+    return render(request , 'search_results/byname.html' , {'names' : names , 'alpha' : gamma})
