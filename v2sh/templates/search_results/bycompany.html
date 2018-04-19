@@ -44,7 +44,7 @@
         {% for name,cnt in names %}
             <div class="sub-main">
                 <span>
-                    <p>Company Name: <a href={{ name }}>{{name}}</a></p>
+                    <p>Company Name: <a href="{% url 'company' name %}" >{{name}}</a></p>
                     <p>Number of people working: {{cnt}}</p>
                 </span>
             </div>

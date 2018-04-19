@@ -68,7 +68,7 @@ def results_by_year(request):
         for i in range(Experience.objects.count()):
             if ( (Experience.objects.all()[i].ending_date.split('-')[0] == year_passed ) or (Experience.objects.all()[i].joining_date.split('-')[0] == year_passed )):
                 user_names.append(Experience.objects.all()[i].object_name.name)
-        print user_names
+        # print user_names
 
 
         return render(request, 'search_results/output_by_year.html',{'name':user_names,'year':year_passed})
@@ -77,3 +77,9 @@ def results_by_year(request):
 
     return render(request, 'search_results/results_by_year.html')
 
+def company(request , name):
+    experiences = []
+    for i in range(Experience.objects.count()):
+        if (Experience.objects.all()[i].company_name == name):
+            experiences.append(Experience.objects.all()[i])
+    return render(request , 'contents/company_profile.html' , {'experiences' : experiences , 'name':name})

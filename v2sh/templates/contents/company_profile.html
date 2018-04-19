@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/aboutus_css.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<h1>{{ name }}</h1>
+<table style = "margin-top:10%; margin-left:40%">
+    <tr>
+        <th>Name</th>
+        <th>Joining Date</th>
+        <th>Ending Date</th>
+        <th>Internship or Job</th>
+    </tr>
+    {% for exp in experiences %}
+        <tr>
+            <td>{{ exp.object_name.name }}</td>
+            <td>{{ exp.joining_date }}</td>
+            <td>{{ exp.ending_date }}</td>
+            <td>
+                {% if exp.internship_or_job %}
+                    Internship
+                {% else %}
+                    Job
+                {% endif %}
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
+
