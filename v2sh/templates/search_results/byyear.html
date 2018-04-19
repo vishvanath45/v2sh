@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bycomapany.css' %}">
+{% endblock %}
+
+
+{% block content %}
+    <div class="main">
+        <h5>
+            <a href="{% url 'byyear' beta='2019' %}">2019</a>
+            |
+            <a href="{% url 'byyear' beta='2018' %}">2018</a>
+            |
+            <a href="{% url 'byyear' beta='2017' %}">2017</a>
+            |
+            <a href="{% url 'byyear' beta='2016' %}">2016</a>
+            |
+            <a href="{% url 'byyear' beta='2015' %}">2015</a>
+            |
+            <a href="{% url 'byyear' beta='2014' %}">2014</a>
+            |
+            <a href="{% url 'byyear' beta='2013' %}">2013</a>
+            |
+            <a href="{% url 'byyear' beta='2012' %}">2012</a>
+            |
+            <a href="{% url 'byyear' beta='2011' %}">2011</a>
+            |
+            <a href="{% url 'byyear' beta='2010' %}">2010</a>
+            |
+            <a href="{% url 'byyear' beta='2009' %}">2009</a>
+            |
+            <a href="{% url 'byyear' beta='2008' %}">2008</a>
+            |
+        </h5>
+
+	<h1>Results with people having internship in {{beta}} </h1> 
+	<h2> Names </h2>
+	{% for i in name %}
+		<div class = "sub-main">
+			<span> 	
+			<p> {{ i }} </p>
+			</span>
+		</div>
+	{% endfor %}
+	</div>
+{% endblock %}
