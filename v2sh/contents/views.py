@@ -57,7 +57,7 @@ def bycompany(request,alpha):
     for i in range(len(names)):
         job_count_pairs.append((names[i], number_of_people[i]))
 
-    return render(request,'contents/bycompany.html',{'names':job_count_pairs,'alpha':alpha1})
+    return render(request,'search_results/bycompany.html',{'names':job_count_pairs,'alpha':alpha1})
 
 
 def results_by_year(request):
