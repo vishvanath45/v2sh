@@ -2,10 +2,11 @@
 
 {% load static %}
 
+{% block title %}
+User: {{ user.name }}
+{% endblock %}
+
 {% block head %}
-    {% block title %}
-    User: {{ user.name }}
-    {% endblock %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 {% endblock %}
@@ -40,7 +41,7 @@
 
     <div id="page-wrap">
     
-        <img src="/static/images/s.jpeg" height = "20%" alt="Photo of Cthulu" id="pic" />
+        <!-- <img src="/static/images/s.jpeg" height = "20%" alt="Photo of Cthulu" id="pic" /> -->
     
         <div id="contact-info" class="vcard">
         
@@ -72,6 +73,8 @@
                 {{ data.ending_date  }}
                 <br>
                 {{ data.role }}
+                <br>
+                <br>
                 {% endfor %}
             </dd>
             <dd class="clear"></dd>
@@ -86,6 +89,9 @@
                 {{ data.ending_date  }}
                 <br>
                 {{ data.role }}
+
+                <br>
+                <br>
                 {% endfor %}
             
             <dd class="clear"></dd>

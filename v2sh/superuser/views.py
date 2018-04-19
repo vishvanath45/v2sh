@@ -70,13 +70,19 @@ def contactform(request):
 
 	return render(request, 'superuser/contactform.html')
 # @login_required()
-def superuserprofile(request):
+
+
+
+
+def superuserprofile(request,su_id):
 
 #  I am currently taking user with su_id = 54, this value will be passed to this function, right now for testing I have taken 54, and populated fake exp in DB.
-
+	
+	
 	for i in range(SuperUser.objects.count()):
-		if (SuperUser.objects.all()[i].su_id == 54):
+		if (SuperUser.objects.all()[i].su_id == int(su_id)):
 			user = SuperUser.objects.all()[i]
+			
 
 
 	# I am considering at max 5 internship and 5 Job exp, we can make more, easily scalable.
@@ -122,57 +128,33 @@ def superuserprofile(request):
 	'''
 
 
-	no_of_obj_returned = Experience.objects.filter(object_name = user).count()
+	# no_of_obj_returned = Experience.objects.filter(object_name = user).count()
 
-	obj = Experience.objects.filter(object_name = user)
+	for i in Experience.objects.all():
 
-
-	for i in range(no_of_obj_returned):
-		# Considering if true than internship else job experience
-		if (obj[i].internship_or_job == True):
+		if (i.object_name ==user and i.internship_or_job == True):
 			ie.append(intershipexp())
 			ie_index+=1
-			ie[ie_index].comp_name = obj[i].company_name;
-			ie[ie_index].joining_date = obj[i].joining_date;
-			ie[ie_index].ending_date = obj[i].ending_date;
-			ie[ie_index].role = obj[i].role
+			ie[ie_index].comp_name = i.company_name;
+			ie[ie_index].joining_date = i.joining_date;
+			ie[ie_index].ending_date = i.ending_date;
+			ie[ie_index].role = i.role
 			ie[ie_index].present = True
-			ie_index += 1
-		else:
-			je.append(intershipexp())
+			# ie_index += 1
+		elif(i.object_name ==user and i.internship_or_job == False):
+
+			je.append(jobexp())
 			je_index += 1
-			je[je_index].comp_name = obj[i].company_name;
-			je[je_index].joining_date = obj[i].joining_date;
-			je[je_index].ending_date = obj[i].ending_date;
-			je[je_index].role = obj[i].role
+			je[je_index].comp_name = i.company_name;
+			je[je_index].joining_date = i.joining_date;
+			je[je_index].ending_date = i.ending_date;
+			je[je_index].role = i.role
 			je[je_index].present = True
-			je_index += 1
+
 
 	
-	# return render(request, 'superuser/superuserprofile.html',{'user':user})	
 	return render(request, 'superuser/superuserprofile.html',{'user':user,'ie':ie,'je':je})
-	# return render(request, 'superuser/superuserprofile.html')
-
-
-def search_by_year_result(year,request):
-    return render(request , 'error.html')
-
-	# for i in range(SuperUser.objects.count()):
-	# 	end_date = int(SuperUser.objects.all()[i].ending_date.split('-')[0])
-	# 	start_date = int(SuperUser.objects.all()[i].joining_date.split('-')[0])
-
-	# 	if( (end_date == year) or (start_date == year)):
-	# 		user = SuperUser.objects.all()[i]
-
-
-
-
-
-
-
-
-
-
 
 def error(request):
     return render(request , 'error.html')
+
