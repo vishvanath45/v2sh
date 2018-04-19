@@ -45,9 +45,14 @@ def bycompany(request,alpha):
     names=[]
     number_of_people=[]
     job_count_pairs = []
+    myname = {}
     for i in range(Experience.objects.count()):
         if(Experience.objects.all()[i].company_name[0]==alpha or Experience.objects.all()[i].company_name[0]==alpha1):
-            names.append(Experience.objects.all()[i].company_name)
+            comp_name = Experience.objects.all()[i].company_name
+            if comp_name in myname:
+                continue
+            names.append(comp_name)
+            myname[comp_name]=1
     for i in names:
         cnt=0
         for j in range(Experience.objects.count()):
@@ -73,6 +78,7 @@ def byyear(request,beta):
 
 
 def company(request , name):
+    print(name)
     experiences = []
     for i in range(Experience.objects.count()):
         if (Experience.objects.all()[i].company_name == name):
