@@ -21,6 +21,15 @@ def aboutus(request):
 
 # @login_required()
 def reportissue(request):
+    if(request.method=="POST"):
+        mail=request.POST['mail']
+        issue=request.POST['issue']
+        details=request.POST['details']
+        device=request.POST.getlist('device')
+        # print(mail)
+        # print(issue)
+        # print(device)
+        # print(details)
     return render(request, 'contents/issue_report.html')
 
 # @login_required()

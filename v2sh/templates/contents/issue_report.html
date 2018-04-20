@@ -26,11 +26,11 @@ form {
 <form>
   <div class="form-group">
     <label for="exampleFormControlInput1">Email address</label>
-    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="example@btech.nitdgp.ac.in">
+    <input name="mail" type="email" class="form-control" id="exampleFormControlInput1" placeholder="example@btech.nitdgp.ac.in">
   </div>
   <div class="form-group">
     <label for="exampleFormControlSelect1">Issue Type</label>
-    <select class="form-control" id="exampleFormControlSelect1">
+    <select name="issue" class="form-control" id="exampleFormControlSelect1">
       <option>UI related</option>
       <option>Incorrect Information</option>
       <option>Broken Link</option>
@@ -50,24 +50,25 @@ form {
   </div> -->
   <div class="form-group">
     <label for="exampleFormControlTextarea1">Give a detailed description :</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <textarea name="details" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
   </div>
 
 Device : &nbsp;
   <div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+  <input name="device" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
   <label class="form-check-label" for="inlineRadio1">Desktop</label>
 </div>
 
 <div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+  <input name="device" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
   <label class="form-check-label" for="inlineRadio2">Mobile</label>
 </div>
 <br>
 <br>
   <div class="form-group row">
     <div class="col-sm-10">
-      <button type="submit" class="btn btn-primary">Sign in</button>
+      <input type = 'submit' value = 'submit' style=" height: 30px; width: 12%;"/>
+      <!--<button type="submit" class="btn btn-primary">Sign in</button>-->
     </div>
   </div>
 </form>
