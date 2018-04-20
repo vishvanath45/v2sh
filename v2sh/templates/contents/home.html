@@ -2,16 +2,32 @@
 
 {% load static %}
 
-{% block head %}
+
     {% block title %}
         Home
     {% endblock %}
+
+{% block head %}
     <link rel="stylesheet" href="{% static 'css/search.css' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 {% endblock %}
 
 {% block content %}
-    <div class="search">
+
+
+
+<div class="search">
+    <div ng-controller="AppCtrl" ng-cloak>
+      <md-content>
+
+        <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+          <md-button class="md-raised md-primary">Primary</md-button>
+        </section>
+
+      </md-content>
+    </div>
+
+
         <span class="sub-search">
             <a href="{% url 'bycompany' alpha='a' %}">Search by Company</a>
         </span>
@@ -23,3 +39,17 @@
         </span>
     </div>
 {% endblock %}
+
+
+<script>
+    angular.module('buttonsDemo1', ['ngMaterial'])
+
+.controller('AppCtrl', function($scope) {
+  $scope.title1 = 'Button';
+  $scope.title4 = 'Warn';
+  $scope.isDisabled = true;
+
+  $scope.googleUrl = 'http://google.com';
+
+});
+</script>
