@@ -73,7 +73,7 @@ def byyear(request,beta):
         ending_year = int(Experience.objects.all()[i].ending_date.split(' ')[2])
         joining_year = int(Experience.objects.all()[i].joining_date.split(' ')[2])
         if ( (ending_year >= year_passed ) and (joining_year <= year_passed )):
-            user_names.append(Experience.objects.all()[i].object_name.name)
+            user_names.append(Experience.objects.all()[i].object_name)
     return render(request, 'search_results/byyear.html',{'name':user_names, 'beta':year_passed})
 
 

@@ -20,7 +20,7 @@
     </tr>
     {% for exp in experiences %}
         <tr>
-            <td>{{ exp.object_name.name }}</td>
+            <td><a href="{% url 'superuserprofile' exp.object_name.su_id %}">{{ exp.object_name.name }}</a></td>
             <td>{{ exp.joining_date }}</td>
             <td>{{ exp.ending_date }}</td>
             <td>
