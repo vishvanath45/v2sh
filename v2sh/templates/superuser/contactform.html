@@ -3,9 +3,6 @@
 {% load static %}
 
 {% block head %}
-{% block title %}
-    Contribute Us!
-{% endblock %}
 <title>Contact_form</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -21,17 +18,26 @@
 
 
 {% block content %}
-
-<table align="center" border="1px"  style="height: 100px; margin-top:60px; opacity: 1; background-color: rgb(255,255,255)" width="60%">
+<script>
+	var ctr = "year1";
+	var ctr1 = "yearr1"; 
+	var year = 2025;
+	var till = 2010;
+	var options = "<option> --year-- </option>";
+	for(var y=year; y>=till; y--){
+	  options += "<option>"+ y +"</option>";
+	}
+</script>
+<table align="center" border="1px"  style="height: 100px; margin-top:60px; opacity: 1; background-color: blue" width="60%">
 <tr align="center">
 <td>
 	<h1 style="">Contact Info</h1>
 </td>
 </tr>
 </table>
-<form action = " ", method ='post'>
+<form action = '#' method ='POST'>
 {% csrf_token %}
-<table align="center" border="1px" width="60%" style="height: 500px; opacity: 1; background-color: rgb(255,255,255)">
+<table align="center" border="1px" width="60%" style="height: 500px; opacity: 1; background-color: blue">
 <tr>
 <td style="text-align: right; font-size: 20px; height: 40px" width="50%">
 	<div style="margin-right: 5%">Name :</div>
@@ -47,7 +53,7 @@
 			<td>
 				<div class="form-group" style="margin-left: 3%; margin-top: 0%;margin-bottom: 0%">
 					<select style="height: 27px; width: 53%" name="branch" required>
-					  <option value = "">Select Branch</option>
+					  <option value = ""> --Select Branch-- </option>
 				      <option value = "CSE">CSE</option>
 				      <option value = "IT">IT</option>
 				      <option value = "CHE">CHE</option>
@@ -65,12 +71,12 @@
 					<div style="margin-right: 5%">Year Of Graduation :</div>
 					<td>
 						<div style="margin-left: 3%">
-							<select id = "year" style="height: 27px; width: 53%" name = "yog" required></select>
+							<select id = "year" style="height: 27px; width: 53%" required></select>
 							<script >
-								var year = 2010;
-								var till = 2025;
-								var options = "<option value = ''>year</option>";
-								for(var y=year; y<=till; y++){
+								var year = 2025;
+								var till = 2010;
+								var options = "<option value = ''> --year-- </option>";
+								for(var y=year; y>=till; y--){
 								  options += "<option value = ' "+y+" '>"+ y +"</option>";
 								}
 								document.getElementById("year").innerHTML = options;
@@ -90,7 +96,7 @@
 									<div style="margin-right: 5%">Email-Id :</div>
 									<td>
 										<div style="margin-left: 3%">
-											<input type="email_id" name = 'email_id' pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" placeholder="Your Email-Id" required>
+											<input type="email_id" name = 'email_id' pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" placeholder = "Your Email-Id" required>
 										</div>
 									</td>
 									<tr style="height: 50px">
@@ -104,74 +110,11 @@
 
 												<div Id="copy-this">
 													Company Name :
-													<input type="text" name = 'I_comp_name' placeholder="Company Name"  ><br><br>
+													<input type="text" name = 'I_comp_name' placeholder="Company Name" required ><br><br>
 													<label style="margin-left: 23%">Role:</label>
 													<label>
 														<div>
-															<input type="text" name = 'I_role' placeholder="Role"  >
-														</div>
-													</label>
-													<br><br>
-													Duration :-      From :
-													<label>
-														<div>
-															<select name = "I_F_month" style="height: 27px" >
-																<option value="">Month</option>
-																<option value="JAN">JAN</option>
-																<option value="FEB">FEB</option>
-																<option value="MARCH">MARCH</option>
-																<option value="APRIL">APRIL</option>
-																<option value="MAY">MAY</option>
-																<option value="JUNE">JUNE</option>
-																<option value="JULY">JULY</option>
-																<option value="AUG">AUG</option>
-																<option value="SEPT">SEPT</option>
-																<option value="OCT">OCT</option>
-																<option value="NOV">NOV</option>
-																<option value="DEC">DEC</option>
-															</select>&nbsp;&nbsp;&nbsp;
-															<select name = "I_F_year" style="height: 27px" id = "year1" ></select>
-															<script >
-																var year = 2010;
-																var till = 2025;
-																var options = "<option value = ''>year</option>";
-																for(var y=year; y<=till; y++){
-																  options += "<option value = ' " + y +" '>"+ y +"</option>";
-																}
-																document.getElementById("year1").innerHTML = options;
-															</script>
-														</div>
-													</label><br><br>
-													<label style="margin-left: 27%">To:</label>
-													<label >
-														<div>
-															<select name = "I_T_month" style="height: 27px" >
-																<option value="">Month</option>
-																<option value="JAN">JAN</option>
-																<option value="FEB">FEB</option>
-																<option value="MARCH">MARCH</option>
-																<option value="APRIL">APRIL</option>
-																<option value="MAY">MAY</option>
-																<option value="JUNE">JUNE</option>
-																<option value="JULY">JULY</option>
-																<option value="AUG">AUG</option>
-																<option value="SEPT">SEPT</option>
-																<option value="OCT">OCT</option>
-																<option value="NOV">NOV</option>
-																<option value="DEC">DEC</option>
-															</select>&nbsp;&nbsp;&nbsp;
-															<select name = "I_T_year" style="height: 27px" id = "year2"  >
-																<!-- <option>year</option> -->
-															</select>
-															<script >
-																var year = 2010;
-																var till = 2025;
-																var options = "<option value = ''>year</option>";
-																for(var y=year; y<=till; y++){
-																  options += "<option value = ' "+ y + "'>"+ y +"</option>";
-																}
-																document.getElementById("year2").innerHTML = options;
-															</script>
+															<input type="text" name = 'I_role' placeholder="Role" required>
 														</div>
 													</label>
 													<br><br>
@@ -189,77 +132,15 @@
 													    </div>
 														<div Id="copy-this1">
 															Company Name :
-															<input type="text" name = 'J_comp_name' placeholder="Company Name" ><br><br>
+															<input type="text" name = 'I_comp_name' placeholder="Company Name" required><br><br>
 															<label style="margin-left: 23%">Role:</label>
 															<label>
 																<div>
-																	<input type="text" name = 'J_role' placeholder="Role" >
+																	<input type="text" name = 'I_role' placeholder="Role" required>
 																</div>
 															</label>
 															<br><br>
-															Duration :-      From :
-															<label>
-																<div>
-																	<select name = "J_F_month" style="height: 27px" id='job' >
-																		<option value="">Month</option>
-																		<option value="JAN">JAN</option>
-																		<option value="FEB">FEB</option>
-																		<option value="MARCH">MARCH</option>
-																		<option value="APRIL">APRIL</option>
-																		<option value="MAY">MAY</option>
-																		<option value="JUNE">JUNE</option>
-																		<option value="JULY">JULY</option>
-																		<option value="AUG">AUG</option>
-																		<option value="SEPT">SEPT</option>
-																		<option value="OCT">OCT</option>
-																		<option value="NOV">NOV</option>
-																		<option value="DEC">DEC</option>
-																	</select>&nbsp;&nbsp;&nbsp;
-																	<select name = "J_F_year" style="height: 27px" id = "year4" ></select>
-																	<script >
-																		var year = 2010;
-																		var till = 2025;
-																		var options = "<option value = ''>year</option>";
-																		for(var y=year; y<=till; y++){
-																		options += "<option value = ' "+ y + "'>"+ y +"</option>";
-																		}
-																		document.getElementById("year4").innerHTML = options;
-																	</script>
-																</div>
-															</label><br><br>
-															<label style="margin-left: 27%">To:</label>
-															<label >
-																<div>
-																	<select name = "J_T_month" style="height: 27px" >
-																		<option value="">Month</option>
-																		<option value="JAN">JAN</option>
-																		<option value="FEB">FEB</option>
-																		<option value="MARCH">MARCH</option>
-																		<option value="APRIL">APRIL</option>
-																		<option value="MAY">MAY</option>
-																		<option value="JUNE">JUNE</option>
-																		<option value="JULY">JULY</option>
-																		<option value="AUG">AUG</option>
-																		<option value="SEPT">SEPT</option>
-																		<option value="OCT">OCT</option>
-																		<option value="NOV">NOV</option>
-																		<option value="DEC">DEC</option>
-																	</select>&nbsp;&nbsp;&nbsp;
-																	<select name = "J_T_year" style="height: 27px" id = "year3" >
-																		<!-- <option>year</option> -->
-																	</select>
-																	<script >
-																		var year = 2010;
-																		var till = 2025;
-																		var options = "<option value = ''>year</option>";
-																		for(var y=year; y<=till; y++){
-																		options += "<option value = ' "+ y + "'>"+ y +"</option>";
-																		}
-																		document.getElementById("year3").innerHTML = options;
-																	</script>
-																</div>
-															</label>
-															<br><br>
+															
 														</div>
 													</td>
 													<tr>
@@ -298,11 +179,11 @@
 	</tr>
 </tr>
 </table>
-<table align="center" style="margin-bottom: 5%; height: 100px; opacity: 1; background-color: rgb(255,255,255)" border="1px" width="60%">
+<table align="center" style="margin-bottom: 5%; height: 100px; opacity: 1; background-color: blue" border="1px" width="60%">
 	<tr align="center">
 		<td >
 			<div align="center">
-				<input type = 'submit' value = 'submit' style=" height: 30px; width: 12%;"/>
+				<input type = 'submit' value = 'submit' style=" height: 30px; width: 12%;">
 			</div>
 		</td>
 	</tr>
@@ -310,21 +191,33 @@
 </form>
 <script>
 $(document).ready(function() {
-
 var iCnt = 0;
 // CREATE A "DIV" ELEMENT AND DESIGN IT USING jQuery ".css()" CLASS.
 var container = $(document.createElement('div')).css({
 });
 
 $('#btAdd').click(function() {
-    if (iCnt <=10) {
-
+    if (iCnt <= 7) {
         iCnt = iCnt + 1;
-
         // ADD TEXTBOX.
+        var var1 = ctr;
+        var var2 = ctr+1;
+        var temp=1;
+        if((iCnt >1)&&(Number(document.getElementById(var1).value)>Number(document.getElementById(var2).value)))
+        {
+    		alert("Ending year should be greater than starting year...");
+    		// continue;
+    		temp=0;
+    		iCnt = iCnt - 1;
+        }
+        if (temp) 
+        {
+        	ctr = ctr + iCnt + 1;
+        // document.getElementById("year1").id = ctr;
         var pp = $("#copy-this").html();
-        $(container).append('<div type=text class="input" name ="pika" id=tb' + iCnt + '>'+iCnt+'<br><br>'+pp+'</div>');
+        $(container).append('<div type=text class="input" name ="pika" id=tb' + iCnt + '>'+iCnt+'<br><br>'+pp+'Duration :-      From : <label><div><select style="height: 27px" required><option value=""> --Month-- </option><option value="JAN">JAN</option><option value="FEB">FEB</option><option value="MARCH">MARCH</option><option value="APRIL">APRIL</option><option value="MAY">MAY</option><option value="JUNE">JUNE</option><option value="JULY">JULY</option><option value="AUG">AUG</option><option value="SEPT">SEPT</option><option value="OCT">OCT</option><option value="NOV">NOV</option><option value="DEC">DEC</option></select>&nbsp;&nbsp;&nbsp;&nbsp<select style="height: 27px" id = '+ctr+' required></select><script>document.getElementById(ctr).innerHTML = options;<'+'/script></div></label><br><br><div style = "margin-left:35%"><input type = "checkbox" id = '+ctr+2+'>Currently Working Here.</input></div><br><label style="margin-left: 27%">To:&nbsp </label><label ><div ><select style="height: 27px" required><option value=""> --Month-- </option><option value="JAN">JAN</option><option value="FEB">FEB</option><option value="MARCH">MARCH</option><option value="APRIL">APRIL</option><option value="MAY">MAY</option><option value="JUNE">JUNE</option><option value="JULY">JULY</option><option value="AUG">AUG</option><option value="SEPT">SEPT</option><option value="OCT">OCT</option><option value="NOV">NOV</option><option value="DEC">DEC</option></select>&nbsp;&nbsp;&nbsp;&nbsp;<select style="height: 27px" id ='+ctr+1+' required ></select><script>document.getElementById(ctr+1).innerHTML = options;<'+'/script></div></label><br><br></div>');
         $('#main').before(container);
+    	}
     }
     else {      
         $(container).append('<label>Reached the limit</label>'); 
@@ -364,14 +257,26 @@ var container1 = $(document.createElement('div')).css({
 });
 
 $('#btAdd1').click(function() {
-    if (iCnt1 <= 10) {
+    if (iCnt1 <= 7) {
 
         iCnt1 = iCnt1 + 1;
-
+        var var1 = ctr1;
+        var var2 = ctr1+1;
+        var temp = 1;
+        if((iCnt1 >1)&&(Number(document.getElementById(var1).value)>Number(document.getElementById(var2).value)))
+        {
+        	alert("Ending year should be greater than starting year...");
+        	temp=0;
+        	iCnt1 = iCnt1 - 1;
+        }
+        if(temp)
+        {
+        	ctr1 = ctr1 + iCnt1 + 1;
         // ADD TEXTBOX.	
         var pp = $("#copy-this1").html();
-        $(container1).append('<div type=text class="input" id=tb1' + iCnt1 + '>'+iCnt1+'<br><br>'+pp+'</div>');
+        $(container1).append('<div type=text class="input" name ="pika" id=tb1' + iCnt1 + '>'+iCnt1+'<br><br>'+pp+'Duration :-      From : <label><div><select style="height: 27px" required><option value=""> --Month-- </option><option value="JAN">JAN</option><option value="FEB">FEB</option><option value="MARCH">MARCH</option><option value="APRIL">APRIL</option><option value="MAY">MAY</option><option value="JUNE">JUNE</option><option value="JULY">JULY</option><option value="AUG">AUG</option><option value="SEPT">SEPT</option><option value="OCT">OCT</option><option value="NOV">NOV</option><option value="DEC">DEC</option></select>&nbsp;&nbsp;&nbsp;&nbsp<select style="height: 27px" id = '+ctr1+' required></select><script>document.getElementById(ctr1).innerHTML = options;<'+'/script></div></label><br><br><div style = "margin-left:35%"><input type = "checkbox" id = '+ctr1+2+'>Currently Working Here.</input></div><br><label style="margin-left: 27%">To:&nbsp </label><label ><div><select style="height: 27px" required><option value=""> --Month-- </option><option value="JAN">JAN</option><option value="FEB">FEB</option><option value="MARCH">MARCH</option><option value="APRIL">APRIL</option><option value="MAY">MAY</option><option value="JUNE">JUNE</option><option value="JULY">JULY</option><option value="AUG">AUG</option><option value="SEPT">SEPT</option><option value="OCT">OCT</option><option value="NOV">NOV</option><option value="DEC">DEC</option></select>&nbsp;&nbsp;&nbsp;&nbsp;<select style="height: 27px" id ='+ctr1+1+' required ></select><script>document.getElementById(ctr1+1).innerHTML = options;<'+'/script></div></label><br><br></div>');
         $('#main1').before(container1);
+    	}
     }
     else {      
         $(container1).append('<label>Reached the limit</label>'); 
@@ -394,7 +299,7 @@ $('#btRemove1').click(function()
     { 
         $(container1)
             .empty() 
-            .remove(); 
+            .remove();
         $('#btAdd1')
             .removeAttr('disabled')
             .attr('class', 'bt1');
@@ -404,34 +309,8 @@ $('#btRemove1').click(function()
 </script>
 <script>
 document.getElementById("copy-this").style.display="none";
-// document.getElementById("inlineCheckbox1").onclick = function(){
-// 	console.log("vikas");
-// if(document.getElementById("input").disabled)
-// 	document.getElementById("input").disabled = false;
-// else
-// 	document.getElementById("input").disabled = true;
-// }
-// document.getElementById("inlineCheckbox2").onclick = function(){
-// if(document.getElementById("input1").disabled)
-// 	document.getElementById("input1").disabled = false;
-// else
-// 	document.getElementById("input1").disabled = true;
-// }
 </script>
-
 <script>
 document.getElementById("copy-this1").style.display="none";
-// document.getElementById("inlineCheckbox1").onclick = function(){
-// if(document.getElementById("input").disabled)
-// 	document.getElementById("input").disabled = false;
-// else
-// 	document.getElementById("input").disabled = true;
-// }
-// document.getElementById("inlineCheckbox2").onclick = function(){
-// if(document.getElementById("input1").disabled)
-// 	document.getElementById("input1").disabled = false;
-// else
-// 	document.getElementById("input1").disabled = true;
-// }
 </script>
 {% endblock %}
