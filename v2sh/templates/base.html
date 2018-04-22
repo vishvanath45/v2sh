@@ -8,20 +8,15 @@
 	</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="base_css.css"> 
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     {% block head %}
-
-        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     {% endblock %}
 </head>
 
-<body id="main">
-<!-- <div id="text">
-  <h1>Everything Connects</h1>
-</div> -->
+<body style="font-family: 'Josefin Sans', sans-serif !important">
 <nav class="navbar fixed-top navbar-expand-lg navbar-light " style="background-color: rgb(0,0,0);">
     <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
         <ul class="navbar-nav mr-auto">
@@ -65,10 +60,6 @@
     {% block content %}
 
     {% endblock %}
-<!--     <div id="text">
-  <h1>Everything Connects</h1>
-</div> -->
-
 <!-- this is bottom navbar -->
 	<nav class="navbar fixed-bottom navbar-expand-lg navbar light justify-content-between"  style="background-color: rgb(0,0,0);">
     <span class="navbar-text"><font color=#ffffff>Developed by team v2sh for NIT Durgapur students</font></span>
@@ -78,6 +69,5 @@
 	      		<a class="nav-item nav-link" href="{% url 'feedbackform' %}"><font color=#ffffff>Feedback</font></a>
 	    </div>
 	</nav>
-    <!-- <script type="text/javascript"></script> -->
 </body>
 </html>
