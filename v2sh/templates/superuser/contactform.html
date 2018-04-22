@@ -28,7 +28,7 @@
 	  options += "<option>"+ y +"</option>";
 	}
 </script>
-<table align="center" border="1px"  style="height: 100px; margin-top:60px; opacity: 1; background-color: blue" width="60%">
+<table align="center" border="1px"  style="height: 100px; margin-top:5%; opacity: 1;" width="60%">
 <tr align="center">
 <td>
 	<h1 style="">Contact Info</h1>
@@ -37,21 +37,26 @@
 </table>
 <form action = '#' method ='POST'>
 {% csrf_token %}
-<table align="center" border="1px" width="60%" style="height: 500px; opacity: 1; background-color: blue">
+<table align="center" border="1px" width="60%" style="height: 500px; opacity: 1;">
 <tr>
 <td style="text-align: right; font-size: 20px; height: 40px" width="50%">
 	<div style="margin-right: 5%">Name :</div>
 	<td>
-		<div style="margin-left: 3%">
-			<input type="text" name = 'name' placeholder="Your Name" style="color: red" required>
-		</div>
+		<!-- <div style="margin-left: 3%"> -->
+
+<div class="form-group col-md-6" style="margin-top: 2%; margin-bottom: 2%">
+      <input type="text" class="form-control" id="inputZip" placeholder="Your Name" name='name' required>
+    </div>
+
+			<!-- <input type="text" name = 'name' placeholder="Your Name" style="color: red" required> -->
+		<!-- </div> -->
 	</td>
 </td>
 	<tr>
 		<td style="text-align: right; font-size: 20px; height: 40px" width="50%">
 			<div style="margin-right: 5%">Branch :</div>
 			<td>
-				<div class="form-group" style="margin-left: 3%; margin-top: 0%;margin-bottom: 0%">
+				<div class="form-group" style="margin-left: 3%; margin-top: 2%;margin-bottom: 2%">
 					<select style="height: 27px; width: 53%" name="branch" required>
 					  <option value = ""> --Select Branch-- </option>
 				      <option value = "CSE">CSE</option>
@@ -87,35 +92,49 @@
 						<td style="text-align: right; font-size: 20px; height: 40px" width="50%">
 							<div style="margin-right: 5%">Contact Number :</div>
 							<td>
-								<div style="margin-left: 3%">
+								<div class="form-group col-md-6" style="margin-top: 2%; margin-bottom: 2%">
+								      <input type="text" class="form-control" id="inputZip" placeholder="Please enter 10 digit number" name='contact_no' pattern="[0-9]{10}" required>
+								    </div>
+								<!-- <div style="margin-left: 3%">
 									<input type="text" name = 'contact_no' placeholder="Please enter 10 digit number" pattern="[0-9]{10}" required>
-								</div>
+								</div> -->
 							</td>
 							<tr>
 								<td style="text-align: right; font-size: 20px; height: 40px" width="50%">
 									<div style="margin-right: 5%">Email-Id :</div>
 									<td>
-										<div style="margin-left: 3%">
+										<div class="form-group col-md-6" style="margin-top: 2%; margin-bottom: 2%">
+								      <input type="email_id" class="form-control" id="inputZip" placeholder="Your Email-Id" name='email_id' pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required>
+								    </div>
+										<!-- <div style="margin-left: 3%">
 											<input type="email_id" name = 'email_id' pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" placeholder = "Your Email-Id" required>
-										</div>
+										</div> -->
 									</td>
 									<tr style="height: 50px">
 										<td style="text-align: right; font-size: 20px;" width="50%">
 											<div style="margin-right: 5%">Internship :</div>
 											<td>
 												<div id="main" style="margin-left: 3%">
-													<input type="button" id="btAdd" value="Add" class="bt" style="width: 25%" />
-													<input type="button" id="btRemove" value="Remove" class="bt" style="width: 25%" />
+													<button type="button" id="btAdd" value="Add" class="bt btn btn-secondary btn-sm">Add</button>
+													<!-- <input type="button" id="btAdd" value="Add" 	class="bt" style="width: 25%" /> -->
+													<button type="button" id="btRemove" value="Remove" class="bt btn btn-secondary btn-sm">Remove</button>
+													<!-- <input type="button" id="btRemove"	 value="Remove" class="bt" style="width: 25%" /> -->
 											    </div>
 
 												<div Id="copy-this">
-													Company Name :
-													<input type="text" name = 'I_comp_name' placeholder="Company Name" required ><br><br>
+													<div class="form-group col-md-6" style="margin-top: 2%; margin-bottom: 2%">
+												      Company Name :
+												      <input type="text" class="form-control" id="inputZip" placeholder="Company Name" name='I_comp_name' required>
+												    </div>
+													<!-- <input type="text" name = 'I_comp_name' placeholder="Company Name" required ><br><br> -->
 													<label style="margin-left: 23%">Role:</label>
 													<label>
-														<div>
+													<div class="form-group col-md-6" style="margin-top: 2%; margin-bottom: 2%">
+												      <input type="text" class="form-control" id="inputZip" placeholder="Role" name='I_role' required>
+												    </div>
+														<!-- <div>
 															<input type="text" name = 'I_role' placeholder="Role" required>
-														</div>
+														</div> -->
 													</label>
 													<br><br>
 												</div>
@@ -127,18 +146,27 @@
 													<div style="margin-right: 5%">Job :</div>
 													<td>
 														<div id="main1" style="margin-left: 3%">
-													        <input type="button" id="btAdd1" value="Add" class="bt1" style="width: 25%" />
-													        <input type="button" id="btRemove1" value="Remove" class="bt1" style="width: 25%" />
+															<button type="button" id="btAdd1" value="Add" class="bt1 btn btn-secondary btn-sm">Add</button>
+													        <!-- <input type="button" id="btAdd1" value="Add" class="bt1" style="width: 25%" /> -->
+													        <button type="button" id="btRemove1" value="Remove" class="bt1 btn btn-secondary btn-sm">Remove</button>
+													        <!-- <input type="button" id="btRemove1" value="Remove" class="bt1" style="width: 25%" /> -->
 													    </div>
 														<div Id="copy-this1">
-															Company Name :
-															<input type="text" name = 'I_comp_name' placeholder="Company Name" required><br><br>
-															<label style="margin-left: 23%">Role:</label>
+															<!-- Company Name : -->
+															<div class="form-group col-md-6" style="margin-top: 2%; margin-bottom: 2%">
+												      Company Name :
+												      <input type="text" class="form-control" id="inputZip" placeholder="Company Name" name='J_comp_name' required>
+												    </div>
+															<!-- <input type="text" name = 'I_comp_name' placeholder="Company Name" required><br><br> -->
+															<label style="margin-left: 3%">Role:</label>
 															<label>
-																<div>
+															<div class="form-group col-md-6" style="margin-top: 2%; margin-bottom: 2%">
+												      <input type="text" class="form-control" id="inputZip" placeholder="Role" name='J_role' required>
+												    </div>
+														<!-- 		<div>
 																	<input type="text" name = 'I_role' placeholder="Role" required>
 																</div>
-															</label>
+														 -->	</label>
 															<br><br>
 															
 														</div>
@@ -147,9 +175,12 @@
 														<td style="text-align: right; font-size: 20px; height: 40px" width="50%">
 															<div style="margin-right: 5%">Note to User :</div>
 															<td>
-																<div style="margin-left: 3%">
+																<div class="form-group col-md-6" style="margin-top: 2%; margin-bottom: 2%">
+								      <textarea class="form-control" id="inputZip" placeholder="Ex. Contact me only on weekend." name='note' required></textarea>
+								    </div>
+<!-- 																<div style="margin-left: 3%">
 																	<textarea name = 'note' placeholder="Ex. Contact me only on weekend."></textarea>
-																</div>
+																</div> -->
 															</td>
 														<!--	<tr>
 																<td style="text-align: right; font-size: 20px; height: 40px" width="50%">
@@ -179,11 +210,12 @@
 	</tr>
 </tr>
 </table>
-<table align="center" style="margin-bottom: 10%; height: 100px; opacity: 1; background-color: blue" border="1px" width="60%">
+<table align="center" style="margin-bottom: 10%; height: 100px; opacity: 1;" border="1px" width="60%">
 	<tr align="center">
 		<td >
 			<div align="center">
-				<input type = 'submit' value = 'submit' style=" height: 30px; width: 12%;">
+				<input class="btn btn-primary" type="submit" value="Submit">
+				<!-- <input type = 'submit' value = 'submit' style=" height: 30px; width: 12%;"> -->
 			</div>
 		</td>
 	</tr>
