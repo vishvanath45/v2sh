@@ -2,10 +2,23 @@ body{
 	max-width: 100%;
     overflow-x: hidden;
 }
+
+.logo{
+/*  height: 50%;
+  width: 50%;*/
+  
+  /*background: #e8ebef;*/
+  vertical-align: middle;
+  text-align: center;
+  margin-top: 10%;
+  /*box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);*/
+      /*font-family: Geneva;*/
+}
+
 .search{
 	position: absolute;
 	display: block;
-	min-height: 100vh;
+	min-height: 15vh;
   	width: 100vw;
   	z-index: 1;
 	display: flex;
@@ -14,28 +27,6 @@ body{
   	text-align: center;   
 }
 .sub-search{
-	margin: 20px 20px 20px 20px;
+	/*margin: 20px 20px 20px 20px;*/
 	/*background: yellow;*/
 }
-
-.buttondemoBasicUsage section {
-  background: #f7f7f7;
-  border-radius: 3px;
-  text-align: center;
-  margin: 1em;
-  position: relative !important;
-  padding-bottom: 10px; }
-
-.buttondemoBasicUsage md-content {
-  margin-right: 7px; }
-
-.buttondemoBasicUsage section .md-button {
-  margin-top: 16px;
-  margin-bottom: 16px; }
-
-.buttondemoBasicUsage .label {
-  position: absolute;
-  bottom: 5px;
-  left: 7px;
-  font-size: 14px;
-  opacity: 0.54; }

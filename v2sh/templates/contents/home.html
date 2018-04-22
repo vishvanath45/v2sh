@@ -14,20 +14,12 @@
 
 {% block content %}
 
+<div class = "logo">
+<img src= "/static/images/V2SH_Logo_front.png" height = "200" margin-top:20%>
+</div>
 
 
 <div class="search">
-    <div ng-controller="AppCtrl" ng-cloak>
-      <md-content>
-
-        <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-          <md-button class="md-raised md-primary">Primary</md-button>
-        </section>
-
-      </md-content>
-    </div>
-
-
         <span class="sub-search">
             <a href="{% url 'bycompany' alpha='a' %}">Search by Company</a>
         </span>
