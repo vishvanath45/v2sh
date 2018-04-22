@@ -77,12 +77,17 @@ def bycompany(request,alpha):
 
 def byyear(request,beta):
     year_passed = int(beta)
+    map_user_names = {}
     user_names = []
     for i in range(Experience.objects.count()):
         ending_year = int(Experience.objects.all()[i].ending_date.split(' ')[2])
         joining_year = int(Experience.objects.all()[i].joining_date.split(' ')[2])
         if ( (ending_year >= year_passed ) and (joining_year <= year_passed )):
-            user_names.append(Experience.objects.all()[i].object_name)
+            person_name = Experience.objects.all()[i].object_name
+            if person_name in map_user_names:
+                continue
+            user_names.append(person_name)
+            map_user_names[person_name] = 1
     return render(request, 'search_results/byyear.html',{'name':user_names, 'beta':year_passed})
 
 

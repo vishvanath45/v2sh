@@ -11,23 +11,23 @@
 
 {% block content %}
 <h1>{{ name }}</h1>
-<table style = "margin-top:10%; margin-left:40%">
+<table style = "margin-top:10%; margin-left:30%">
     <tr>
-        <th>Name</th>
-        <th>Joining Date</th>
-        <th>Ending Date</th>
-        <th>Internship or Job</th>
+        <th>Name&nbsp;&nbsp;&nbsp;&nbsp;</th>
+        <th>Joining Date&nbsp;&nbsp;&nbsp;&nbsp;</th>
+        <th>Ending Date&nbsp;&nbsp;&nbsp;&nbsp;</th>
+        <th>Internship or Job&nbsp;&nbsp;&nbsp;&nbsp;</th>
     </tr>
     {% for exp in experiences %}
         <tr>
-            <td><a href="{% url 'superuserprofile' exp.object_name.su_id %}">{{ exp.object_name.name }}</a></td>
-            <td>{{ exp.joining_date }}</td>
-            <td>{{ exp.ending_date }}</td>
+            <td><a href="{% url 'superuserprofile' exp.object_name.su_id %}">{{ exp.object_name.name }}</a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>{{ exp.joining_date }}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>{{ exp.ending_date }}&nbsp;&nbsp;&nbsp;&nbsp;</td>
             <td>
                 {% if exp.internship_or_job %}
-                    Internship
+                    Internship&nbsp;&nbsp;&nbsp;&nbsp;
                 {% else %}
-                    Job
+                    Job&nbsp;&nbsp;&nbsp;&nbsp;
                 {% endif %}
             </td>
         </tr>

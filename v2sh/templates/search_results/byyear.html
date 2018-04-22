@@ -6,7 +6,7 @@
 
 {% block head %}
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/bycomapany.css' %}">
+    <link rel="stylesheet" href="{% static 'css/byyear.css' %}">
 {% endblock %}
 
 
@@ -38,7 +38,7 @@
             <a href="{% url 'byyear' beta='2008' %}">2008</a>
             |
         </h5>
-
+        
 	<h1>Results with people having internship in {{beta}} </h1> 
 	<h2> Names </h2>
 	{% for i in name %}
