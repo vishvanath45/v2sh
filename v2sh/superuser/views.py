@@ -14,7 +14,8 @@ def contactform(request):
 		su_id = SuperUser.objects.count()+1
 		name = request.POST['name']
 		branch = request.POST['branch']
-		yog = request.POST['yog']
+		yog = int(request.POST['yog'])
+		# yog = int(201/5)
 		contact_no = request.POST['contact_no']
 		email_id = request.POST['email_id']
 		
@@ -43,7 +44,7 @@ def contactform(request):
 
 		note = request.POST['note']
 
-		# print note
+		print (yog)
 
 		User = SuperUser.objects.create(su_id = su_id, name = name, email = email_id, ph_no = contact_no, branch = branch,yog = yog,note =note )
 
@@ -100,7 +101,7 @@ def superuserprofile(request,su_id):
 	# for i in range(5):
 	# 	ie.append(intershipexp())
 
-	print user.note
+	# print user.note
 
 	class jobexp(object):
 		comp_name = str()

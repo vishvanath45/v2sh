@@ -44,7 +44,7 @@
 	<td>
 		<!-- <div style="margin-left: 3%"> -->
 
-<div class="form-group col-md-6" style="margin-top: 2%; margin-bottom: 2%">
+<div class="form-group col-md-7" style="margin-top: 2%; margin-bottom: 2%">
       <input type="text" class="form-control" id="inputZip" placeholder="Your Name" name='name' required>
     </div>
 
@@ -76,13 +76,13 @@
 					<div style="margin-right: 5%">Year Of Graduation :</div>
 					<td>
 						<div style="margin-left: 3%">
-							<select id = "year" style="height: 27px; width: 53%" required></select>
+							<select id = "year" name = "yog" style="height: 27px; width: 53%" required></select>
 							<script >
 								var year = 2025;
 								var till = 2010;
 								var options = "<option value = ''> --year-- </option>";
 								for(var y=year; y>=till; y--){
-								  options += "<option value = ' "+y+" '>"+ y +"</option>";
+								  options += "<option value ='"+y+"'>"+ y +"</option>";
 								}
 								document.getElementById("year").innerHTML = options;
 							</script>
@@ -92,7 +92,7 @@
 						<td style="text-align: right; font-size: 20px; height: 40px" width="50%">
 							<div style="margin-right: 5%">Contact Number :</div>
 							<td>
-								<div class="form-group col-md-6" style="margin-top: 2%; margin-bottom: 2%">
+								<div class="form-group col-md-7" style="margin-top: 2%; margin-bottom: 2%">
 								      <input type="text" class="form-control" id="inputZip" placeholder="Please enter 10 digit number" name='contact_no' pattern="[0-9]{10}" required>
 								    </div>
 								<!-- <div style="margin-left: 3%">
@@ -103,7 +103,7 @@
 								<td style="text-align: right; font-size: 20px; height: 40px" width="50%">
 									<div style="margin-right: 5%">Email-Id :</div>
 									<td>
-										<div class="form-group col-md-6" style="margin-top: 2%; margin-bottom: 2%">
+										<div class="form-group col-md-7" style="margin-top: 2%; margin-bottom: 2%">
 								      <input type="email_id" class="form-control" id="inputZip" placeholder="Your Email-Id" name='email_id' pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required>
 								    </div>
 										<!-- <div style="margin-left: 3%">
@@ -122,18 +122,20 @@
 											    </div>
 
 												<div Id="copy-this">
-													<div class="form-group col-md-6" style="margin-top: 2%; margin-bottom: 2%">
-												      Company Name :
-												      <input type="text" class="form-control" id="inputZip" placeholder="Company Name" name='I_comp_name' required>
-												    </div>
-													<!-- <input type="text" name = 'I_comp_name' placeholder="Company Name" required ><br><br> -->
-													<label style="margin-left: 23%">Role:</label>
+													<!-- <div class="form-group col-md-6" style="margin-top: 2%; margin-bottom: 2%"> -->
+												      <label style="margin-left: 3%">Company Name :</label>
+												      <label>
+												      <input type="text" class="form-control" id="inputZip" placeholder="Company Name" name='I_comp_name' >
+												  		</label>
+												    <!-- </div> -->
+													<!-- <input type="text" name = 'I_comp_name' placeholder="Company Name"  ><br><br> -->
+													<label style="margin-left: 25%">Role :</label>
 													<label>
-													<div class="form-group col-md-6" style="margin-top: 2%; margin-bottom: 2%">
-												      <input type="text" class="form-control" id="inputZip" placeholder="Role" name='I_role' required>
-												    </div>
+													<!-- <div class="form-group col-md-6" style="margin-top: 2%; margin-bottom: 2%"> -->
+												      <input type="text" class="form-control" id="inputZip" placeholder="Role" name='I_role' >
+												    <!-- </div> -->
 														<!-- <div>
-															<input type="text" name = 'I_role' placeholder="Role" required>
+															<input type="text" name = 'I_role' placeholder="Role" >
 														</div> -->
 													</label>
 													<br><br>
@@ -153,16 +155,18 @@
 													    </div>
 														<div Id="copy-this1">
 															<!-- Company Name : -->
-															<div class="form-group col-md-6" style="margin-top: 2%; margin-bottom: 2%">
-												      Company Name :
-												      <input type="text" class="form-control" id="inputZip" placeholder="Company Name" name='J_comp_name' required>
-												    </div>
-															<!-- <input type="text" name = 'I_comp_name' placeholder="Company Name" required><br><br> -->
-															<label style="margin-left: 3%">Role:</label>
+															<!-- <div class="form-group col-md-6" style="margin-top: 2%; margin-bottom: 2%"> -->
+												      <label style="margin-left: 3%">Company Name :</label>
+												      <label>
+												      	<input type="text" class="form-control" id="inputZip" placeholder="Company Name" name='J_comp_name' >
+												      </label>
+												    <!-- </div> -->
+															<!-- <input type="text" name = 'I_comp_name' placeholder="Company Name" ><br><br> -->
+															<label style="margin-left: 25%">Role :</label>
 															<label>
-															<div class="form-group col-md-6" style="margin-top: 2%; margin-bottom: 2%">
-												      <input type="text" class="form-control" id="inputZip" placeholder="Role" name='J_role' required>
-												    </div>
+															<!-- <div class="form-group col-md-6" style="margin-top: 2%; margin-bottom: 2%"> -->
+												      <input type="text" class="form-control" id="inputZip" placeholder="Role" name='J_role' >
+												    <!-- </div> -->
 														<!-- 		<div>
 																	<input type="text" name = 'I_role' placeholder="Role" required>
 																</div>
@@ -247,7 +251,7 @@ $('#btAdd').click(function() {
         	ctr = ctr + iCnt + 1;
         // document.getElementById("year1").id = ctr;
         var pp = $("#copy-this").html();
-        $(container).append('<div type=text class="input" name ="pika" id=tb' + iCnt + '>'+iCnt+'<br><br>'+pp+'Duration :-      From : <label><div><select style="height: 27px" required><option value=""> --Month-- </option><option value="JAN">JAN</option><option value="FEB">FEB</option><option value="MARCH">MARCH</option><option value="APRIL">APRIL</option><option value="MAY">MAY</option><option value="JUNE">JUNE</option><option value="JULY">JULY</option><option value="AUG">AUG</option><option value="SEPT">SEPT</option><option value="OCT">OCT</option><option value="NOV">NOV</option><option value="DEC">DEC</option></select>&nbsp;&nbsp;&nbsp;&nbsp<select style="height: 27px" id = '+ctr+' required></select><script>document.getElementById(ctr).innerHTML = options;<'+'/script></div></label><br><br><div style = "margin-left:35%"><input type = "checkbox" id = '+ctr+2+'>Currently Working Here.</input></div><br><label style="margin-left: 27%">To:&nbsp </label><label ><div ><select style="height: 27px" required><option value=""> --Month-- </option><option value="JAN">JAN</option><option value="FEB">FEB</option><option value="MARCH">MARCH</option><option value="APRIL">APRIL</option><option value="MAY">MAY</option><option value="JUNE">JUNE</option><option value="JULY">JULY</option><option value="AUG">AUG</option><option value="SEPT">SEPT</option><option value="OCT">OCT</option><option value="NOV">NOV</option><option value="DEC">DEC</option></select>&nbsp;&nbsp;&nbsp;&nbsp;<select style="height: 27px" id ='+ctr+1+' required ></select><script>document.getElementById(ctr+1).innerHTML = options;<'+'/script></div></label><br><br></div>');
+        $(container).append('<div type=text class="input" name ="pika" id=tb' + iCnt + '>'+pp+'Duration :-      From : <label><div><select style="height: 27px" name = "I_F_month" required><option value=""> --Month-- </option><option value="JAN">JAN</option><option value="FEB">FEB</option><option value="MARCH">MARCH</option><option value="APRIL">APRIL</option><option value="MAY">MAY</option><option value="JUNE">JUNE</option><option value="JULY">JULY</option><option value="AUG">AUG</option><option value="SEPT">SEPT</option><option value="OCT">OCT</option><option value="NOV">NOV</option><option value="DEC">DEC</option></select>&nbsp;&nbsp;&nbsp;&nbsp<select style="height: 27px" id = '+ctr+' name = "I_F_year" required></select><script>document.getElementById(ctr).innerHTML = options;<'+'/script></div></label><br><br><div style = "margin-left:35%"><input type = "checkbox" id = '+ctr+2+'>Currently Working Here.</input></div><br><label style="margin-left: 27%">To:&nbsp </label><label ><div ><select style="height: 27px" name = "I_T_month" required><option value=""> --Month-- </option><option value="JAN">JAN</option><option value="FEB">FEB</option><option value="MARCH">MARCH</option><option value="APRIL">APRIL</option><option value="MAY">MAY</option><option value="JUNE">JUNE</option><option value="JULY">JULY</option><option value="AUG">AUG</option><option value="SEPT">SEPT</option><option value="OCT">OCT</option><option value="NOV">NOV</option><option value="DEC">DEC</option></select>&nbsp;&nbsp;&nbsp;&nbsp;<select style="height: 27px" id ='+ctr+1+' name = "I_T_year" required ></select><script>document.getElementById(ctr+1).innerHTML = options;<'+'/script></div></label><br><br></div>');
         $('#main').before(container);
     	}
     }
@@ -306,7 +310,7 @@ $('#btAdd1').click(function() {
         	ctr1 = ctr1 + iCnt1 + 1;
         // ADD TEXTBOX.	
         var pp = $("#copy-this1").html();
-        $(container1).append('<div type=text class="input" name ="pika" id=tb1' + iCnt1 + '>'+iCnt1+'<br><br>'+pp+'Duration :-      From : <label><div><select style="height: 27px" required><option value=""> --Month-- </option><option value="JAN">JAN</option><option value="FEB">FEB</option><option value="MARCH">MARCH</option><option value="APRIL">APRIL</option><option value="MAY">MAY</option><option value="JUNE">JUNE</option><option value="JULY">JULY</option><option value="AUG">AUG</option><option value="SEPT">SEPT</option><option value="OCT">OCT</option><option value="NOV">NOV</option><option value="DEC">DEC</option></select>&nbsp;&nbsp;&nbsp;&nbsp<select style="height: 27px" id = '+ctr1+' required></select><script>document.getElementById(ctr1).innerHTML = options;<'+'/script></div></label><br><br><div style = "margin-left:35%"><input type = "checkbox" id = '+ctr1+2+'>Currently Working Here.</input></div><br><label style="margin-left: 27%">To:&nbsp </label><label ><div><select style="height: 27px" required><option value=""> --Month-- </option><option value="JAN">JAN</option><option value="FEB">FEB</option><option value="MARCH">MARCH</option><option value="APRIL">APRIL</option><option value="MAY">MAY</option><option value="JUNE">JUNE</option><option value="JULY">JULY</option><option value="AUG">AUG</option><option value="SEPT">SEPT</option><option value="OCT">OCT</option><option value="NOV">NOV</option><option value="DEC">DEC</option></select>&nbsp;&nbsp;&nbsp;&nbsp;<select style="height: 27px" id ='+ctr1+1+' required ></select><script>document.getElementById(ctr1+1).innerHTML = options;<'+'/script></div></label><br><br></div>');
+        $(container1).append('<div type=text class="input" name ="pika" id=tb1' + iCnt1 + '>'+pp+'Duration :-      From : <label><div><select style="height: 27px" name = "J_F_month" required><option value=""> --Month-- </option><option value="JAN">JAN</option><option value="FEB">FEB</option><option value="MARCH">MARCH</option><option value="APRIL">APRIL</option><option value="MAY">MAY</option><option value="JUNE">JUNE</option><option value="JULY">JULY</option><option value="AUG">AUG</option><option value="SEPT">SEPT</option><option value="OCT">OCT</option><option value="NOV">NOV</option><option value="DEC">DEC</option></select>&nbsp;&nbsp;&nbsp;&nbsp<select style="height: 27px" id = '+ctr1+' name = "J_F_year" required></select><script>document.getElementById(ctr1).innerHTML = options;<'+'/script></div></label><br><br><div style = "margin-left:35%"><input type = "checkbox" id = '+ctr1+2+'>Currently Working Here.</input></div><br><label style="margin-left: 27%">To:&nbsp </label><label ><div><select style="height: 27px" name = "J_T_month" required><option value=""> --Month-- </option><option value="JAN">JAN</option><option value="FEB">FEB</option><option value="MARCH">MARCH</option><option value="APRIL">APRIL</option><option value="MAY">MAY</option><option value="JUNE">JUNE</option><option value="JULY">JULY</option><option value="AUG">AUG</option><option value="SEPT">SEPT</option><option value="OCT">OCT</option><option value="NOV">NOV</option><option value="DEC">DEC</option></select>&nbsp;&nbsp;&nbsp;&nbsp;<select style="height: 27px" id ='+ctr1+1+' name = "J_T_year" required ></select><script>document.getElementById(ctr1+1).innerHTML = options;<'+'/script></div></label><br><br></div>');
         $('#main1').before(container1);
     	}
     }
