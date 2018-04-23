@@ -21,18 +21,21 @@
 
 <div class="search">
         <span class="sub-search">
-            <button type="button" class="btn btn-light"><a href="{% url 'bycompany' alpha='a' %}">Search by Company</a></button>
+            <a href="{% url 'bycompany' alpha='a' %}" class="btn btn-light" role="button"><font style="color: #09a7e5 ">Search by Company</font></a>
+             <!-- <a button type="submit" class="btn btn-light" onclick= " href ='{%url 'bycompany' alpha='a' %}" '>Search by Company</button> -->
         </span>
         &nbsp;&nbsp;
         &nbsp;&nbsp;
         
         <span class="sub-search">
-            <button type="button" class="btn btn-light"><a href="{% url 'byname' 'a' %}">Search by Name</a></button>
+             <a href="{% url 'byname' 'a' %}" class="btn btn-light" role="button"><font style="color: #09a7e5 ">Search by Name</font></a>
+            <!-- <button type="submit" class="btn btn-light"><a href="{% url 'byname' 'a' %}">Search by Name</a></button> -->
         </span>
         &nbsp;&nbsp;
         &nbsp;&nbsp;
         <span class="sub-search">
-            <button type="button" class="btn btn-light"><a href="{% url 'byyear' beta='2018' %}">Search by Year of Graduation</a></button>
+                    <a href="{% url 'byyear' beta='2018' %}" class="btn btn-light" role="button"><font style="color: #09a7e5 ">Search by Year of Graduation</font></a>
+            <!-- <button type="submit" class="btn btn-light"><a href="{% url 'byyear' beta='2018' %}">Search by Year of Graduation</a></button> -->
         </span>
     </div>
 {% endblock %}
