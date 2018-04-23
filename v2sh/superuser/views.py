@@ -61,7 +61,7 @@ def contactform(request):
 				 
 
 
-		return HttpResponse("Thanks for filling the form")
+		return render(request, 'superuser/thankyou_form.html')
 		# try:
 		# 	pkp = request.POST.getlist('Cname')
 		# 	print (pkp)
