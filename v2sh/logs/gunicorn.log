@@ -1,0 +1,416 @@
+[2018-04-23 09:46:53 +0000] [2592] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  statsd_host: None
+  max_requests_jitter: 0
+  post_fork: <function post_fork at 0x7f1c7ca5d0c8>
+  errorlog: /home/vnds_20150389/v2sh/v2sh/logs/gunicorn.log
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 2
+  suppress_ragged_eofs: True
+  syslog: False
+  syslog_facility: user
+  when_ready: <function when_ready at 0x7f1c7ca55d70>
+  pre_fork: <function pre_fork at 0x7f1c7ca55ed8>
+  cert_reqs: 0
+  preload_app: False
+  keepalive: 2
+  accesslog: None
+  group: 0
+  graceful_timeout: 30
+  do_handshake_on_connect: False
+  spew: False
+  workers: 1
+  proc_name: v2sh
+  sendfile: None
+  pidfile: None
+  umask: 0
+  on_reload: <function on_reload at 0x7f1c7ca55c08>
+  pre_exec: <function pre_exec at 0x7f1c7ca5d668>
+  worker_tmp_dir: None
+  limit_request_fields: 100
+  pythonpath: None
+  on_exit: <function on_exit at 0x7f1c7ca5de60>
+  config: None
+  logconfig: None
+  check_config: False
+  statsd_prefix: 
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  reload_engine: auto
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x7f1c7ca5d7d0>
+  post_request: <function post_request at 0x7f1c7ca5d8c0>
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x7f1c7ca5d398>
+  raw_paste_global_conf: []
+  threads: 1
+  max_requests: 0
+  chdir: /home/vnds_20150389/v2sh/v2sh
+  daemon: False
+  user: 0
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  on_starting: <function on_starting at 0x7f1c7ca55aa0>
+  post_worker_init: <function post_worker_init at 0x7f1c7ca5d230>
+  child_exit: <function child_exit at 0x7f1c7ca5da28>
+  worker_exit: <function worker_exit at 0x7f1c7ca5db90>
+  paste: None
+  default_proc_name: v2sh.wsgi:application
+  syslog_addr: udp://localhost:514
+  syslog_prefix: None
+  ciphers: TLSv1
+  worker_abort: <function worker_abort at 0x7f1c7ca5d500>
+  loglevel: debug
+  bind: ['0.0.0.0:80']
+  raw_env: []
+  initgroups: False
+  capture_output: False
+  reload: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x7f1c7ca5dcf8>
+  timeout: 30
+  keyfile: None
+  ca_certs: None
+  tmp_upload_dir: None
+  backlog: 2048
+  logger_class: gunicorn.glogging.Logger
+[2018-04-23 09:46:53 +0000] [2592] [INFO] Starting gunicorn 19.7.1
+[2018-04-23 09:46:53 +0000] [2592] [DEBUG] Arbiter booted
+[2018-04-23 09:46:53 +0000] [2592] [INFO] Listening at: http://0.0.0.0:80 (2592)
+[2018-04-23 09:46:53 +0000] [2592] [INFO] Using worker: sync
+[2018-04-23 09:46:53 +0000] [2596] [INFO] Booting worker with pid: 2596
+[2018-04-23 09:46:53 +0000] [2592] [DEBUG] 1 workers
+[2018-04-23 09:46:59 +0000] [2596] [DEBUG] GET /contents/ourmission/
+[2018-04-23 09:47:00 +0000] [2596] [DEBUG] GET /static/css/bootstrap.min.css
+[2018-04-23 09:48:23 +0000] [2606] [INFO] Booting worker with pid: 2606
+[2018-04-23 09:48:23 +0000] [2592] [INFO] Handling signal: hup
+[2018-04-23 09:48:23 +0000] [2592] [INFO] Hang up: Master
+[2018-04-23 09:48:23 +0000] [2592] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  statsd_host: None
+  max_requests_jitter: 0
+  post_fork: <function post_fork at 0x7f1c7ca5d0c8>
+  errorlog: /home/vnds_20150389/v2sh/v2sh/logs/gunicorn.log
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 2
+  suppress_ragged_eofs: True
+  syslog: False
+  syslog_facility: user
+  when_ready: <function when_ready at 0x7f1c7ca55d70>
+  pre_fork: <function pre_fork at 0x7f1c7ca55ed8>
+  cert_reqs: 0
+  preload_app: False
+  keepalive: 2
+  accesslog: None
+  group: 0
+  graceful_timeout: 30
+  do_handshake_on_connect: False
+  spew: False
+  workers: 1
+  proc_name: v2sh
+  sendfile: None
+  pidfile: None
+  umask: 0
+  on_reload: <function on_reload at 0x7f1c7ca55c08>
+  pre_exec: <function pre_exec at 0x7f1c7ca5d668>
+  worker_tmp_dir: None
+  limit_request_fields: 100
+  pythonpath: None
+  on_exit: <function on_exit at 0x7f1c7ca5de60>
+  config: None
+  logconfig: None
+  check_config: False
+  statsd_prefix: 
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  reload_engine: auto
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x7f1c7ca5d7d0>
+  post_request: <function post_request at 0x7f1c7ca5d8c0>
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x7f1c7ca5d398>
+  raw_paste_global_conf: []
+  threads: 1
+  max_requests: 0
+  chdir: /home/vnds_20150389/v2sh/v2sh
+  daemon: False
+  user: 0
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  on_starting: <function on_starting at 0x7f1c7ca55aa0>
+  post_worker_init: <function post_worker_init at 0x7f1c7ca5d230>
+  child_exit: <function child_exit at 0x7f1c7ca5da28>
+  worker_exit: <function worker_exit at 0x7f1c7ca5db90>
+  paste: None
+  default_proc_name: v2sh.wsgi:application
+  syslog_addr: udp://localhost:514
+  syslog_prefix: None
+  ciphers: TLSv1
+  worker_abort: <function worker_abort at 0x7f1c7ca5d500>
+  loglevel: debug
+  bind: ['0.0.0.0:80']
+  raw_env: []
+  initgroups: False
+  capture_output: False
+  reload: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x7f1c7ca5dcf8>
+  timeout: 30
+  keyfile: None
+  ca_certs: None
+  tmp_upload_dir: None
+  backlog: 2048
+  logger_class: gunicorn.glogging.Logger
+[2018-04-23 09:48:23 +0000] [2610] [INFO] Booting worker with pid: 2610
+[2018-04-23 09:48:23 +0000] [2606] [INFO] Worker exiting (pid: 2606)
+[2018-04-23 09:50:24 +0000] [2723] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  statsd_host: None
+  max_requests_jitter: 0
+  post_fork: <function post_fork at 0x7f6e705cb0c8>
+  errorlog: /home/vnds_20150389/v2sh/v2sh/logs/gunicorn.log
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 2
+  suppress_ragged_eofs: True
+  syslog: False
+  syslog_facility: user
+  when_ready: <function when_ready at 0x7f6e705c3d70>
+  pre_fork: <function pre_fork at 0x7f6e705c3ed8>
+  cert_reqs: 0
+  preload_app: False
+  keepalive: 2
+  accesslog: None
+  group: 0
+  graceful_timeout: 30
+  do_handshake_on_connect: False
+  spew: False
+  workers: 1
+  proc_name: v2sh
+  sendfile: None
+  pidfile: None
+  umask: 0
+  on_reload: <function on_reload at 0x7f6e705c3c08>
+  pre_exec: <function pre_exec at 0x7f6e705cb668>
+  worker_tmp_dir: None
+  limit_request_fields: 100
+  pythonpath: None
+  on_exit: <function on_exit at 0x7f6e705cbe60>
+  config: None
+  logconfig: None
+  check_config: False
+  statsd_prefix: 
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  reload_engine: auto
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x7f6e705cb7d0>
+  post_request: <function post_request at 0x7f6e705cb8c0>
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x7f6e705cb398>
+  raw_paste_global_conf: []
+  threads: 1
+  max_requests: 0
+  chdir: /home/vnds_20150389/v2sh/v2sh
+  daemon: False
+  user: 0
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  on_starting: <function on_starting at 0x7f6e705c3aa0>
+  post_worker_init: <function post_worker_init at 0x7f6e705cb230>
+  child_exit: <function child_exit at 0x7f6e705cba28>
+  worker_exit: <function worker_exit at 0x7f6e705cbb90>
+  paste: None
+  default_proc_name: v2sh.wsgi:application
+  syslog_addr: udp://localhost:514
+  syslog_prefix: None
+  ciphers: TLSv1
+  worker_abort: <function worker_abort at 0x7f6e705cb500>
+  loglevel: debug
+  bind: ['0.0.0.0:80']
+  raw_env: []
+  initgroups: False
+  capture_output: False
+  reload: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x7f6e705cbcf8>
+  timeout: 30
+  keyfile: None
+  ca_certs: None
+  tmp_upload_dir: None
+  backlog: 2048
+  logger_class: gunicorn.glogging.Logger
+[2018-04-23 09:50:24 +0000] [2723] [INFO] Starting gunicorn 19.7.1
+[2018-04-23 09:50:24 +0000] [2723] [DEBUG] Arbiter booted
+[2018-04-23 09:50:24 +0000] [2723] [INFO] Listening at: http://0.0.0.0:80 (2723)
+[2018-04-23 09:50:24 +0000] [2723] [INFO] Using worker: sync
+[2018-04-23 09:50:24 +0000] [2727] [INFO] Booting worker with pid: 2727
+[2018-04-23 09:50:24 +0000] [2723] [DEBUG] 1 workers
+[2018-04-23 09:50:32 +0000] [2610] [DEBUG] GET /
+[2018-04-23 09:50:33 +0000] [2727] [DEBUG] GET /static/css/bootstrap.min.css
+[2018-04-23 09:50:33 +0000] [2610] [DEBUG] GET /static/css/search.css
+[2018-04-23 09:50:35 +0000] [2610] [DEBUG] GET /static/images/V2SH_Logo_front.png
+[2018-04-23 09:50:45 +0000] [2727] [DEBUG] GET /contents/bycompany/a
+[2018-04-23 09:50:47 +0000] [2727] [DEBUG] GET /contents/byname/a
+[2018-04-23 09:50:49 +0000] [2727] [DEBUG] GET /static/css/bootstrap.min.css
+[2018-04-23 09:50:50 +0000] [2610] [DEBUG] GET /static/css/bycomapany.css
+[2018-04-23 09:50:53 +0000] [2723] [INFO] Handling signal: int
+[2018-04-23 09:50:53 +0000] [2727] [INFO] Worker exiting (pid: 2727)
+[2018-04-23 09:50:53 +0000] [2723] [INFO] Shutting down: Master
+[2018-04-23 09:54:35 +0000] [2610] [DEBUG] GET /
+[2018-04-23 10:07:25 +0000] [2610] [DEBUG] GET /
+[2018-04-23 10:07:26 +0000] [2610] [DEBUG] GET /static/css/search.css
+[2018-04-23 10:07:26 +0000] [2610] [DEBUG] GET /static/css/bootstrap.min.css
+[2018-04-23 10:07:26 +0000] [2610] [DEBUG] GET /static/images/V2SH_Logo_front.png
+[2018-04-23 10:08:11 +0000] [2610] [DEBUG] GET /static/css/bycomapany.css
+[2018-04-23 10:08:59 +0000] [2961] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  statsd_host: None
+  max_requests_jitter: 0
+  post_fork: <function post_fork at 0x7f180835e0c8>
+  errorlog: /home/vnds_20150389/v2sh/v2sh/logs/gunicorn.log
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 2
+  suppress_ragged_eofs: True
+  syslog: False
+  syslog_facility: user
+  when_ready: <function when_ready at 0x7f1808356d70>
+  pre_fork: <function pre_fork at 0x7f1808356ed8>
+  cert_reqs: 0
+  preload_app: False
+  keepalive: 2
+  accesslog: None
+  group: 0
+  graceful_timeout: 30
+  do_handshake_on_connect: False
+  spew: False
+  workers: 1
+  proc_name: v2sh
+  sendfile: None
+  pidfile: None
+  umask: 0
+  on_reload: <function on_reload at 0x7f1808356c08>
+  pre_exec: <function pre_exec at 0x7f180835e668>
+  worker_tmp_dir: None
+  limit_request_fields: 100
+  pythonpath: None
+  on_exit: <function on_exit at 0x7f180835ee60>
+  config: None
+  logconfig: None
+  check_config: False
+  statsd_prefix: 
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  reload_engine: auto
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x7f180835e7d0>
+  post_request: <function post_request at 0x7f180835e8c0>
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x7f180835e398>
+  raw_paste_global_conf: []
+  threads: 1
+  max_requests: 0
+  chdir: /home/vnds_20150389/v2sh/v2sh
+  daemon: False
+  user: 0
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  on_starting: <function on_starting at 0x7f1808356aa0>
+  post_worker_init: <function post_worker_init at 0x7f180835e230>
+  child_exit: <function child_exit at 0x7f180835ea28>
+  worker_exit: <function worker_exit at 0x7f180835eb90>
+  paste: None
+  default_proc_name: v2sh.wsgi:application
+  syslog_addr: udp://localhost:514
+  syslog_prefix: None
+  ciphers: TLSv1
+  worker_abort: <function worker_abort at 0x7f180835e500>
+  loglevel: debug
+  bind: ['127.0.0.1:80']
+  raw_env: []
+  initgroups: False
+  capture_output: False
+  reload: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x7f180835ecf8>
+  timeout: 30
+  keyfile: None
+  ca_certs: None
+  tmp_upload_dir: None
+  backlog: 2048
+  logger_class: gunicorn.glogging.Logger
+[2018-04-23 10:08:59 +0000] [2961] [INFO] Starting gunicorn 19.7.1
+[2018-04-23 10:08:59 +0000] [2961] [DEBUG] Arbiter booted
+[2018-04-23 10:08:59 +0000] [2961] [INFO] Listening at: http://127.0.0.1:80 (2961)
+[2018-04-23 10:08:59 +0000] [2961] [INFO] Using worker: sync
+[2018-04-23 10:08:59 +0000] [2965] [INFO] Booting worker with pid: 2965
+[2018-04-23 10:08:59 +0000] [2961] [DEBUG] 1 workers
+[2018-04-23 10:09:04 +0000] [2610] [DEBUG] GET /contents/bycompany/h
+[2018-04-23 10:09:07 +0000] [2610] [DEBUG] GET /static/css/bycomapany.css
+[2018-04-23 10:09:07 +0000] [2610] [DEBUG] GET /static/css/bootstrap.min.css
+[2018-04-23 10:09:10 +0000] [2610] [DEBUG] GET /contents/bycompany/f
+[2018-04-23 10:09:14 +0000] [2610] [DEBUG] GET /static/css/bycomapany.css
+[2018-04-23 10:09:14 +0000] [2610] [DEBUG] GET /static/css/bootstrap.min.css
+[2018-04-23 10:09:16 +0000] [2610] [DEBUG] GET /contents/bycompany/m
+[2018-04-23 10:09:21 +0000] [2610] [DEBUG] GET /static/css/bycomapany.css
+[2018-04-23 10:09:21 +0000] [2610] [DEBUG] GET /static/css/bootstrap.min.css
+[2018-04-23 10:09:22 +0000] [2610] [DEBUG] GET /contents/bycompany/q
+[2018-04-23 10:09:23 +0000] [2610] [DEBUG] GET /static/css/bycomapany.css
+[2018-04-23 10:09:24 +0000] [2610] [DEBUG] GET /static/css/bootstrap.min.css
+[2018-04-23 10:09:25 +0000] [2610] [DEBUG] GET /contents/bycompany/q
+[2018-04-23 10:09:26 +0000] [2610] [DEBUG] GET /static/css/bycomapany.css
+[2018-04-23 10:09:26 +0000] [2610] [DEBUG] GET /static/css/bootstrap.min.css
+[2018-04-23 10:09:28 +0000] [2610] [DEBUG] GET /contents/bycompany/u
+[2018-04-23 10:09:29 +0000] [2610] [DEBUG] GET /static/css/bootstrap.min.css
+[2018-04-23 10:09:29 +0000] [2610] [DEBUG] GET /static/css/bycomapany.css
+[2018-04-23 10:09:32 +0000] [2610] [DEBUG] GET /contents/bycompany/v
+[2018-04-23 10:09:33 +0000] [2610] [DEBUG] GET /static/css/bootstrap.min.css
+[2018-04-23 10:09:33 +0000] [2610] [DEBUG] GET /static/css/bycomapany.css
+[2018-04-23 10:09:36 +0000] [2610] [DEBUG] GET /contents/bycompany/w
+[2018-04-23 10:09:40 +0000] [2610] [DEBUG] GET /static/css/bootstrap.min.css
+[2018-04-23 10:09:40 +0000] [2610] [DEBUG] GET /static/css/bycomapany.css
+[2018-04-23 10:09:42 +0000] [2610] [DEBUG] GET /contents/bycompany/b
+[2018-04-23 10:09:45 +0000] [2610] [DEBUG] GET /static/css/bootstrap.min.css
+[2018-04-23 10:09:45 +0000] [2610] [DEBUG] GET /static/css/bycomapany.css
+[2018-04-23 10:09:52 +0000] [2610] [DEBUG] GET /
+[2018-04-23 10:09:53 +0000] [2610] [DEBUG] GET /static/css/bootstrap.min.css
+[2018-04-23 10:09:53 +0000] [2610] [DEBUG] GET /static/css/search.css
+[2018-04-23 10:09:54 +0000] [2610] [DEBUG] GET /static/images/V2SH_Logo_front.png
+[2018-04-23 10:09:56 +0000] [2610] [DEBUG] GET /contents/byyear/2018
+[2018-04-23 10:09:57 +0000] [2610] [DEBUG] GET /static/css/bootstrap.min.css
+[2018-04-23 10:09:58 +0000] [2610] [DEBUG] GET /static/css/byyear.css
+[2018-04-23 10:10:02 +0000] [2610] [DEBUG] GET /superuser/superuserprofile/85
+[2018-04-23 10:10:03 +0000] [2610] [DEBUG] GET /static/css/bootstrap.min.css
+[2018-04-23 10:10:03 +0000] [2610] [DEBUG] GET /static/css/style.css
+[2018-04-23 10:10:05 +0000] [2610] [DEBUG] GET /superuser/superuserprofile/images/noise.jpg
+[2018-04-23 10:10:11 +0000] [2961] [INFO] Handling signal: int
+[2018-04-23 10:10:11 +0000] [2965] [INFO] Worker exiting (pid: 2965)
+[2018-04-23 10:10:11 +0000] [2961] [INFO] Shutting down: Master
+[2018-04-23 10:27:46 +0000] [2610] [DEBUG] GET /downloader/
+[2018-04-23 10:27:48 +0000] [2610] [DEBUG] POST /downloader/
+[2018-04-23 11:00:15 +0000] [2610] [DEBUG] GET /
+[2018-04-23 11:00:16 +0000] [2610] [DEBUG] GET /static/css/bootstrap.min.css
+[2018-04-23 11:00:16 +0000] [2610] [DEBUG] GET /static/css/search.css
+[2018-04-23 11:00:17 +0000] [2610] [DEBUG] GET /static/images/V2SH_Logo_front.png
+[2018-04-23 11:00:41 +0000] [2610] [DEBUG] GET /superuser/contactform/
+[2018-04-23 11:00:41 +0000] [2610] [DEBUG] GET /static/css/bootstrap.min.css
+[2018-04-23 11:01:50 +0000] [2610] [DEBUG] GET /
+[2018-04-23 11:01:51 +0000] [2610] [DEBUG] GET /static/css/bootstrap.min.css
+[2018-04-23 11:01:51 +0000] [2610] [DEBUG] GET /static/css/search.css
+[2018-04-23 11:01:52 +0000] [2610] [DEBUG] GET /static/images/V2SH_Logo_front.png
+[2018-04-23 11:01:54 +0000] [2610] [DEBUG] GET /contents/aboutus/
+[2018-04-23 11:01:55 +0000] [2610] [DEBUG] GET /static/css/bootstrap.min.css
+[2018-04-23 11:01:55 +0000] [2610] [DEBUG] GET /static/css/aboutus_css.css
+[2018-04-23 11:01:56 +0000] [2610] [DEBUG] GET /static/images/v1.png
+[2018-04-23 11:01:57 +0000] [2610] [DEBUG] GET /static/images/s.jpeg
+[2018-04-23 11:01:57 +0000] [2610] [DEBUG] GET /static/images/h.jpg
+[2018-04-23 11:01:57 +0000] [2610] [DEBUG] GET /static/images/v2.jpeg
+[2018-04-23 11:12:27 +0000] [2610] [INFO] Parent changed, shutting down: <Worker 2610>
+[2018-04-23 11:12:27 +0000] [2610] [INFO] Worker exiting (pid: 2610)
