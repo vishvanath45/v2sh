@@ -8,8 +8,10 @@ from superuser.models import SuperUser, Experience
 from django.contrib.auth.decorators import login_required
 
 from django.urls import reverse
-# Create your views here.
 
+from django.contrib.auth import get_user_model
+# Create your views here.
+User = get_user_model()
 
 # @login_required()
 def home(request):
@@ -47,11 +49,11 @@ def feedbackform(request):
 def ourmission(request):
     return render(request, 'contents/ourmission.html')
 
-# @login_required()
-
+@login_required()
 def bycompany(request,alpha):
+
     alpha1=alpha.upper()
-    names=[]
+    names=[]    
     number_of_people=[]
     job_count_pairs = []
     myname = {}
@@ -73,8 +75,7 @@ def bycompany(request,alpha):
 
     return render(request,'search_results/bycompany.html',{'names':job_count_pairs,'alpha':alpha1})
 
-
-
+@login_required()
 def byyear(request,beta):
     year_passed = int(beta)
     map_user_names = {}
@@ -90,7 +91,7 @@ def byyear(request,beta):
             map_user_names[person_name] = 1
     return render(request, 'search_results/byyear.html',{'name':user_names, 'beta':year_passed})
 
-
+@login_required()
 def company(request , name):
     # print(name)
     experiences = []
@@ -99,7 +100,7 @@ def company(request , name):
             experiences.append(Experience.objects.all()[i])
     return render(request , 'contents/company_profile.html' , {'experiences' : experiences , 'name':name})
 
-
+@login_required
 def byname(request , gamma):
     gamma1 = gamma.upper()
     names = []
