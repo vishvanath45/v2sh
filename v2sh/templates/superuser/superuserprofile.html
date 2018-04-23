@@ -20,7 +20,7 @@ User: {{ user.name }}
 
      <style type="text/css">
         * { margin: 0; padding: 0; }
-        body { margin-top: 80px; font: 16px Helvetica, Sans-Serif; line-height: 24px; background: url(images/noise.jpg); }
+        body { margin-top: 80px; font: 16px Helvetica, Sans-Serif; line-height: 24px;  }
         .clear { clear: both; }
         #page-wrap { width: 800px; margin: 40px auto 60px; }
         #pic { float: right; margin: -30px 0 0 0; }
@@ -40,13 +40,9 @@ User: {{ user.name }}
 
 
     <div id="page-wrap">
-    
-        <!-- <img src="/static/images/s.jpeg" height = "20%" alt="Photo of Cthulu" id="pic" /> -->
-    
+        
         <div id="contact-info" class="vcard">
-        
-            <!-- Microformats! -->
-        
+                
             <h1 class="fn">{{ user.name }}</h1>
         
             <p>
@@ -97,11 +93,9 @@ User: {{ user.name }}
             <dd class="clear"></dd>
             
             <dd class="clear"></dd>
-
-                <!-- {{ user.notes }} -->
             
-<!--             <dt>Notes to User</dt>
-            <dd>World Domination, Deep Sea Diving, Murder Most Foul</dd> -->
+            <dt>Notes to User</dt>
+            <dd>{{ user.note }}</dd>
             
             <dd class="clear"></dd>
 

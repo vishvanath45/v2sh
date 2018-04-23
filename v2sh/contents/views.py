@@ -92,7 +92,7 @@ def byyear(request,beta):
 
 
 def company(request , name):
-    print(name)
+    # print(name)
     experiences = []
     for i in range(Experience.objects.count()):
         if (Experience.objects.all()[i].company_name == name):

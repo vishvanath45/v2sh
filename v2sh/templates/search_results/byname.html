@@ -6,7 +6,7 @@
 
 {% block head %}
     {% block title %}
-        Search Results: By Company
+        Search Results: By Name
     {% endblock %}
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/bycomapany.css' %}">
@@ -70,10 +70,10 @@
             |
         </h5>
         <h1>Results: Starting with {{alpha}}</h1>
+        <h2>Name of the Alumini </h2>
             <div class="sub-main">
                 <span>
-                    <ul>Name of the persons working in this company
-                        {% for name in names %}
+                    <ul>                        {% for name in names %}
                         <li><a href="{% url 'superuserprofile' name.su_id %}">{{ name.name }}</a></li>
                         {% endfor %}
                     </ul>

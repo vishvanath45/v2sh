@@ -100,7 +100,7 @@ def superuserprofile(request,su_id):
 	# for i in range(5):
 	# 	ie.append(intershipexp())
 
-
+	print user.note
 
 	class jobexp(object):
 		comp_name = str()
