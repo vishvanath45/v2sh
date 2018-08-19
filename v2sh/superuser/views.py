@@ -1,21 +1,19 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-
 from django.shortcuts import render
 from django.views.decorators.csrf import ensure_csrf_cookie
 from django.contrib.auth.decorators import login_required
-from .models import SuperUser, Experience
 # Create your views here.
 from django.http import HttpResponse
+from v2sh.environment import db, experience, superuser, user
 
 def contactform(request):
 	if(request.method == 'POST'):
 
-		su_id = SuperUser.objects.count()+1
+		su_id = superuser.count()+1
 		name = request.POST['name']
 		branch = request.POST['branch']
 		yog = int(request.POST['yog'])
-		# yog = int(201/5)
 		contact_no = request.POST['contact_no']
 		email_id = request.POST['email_id']
 		
@@ -37,54 +35,46 @@ def contactform(request):
 		J_T_year = request.POST.getlist('J_T_year')
 
 		# For debugging purpose
-		# print su_id, name, branch, yog, contact_no, email_id
-		# print I_comp_name, I_role, I_F_month , I_F_year,I_T_month,I_T_year
-		# print J_comp_name, J_role, J_F_month , J_F_year,J_T_month,J_T_year
+		# print (name, branch, yog, contact_no, email_id)
+		# print (I_comp_name, I_role, I_F_month , I_F_year,I_T_month,I_T_year)
+		# print (J_comp_name, J_role, J_F_month , J_F_year,J_T_month,J_T_year)
 
 
 		note = request.POST['note']
 
-		print (yog)
-
-		User = SuperUser.objects.create(su_id = su_id, name = name, email = email_id, ph_no = contact_no, branch = branch,yog = yog,note =note )
+		obj_id = superuser.insert({'su_id' : su_id, 'name' : name, 'email' : email_id, \
+			'ph_no' : contact_no, 'branch' : branch, 'yog' : yog, 'note' : note})
 
 		for i in range(len(I_comp_name)):
 
 			if(I_comp_name[i]!=''):
-				exp = Experience.objects.create(company_name = I_comp_name[i], joining_date = str(I_F_month[i])+" "+ str(I_F_year[i]), ending_date = str(I_T_month[i])+" "+ str(I_T_year[i]), role = I_role[i], internship_or_job = True, object_name = User)
+				exp = experience.insert({'company_name' : I_comp_name[i], \
+					'joining_date' : str(I_F_month[i])+" "+ str(I_F_year[i]), \
+					'ending_date' : str(I_T_month[i])+" "+ str(I_T_year[i]), \
+					'role' : I_role[i], 'internship_or_job' : True, 'object_name' : obj_id})
 
 
 		for i in range(len(J_comp_name)):
 
 			if(J_comp_name[i]!=''):
-				exp = Experience.objects.create(company_name = J_comp_name[i], joining_date = str(J_F_month[i])+" "+ str(J_F_year[i]), ending_date = str(J_T_month[i])+" "+str(J_T_year[i]), role = J_role[i], internship_or_job = False, object_name = User)
+				exp = experience.insert({'company_name' : J_comp_name[i], \
+					'joining_date' : str(J_F_month[i])+" "+ str(J_F_year[i]), \
+					'ending_date' : str(J_T_month[i])+" "+str(J_T_year[i]), \
+					'role' : J_role[i], 'internship_or_job' : False, 'object_name' : obj_id})
 				 
 
 
 		return render(request, 'superuser/thankyou_form.html')
-		# try:
-		# 	pkp = request.POST.getlist('Cname')
-		# 	print (pkp)
-		# except :
-		# 	pkp = 1
-		
 
 	return render(request, 'superuser/contactform.html')
-# @login_required()
 
-@login_required()
+#@login_required()
 def superuserprofile(request,su_id):
 
 #  I am currently taking user with su_id = 54, this value will be passed to this function, right now for testing I have taken 54, and populated fake exp in DB.
-	
-	
-	for i in range(SuperUser.objects.count()):
-		if (SuperUser.objects.all()[i].su_id == int(su_id)):
-			user = SuperUser.objects.all()[i]
-			
+	user = superuser.find_one({'su_id':su_id})
 
-
-	# I am considering at max 5 internship and 5 Job exp, we can make more, easily scalable.
+	obj_id = user['_id']
 
 	class intershipexp(object):
 		comp_name = str()
@@ -93,13 +83,8 @@ def superuserprofile(request,su_id):
 		role = str()
 		present = False
 
-	ie_index = -1
-
 	ie = []
-	# for i in range(5):
-	# 	ie.append(intershipexp())
-
-	# print user.note
+	ie_index = -1
 
 	class jobexp(object):
 		comp_name = str()
@@ -108,50 +93,28 @@ def superuserprofile(request,su_id):
 		role = str()
 		present = False
 
-	je_index = -1
 	je = []
-	# for i in range(5):
-	# 	je.append(jobexp())
+	je_index = -1
 
+	for i in experience.find({'object_name':obj_id}):
 
-	'''
-	@vishvanath45 -- 
-	exp = Experience.objects.get(object_name = user)
-	earlier we used to use get() to find entries with object user,
-	but get() only expects single object to be returned, but suppose 
-	Experience might have different rows for same user.
-	so multiple objects need to be returned.
-
-	So we will use filter instead, 
-	See discussion here - https://stackoverflow.com/questions/7983946/django-multipleobjectsreturned
-	'''
-
-
-	# no_of_obj_returned = Experience.objects.filter(object_name = user).count()
-
-	for i in Experience.objects.all():
-
-		if (i.object_name ==user and i.internship_or_job == True):
+		if (i['internship_or_job'] == True):
 			ie.append(intershipexp())
 			ie_index+=1
-			ie[ie_index].comp_name = i.company_name;
-			ie[ie_index].joining_date = i.joining_date;
-			ie[ie_index].ending_date = i.ending_date;
-			ie[ie_index].role = i.role
+			ie[ie_index].comp_name = i['company_name']
+			ie[ie_index].joining_date = i['joining_date']
+			ie[ie_index].ending_date = i['ending_date']
+			ie[ie_index].role = i['role']
 			ie[ie_index].present = True
-			# ie_index += 1
-		elif(i.object_name ==user and i.internship_or_job == False):
-
+		else:
 			je.append(jobexp())
 			je_index += 1
-			je[je_index].comp_name = i.company_name;
-			je[je_index].joining_date = i.joining_date;
-			je[je_index].ending_date = i.ending_date;
-			je[je_index].role = i.role
+			je[je_index].comp_name = i['company_name']
+			je[je_index].joining_date = i['joining_date']
+			je[je_index].ending_date = i['ending_date']
+			je[je_index].role = i['role']
 			je[je_index].present = True
 
-
-	
 	return render(request, 'superuser/superuserprofile.html',{'user':user,'ie':ie,'je':je})
 
 def error(request):

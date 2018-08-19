@@ -44,7 +44,7 @@
 	{% for i in name %}
 		<div class = "sub-main">
 			<span> 	
-			<p> <a href="{% url 'superuserprofile' i.su_id %}">{{ i.name }}</a></p>
+			<p> <a href="{% url 'superuserprofile' i.su_id %}">{{ i }}</a></p>
 			</span>
 		</div>
 	{% endfor %}

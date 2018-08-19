@@ -1,14 +1,16 @@
-import os
+# import os
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'v2sh.settings')
+# os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'v2sh.settings')
 
-import django
+# import django
 
-django.setup()
+# django.setup()
+
+from v2sh.environment import db, experience, superuser, user 
 
 import random
 
-from superuser.models import SuperUser, Experience
+# from superuser.models import SuperUser, Experience
 
 from faker import Faker
 
@@ -19,7 +21,7 @@ i = 0
 for entry in range(90):
 
     # fake_suid = int(i)
-    su_id = SuperUser.objects.count() + 1
+    su_id = superuser.count()+1
 
     i += 1
 
@@ -37,9 +39,12 @@ for entry in range(90):
 
     fake_yog = random.choice(yog)
 
-    suprusrobj = \
-    SuperUser.objects.get_or_create(su_id=su_id, name=fake_name, email=fake_email, ph_no=fake_phone, branch=fake_branch,
-                                    yog=fake_yog)[0]
+    note = ['call no', 'email yes', 'dnd', 'Ok Thanks', 'Horn Ok Please']
+
+    fake_note = random.choice(note)
+
+    obj_id = superuser.insert({'su_id' : su_id, 'name' : fake_name, 'email' : fake_email, \
+            'ph_no' : fake_phone, 'branch' : fake_branch, 'yog' : fake_yog, 'note' : fake_note})
 
     for j in range(3):
         fake_company = fake.company()
@@ -60,9 +65,7 @@ for entry in range(90):
 
         fake_i_or_j = random.choice(intern_or_job)
 
-        exp_rec = \
-        Experience.objects.get_or_create(object_name=suprusrobj, company_name=fake_company, joining_date=fake_jd,
-                                         ending_date=fake_ed, role=fake_role, internship_or_job=fake_i_or_j)[0]
+        exp = experience.insert({'company_name' : fake_company,'joining_date' : fake_jd, 'ending_date' : fake_ed, 'role' : fake_role, 'internship_or_job' : fake_i_or_j, 'object_name' : obj_id})
 
 
 

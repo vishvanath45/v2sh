@@ -1,8 +1,9 @@
 from __future__ import unicode_literals
 
 from django.db import models
-
+from mongoengine import *
 import uuid
+
 
 class SuperUser(models.Model):
     su_id = models.IntegerField( default = 0, primary_key = True )
