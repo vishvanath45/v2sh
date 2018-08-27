@@ -1,10 +1,13 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+from django.core.mail import send_mail
 from django.shortcuts import render,redirect
-
-from .forms import RegisterForm
+from django import forms
+from .forms import RegisterForm,LoginForm
 from django.http import HttpResponse
+from v2sh.environment import db, experience, superuser, credentials,session
+'''
 from django.contrib.auth.decorators import login_required
 
 from django.contrib.auth import authenticate,login
@@ -79,3 +82,35 @@ def activate(request, uidb64, token):
         return HttpResponse('Thank you for your email confirmation. Now you can login your account.')
     else:
         return HttpResponse('Activation link is invalid!')
+'''
+def signup(request):
+   # if request.session['email']:
+    if request.method == 'POST':
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            email = form.cleaned_data.get('email')
+            password1 = form.cleaned_data.get('password1')
+            password2 = form.cleaned_data.get('password2')
+            full_name = form.cleaned_data.get('name')
+            is_authenticate = False
+            credentials.insert({'Name' : full_name , 'Email' : email , 'Password' : password1})
+            return redirect('login')
+    else:
+        form = RegisterForm()
+    return render(request, 'accounts/signup.html', {'form': form})
+        
+def login(request):
+    if request.method == 'POST':
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            email = form.cleaned_data.get('email')
+            password = form.cleaned_data.get('password')
+            #request.session['email'] = email
+            return redirect('home')
+    else:
+        form = LoginForm()
+    
+    return render(request, 'accounts/login.html', {'form': form})
+    
+def logout(request):
+    return redirect('home')
