@@ -5,7 +5,7 @@ from django.views.decorators.csrf import ensure_csrf_cookie
 from django.contrib.auth.decorators import login_required
 # Create your views here.
 from django.http import HttpResponse
-from v2sh.environment import db, experience, superuser, user
+from v2sh.environment import db, experience, superuser, user,session
 
 def contactform(request):
 	if(request.method == 'POST'):

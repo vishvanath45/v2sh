@@ -11,7 +11,7 @@ from django.urls import reverse
 
 from django.contrib.auth import get_user_model
 
-from v2sh.environment import db, experience, superuser, user
+from v2sh.environment import db, experience, superuser, session
 
 # Create your views here.
 User = get_user_model()

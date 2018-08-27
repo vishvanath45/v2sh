@@ -10,7 +10,8 @@ db = client['db_dev']
 experience = db['Experience']
 superuser = db['SuperUser']
 user = db['User']
-
+credentials = db['credentials']
+session = db['Session_table']
 # Production Settings 
 # DO NOT CHANGE !! 
 # client.db_prod.authenticate('root_su','yeh_production_db_h',mechanism='SCRAM-SHA-1')
@@ -18,6 +19,7 @@ user = db['User']
 # experience = db['Experience']
 # superuser = db['SuperUser']
 # user = db['User']
+#credentials = db['credentials']
 
 # Backup Settings 
 # DO NOT CHANGE !! 
@@ -25,4 +27,5 @@ user = db['User']
 # db = client['db_prod']
 # experience = db['Experience']
 # superuser = db['SuperUser']
-# user = db['User']
+# user = db['User']'
+#credentials = db['credentials']
