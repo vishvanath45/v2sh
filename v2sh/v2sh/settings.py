@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
+    'django.contrib.sites',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
@@ -89,7 +90,9 @@ DATABASES = {
     },
 }
 
-SESSION_ENGINE = 'mongoengine.django.sessions' # optional
+SESSION_ENGINE = 'mongo_sessions.session' # optional
+MONGO_SESSIONS_COLLECTION = 'mongo_sessions'
+
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -148,3 +151,18 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 587
+
+
+# TESTing
+
+MONGO_PORT = 27017
+MONGO_HOST = '35.187.229.248'
+MONGO_DB_NAME = 'db_dev'
+MONGO_DB_USER = 'codes_for_living'
+MONGO_DB_PASSWORD = 'kaise_kiya_bhaiya?'
+MONGO_SESSIONS_COLLECTION = 'credentials'
+
+# all this settings are defaults, you can skip any
+# expireAfterSeconds index value by default is SESSION_COOKIE_AGE you can change:
+
+MONGO_SESSIONS_TTL = 60 # 1 min
