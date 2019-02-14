@@ -40,69 +40,68 @@ User: {{ user.name }}
 
 
     <div id="page-wrap">
-        
+
         <div id="contact-info" class="vcard">
-                
+
             <h1 class="fn">{{ user.name }}</h1>
-        
+
             <p>
-            	Branch: <span class="text">{{ user.branch }}</span><br /> 
+            	Branch: <span class="text">{{ user.branch }}</span><br />
             	Year of Graduation: <span class="text">{{ user.yog }}</span><br />
                 Cell: <span class="tel">{{ user.ph_no }}</span><br />
                 Email: <a class="email">{{ user.email }}</a>
             </p>
         </div>
-                
-        
+
+
         <div class="clear"></div>
-        
+
         <dl>
             <dd class="clear"></dd>
-            
+
             <dt>Internship</dt>
             <dd>
                 {% for data in ie %}
                 <h2>{{ data.comp_name }}</h2>
-                
-                {{ data.joining_date }}
+
+                Joining Date : {{ data.joining_date }}
                 <br>
-                {{ data.ending_date  }}
+                Ending Date : {{ data.ending_date  }}
                 <br>
-                {{ data.role }}
+                Role : {{ data.role }}
                 <br>
                 <br>
                 {% endfor %}
             </dd>
             <dd class="clear"></dd>
-            
+
             <dt>Job</dt>
             <dd>
                 {% for data in je %}
                 <h2>{{ data.comp_name }}</h2>
 
-                {{ data.joining_date }}
+                Joining Date : {{ data.joining_date }}
                 <br>
-                {{ data.ending_date  }}
+                Ending Date : {{ data.ending_date  }}
                 <br>
-                {{ data.role }}
-
+                Role : {{ data.role }}
                 <br>
                 <br>
                 {% endfor %}
-            
+
             <dd class="clear"></dd>
-            
+
             <dd class="clear"></dd>
-            
+
             <dt>Notes to User</dt>
             <dd>{{ user.note }}</dd>
-            
+
             <dd class="clear"></dd>
 
         </dl>
-        
+
         <div class="clear"></div>
-    
+
     </div>
 
 

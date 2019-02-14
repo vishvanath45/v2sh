@@ -1,20 +1,20 @@
 '''
-This is just a individual script to check DB connection 
+This is just a individual script to check DB connection
 May be useful for debugging purposes.
 '''
 
 from pymongo import MongoClient
 import pprint
 
-client = MongoClient('35.187.229.248')
+client = MongoClient(IP_ADDR)
 # If true, connection successful
-
+print(client)
 # Read only
 client.db_prod.authenticate(USERNAME,PASSWORD,mechanism='SCRAM-SHA-1')
 
-db = client[DB_NAME]
+db = client[DATABASE]
 
-collection = db[COLLECTION_NAME]
+collection = db[collection]
 
 print(collection)
 

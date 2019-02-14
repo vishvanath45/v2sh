@@ -38,13 +38,13 @@
             <a href="{% url 'byyear' beta='2008' %}">2008</a>
             |
         </h5>
-        
-	<h1>Results with people having jobs/internships in {{beta}} </h1> 
+
+	<h1>Results with people having jobs/internships in {{beta}} </h1>
 	<h2> Names </h2>
 	{% for i in name %}
 		<div class = "sub-main">
-			<span> 	
-			<p> <a href="{% url 'superuserprofile' i.su_id %}">{{ i }}</a></p>
+			<span>
+			<p> <a href="{% url 'superuserprofile' i.su_id %}">{{ i.name }}</a></p>
 			</span>
 		</div>
 	{% endfor %}

@@ -16,7 +16,7 @@ def contactform(request):
 		yog = int(request.POST['yog'])
 		contact_no = request.POST['contact_no']
 		email_id = request.POST['email_id']
-		
+
 		I_comp_name = request.POST.getlist('I_comp_name')
 		I_role = request.POST.getlist('I_role')
 		#  internship from = I_F
@@ -61,7 +61,7 @@ def contactform(request):
 					'joining_date' : str(J_F_month[i])+" "+ str(J_F_year[i]), \
 					'ending_date' : str(J_T_month[i])+" "+str(J_T_year[i]), \
 					'role' : J_role[i], 'internship_or_job' : False, 'object_name' : obj_id})
-				 
+
 
 
 		return render(request, 'superuser/thankyou_form.html')
@@ -72,8 +72,8 @@ def contactform(request):
 def superuserprofile(request,su_id):
 
 #  I am currently taking user with su_id = 54, this value will be passed to this function, right now for testing I have taken 54, and populated fake exp in DB.
-	user = superuser.find_one({'su_id':su_id})
-
+	user = superuser.find_one({'su_id':int(su_id)})
+	print(user)
 	obj_id = user['_id']
 
 	class intershipexp(object):

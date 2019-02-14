@@ -45,7 +45,7 @@ def feedbackform(request):
 		ask=request.POST.getlist('ask')
 		# print(note)
 		# print(rating)
-		# print(ask)	
+		# print(ask)
 	return render(request, 'contents/feedbackform.html')
 
 # @login_required()
@@ -56,11 +56,10 @@ def ourmission(request):
 def bycompany(request,alpha):
 
     alpha1=alpha.upper()
-    names=[]    
+    names=[]
     number_of_people=[]
     job_count_pairs = []
     myname = {}
-
     # for i in range(Experience.objects.count()):
     #     if(Experience.objects.all()[i].company_name[0]==alpha or Experience.objects.all()[i].company_name[0]==alpha1):
     #         comp_name = Experience.objects.all()[i].company_name
@@ -105,22 +104,33 @@ def bycompany(request,alpha):
 #             user_names.append(person_name)
 #             map_user_names[person_name] = 1
 #     return render(request, 'search_results/byyear.html',{'name':user_names, 'beta':year_passed})
+
 def byyear(request,beta):
+# done vishva feb 15,19
     year_passed = int(beta)
-    print(year_passed)
-    print("\n----\n")
+
     map_user_names = {}
+
+    class user_n(object):
+        def __init__(self, name, su_id):
+            self.name = name
+            self.su_id = su_id
+
     user_names = []
     for i in experience.find({}):
-        ending_year = int(i['ending_date'].split(' ')[-1])
+        try:
+            ending_year = int(i['ending_date'].split(' ')[-1])
+        except:
+            ending_year = 20555
         joining_year = int(i['joining_date'].split(' ')[-1])
         print(ending_year, joining_year, year_passed)
-        if ( (ending_year >= year_passed ) and (joining_year <= year_passed )):
+        print("asdasdsad\n\nasdasdsa")
+        if ((joining_year <= year_passed ) and (ending_year >= year_passed )):
             person = superuser.find_one({'_id':i['object_name']})
             person_name = person['name']
             if person_name in map_user_names:
                 continue
-            user_names.append(person_name)
+            user_names.append(user_n(person['name'], person['su_id'] ))
             map_user_names[person_name] = 1
     print(user_names)
     return render(request, 'search_results/byyear.html',{'name':user_names, 'beta':year_passed})
@@ -129,20 +139,37 @@ def byyear(request,beta):
 # To do work for @rishi07
 
 #@login_required()
+# company profile shows job or internship by alumini
 def company(request , name):
-    # print(name)
+# done vishva feb 15,19
+    class company_data(object):
+        def __init__(self, name, j_d, e_d, j_or_i):
+            self.name = name
+            self.joining_date = j_d
+            self.ending_date = e_d
+            self.internship_or_job = j_or_i
+
     experiences = []
     for i in experience.find({'company_name':name}):
-        experiences.append(i)
+        _id = i['object_name']
+        superuser_name = superuser.find({"_id":_id})[0]
+        name = superuser_name['name']
+        experiences.append(company_data(name, i['joining_date'], i['ending_date'], i['internship_or_job']))
+
     return render(request , 'contents/company_profile.html' , {'experiences' : experiences , 'name':name})
 
 #@login_required
+# done vishva feb 15,19
 def byname(request , gamma):
-    gamma1 = gamma.upper()
+    class user_data(object):
+        def __init__(self, name, su_id):
+            self.name = name
+            self.su_id = su_id
+
     names = []
-    User = SuperUser.objects.all()
-    for i in range(SuperUser.objects.count()):
-        if SuperUser.objects.all()[i].name[0] == gamma or SuperUser.objects.all()[i].name[0] == gamma1:
-            names.append(SuperUser.objects.all()[i])
+
+    for i in superuser.find():
+        if(i['name'][0].lower() == gamma.lower()):
+            names.append(user_data(i['name'], i['su_id']))
 
     return render(request , 'search_results/byname.html' , {'names' : names , 'alpha' : gamma})
