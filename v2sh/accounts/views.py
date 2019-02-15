@@ -7,6 +7,9 @@ from django import forms
 from .forms import RegisterForm,LoginForm
 from django.http import HttpResponse
 from v2sh.environment import db, experience, superuser, credentials,session
+import hashlib
+from django.utils.crypto import get_random_string
+
 '''
 from django.contrib.auth.decorators import login_required
 
@@ -83,17 +86,24 @@ def activate(request, uidb64, token):
     else:
         return HttpResponse('Activation link is invalid!')
 '''
+def hash(string):
+    m = hashlib.sha256()
+    m.update(string.encode())
+    return m.digest()  
+
 def signup(request):
    # if request.session['email']:
     if request.method == 'POST':
         form = RegisterForm(request.POST)
         if form.is_valid():
             email = form.cleaned_data.get('email')
-            password1 = form.cleaned_data.get('password1')
-            password2 = form.cleaned_data.get('password2')
+            password1 = hash(form.cleaned_data.get('password1'))
             full_name = form.cleaned_data.get('name')
             is_authenticate = False
-            credentials.insert({'Name' : full_name , 'Email' : email , 'Password' : password1})
+            chars = 'abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)'
+            secret_key = get_random_string(20, chars) 
+            key = hashlib.sha256((secret_key + email).encode('utf-8')).hexdigest()    
+            credentials.insert({'Name' : full_name , 'Email' : email , 'Password' : password1 , 'is_authenticate' : is_authenticate , 'key' : key})
             return redirect('login')
     else:
         form = RegisterForm()
@@ -104,9 +114,12 @@ def login(request):
         form = LoginForm(request.POST)
         if form.is_valid():
             email = form.cleaned_data.get('email')
-            password = form.cleaned_data.get('password')
+            password = hash(form.cleaned_data.get('password'))
+            if credentials.find_one({'Email' : email , 'Password' : password , 'is_authenticate' : True}) != None:
+                return redirect('home')
+            else:
             #request.session['email'] = email
-            return redirect('home')
+                return redirect('login')
     else:
         form = LoginForm()
     
@@ -114,3 +127,14 @@ def login(request):
     
 def logout(request):
     return redirect('home')
+
+def activation(request , key):
+    if credentials.find_one({'key' : key}) != None:
+        if credentials.find_one({'key' : key , 'is_authenticate' : False}) != None:
+            credentials.update_one({'key' : key , 'is_authenticate' : False} , {"$set" : {'is_authenticate' : True}})                                                                                      
+            return redirect('login')
+        else:
+            return redirect('home')
+    else:
+        return redirect('signup')
+
